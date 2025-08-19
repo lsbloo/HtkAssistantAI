@@ -17,5 +17,11 @@ def initialize_environment():
     if(environments_config['HTK_ASSISTANT_ENV'] == 'development' and environments_config['HTK_ASSISTANT_DEBUG'] == 'True'):
         print("Development environment detected. Debug mode is enabled.")
         load_prompt("development_prompt", timeSleep=2, loadingPercentSimulate=100)  # Simulate loading a development prompt
-        print()
+        if(environments_config['HTK_ASSISTANT_LOG_LEVEL'] == 'DEBUG'):
+            print('Environments configuration is loaded', environments_config)  # Print the environment configuration for debugging
+        
+        if(environments_config['HTK_ASSISTANT_API_KEY_LLM_GROQ'] is None):
+            print()
+            print("Warning: HTK_ASSISTANT_API_KEY_LLM_GROQ is not set. Please set it in your environment variables.")
+            print()
         

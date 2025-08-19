@@ -50,3 +50,4 @@ wcwidth==0.2.13
 websocket-client==1.8.0
 widgetsnbextension==4.0.14
 wsproto==1.2.0
+pyfiglet==1.0.4
