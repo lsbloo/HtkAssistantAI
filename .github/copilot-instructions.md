@@ -16,6 +16,7 @@ applications in desktop but have integration with other devices like android.
 
 - `/src`: Contains the source code for the application.
 - `/src/application/ui`: Contains the source code of screens and ux/ui of application.
+- `/src/core/iot/camera`: Contains the source code from integration with desktop application and other application with network protocol and VideoCapture
 - `/src/core/setup`: Contains the source code for configuration and setup environments.
 - `/src/core/LLMs`: Contains the source code for each type of llm in this application.
 - `/src/core/audio`: Contains the source code for output audio in this application.
@@ -36,3 +37,7 @@ applications in desktop but have integration with other devices like android.
 ## UI guidelines
 
 - Application should have a modern and clean design.
+
+## Commit Guidelines
+
+- Always 

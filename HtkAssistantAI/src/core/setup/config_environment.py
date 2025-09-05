@@ -13,14 +13,29 @@ def initialize_environment():
     environments_config['HTK_ASSISTANT_DEBUG'] = os.environ.get('HTK_ASSISTANT_DEBUG', 'True') # Enable debug mode for development
     environments_config['HTK_ASSISTANT_LOG_LEVEL'] = os.environ.get('HTK_ASSISTANT_LOG_LEVEL', 'DEBUG') # Set log level to DEBUG for detailed logs
     environments_config['HTK_ASSISTANT_API_KEY_LLM_GROQ'] = os.environ.get('HTK_ASSISTANT_API_KEY_LLM_GROQ') # Placeholder for API key, should be set securely, set the key for the LLM Groq Service
+    environments_config['HTK_ASSISTANT_API_KEY_LLM_CHATGPT'] = os.environ.get('HTK_ASSISTANT_API_KEY_LLM_CHATGPT') # Placeholder for API key, should be set securely, set the key for the LLM ChatGPT Service
+    environments_config['HTK_ASSISTANT_API_KEY_LLM_GEMINI'] = os.environ.get('HTK_ASSISTANT_API_KEY_LLM_GEMINI') # Placeholder for API key, should be set securely, set the key for the LLM Gemini Service
+    environments_config['HTK_ASSISTANT_STREAM_URL'] = os.environ.get('HTK_ASSISTANT_STREAM_URL')
+   
     if(environments_config['HTK_ASSISTANT_ENV'] == 'development' and environments_config['HTK_ASSISTANT_DEBUG'] == 'True'):
         print("Development environment detected. Debug mode is enabled.")
         load_prompt("HTK Assistant Environment", timeSleep=2, loadingPercentSimulate=100)  # Simulate loading a development prompt
         if(environments_config['HTK_ASSISTANT_LOG_LEVEL'] == 'DEBUG'):
             print('Environments configuration is loaded', environments_config)  # Print the environment configuration for debugging
         
-        if(environments_config['HTK_ASSISTANT_API_KEY_LLM_GROQ'] is None):
+        
+        # Define the keys and their corresponding warning messages
+        required_keys = {
+            'HTK_ASSISTANT_API_KEY_LLM_GROQ': "Warning: HTK_ASSISTANT_API_KEY_LLM_GROQ is not set. Please set it in your environment variables.",
+            'HTK_ASSISTANT_API_KEY_LLM_CHATGPT': "Warning: HTK_ASSISTANT_API_KEY_LLM_CHATGPT is not set. Please set it in your environment variables.",
+            'HTK_ASSISTANT_API_KEY_LLM_GEMINI': "Warning: HTK_ASSISTANT_API_KEY_LLM_GEMINI is not set. Please set it in your environment variables.",
+            'HTK_ASSISTANT_STREAM_URL': "Warning: HTK_ASSISTANT_STREAM_URL is not set. Please set it in your environment variables."
+        }
+
+    # Iterate through the required keys and check if they are None
+    for key, warning_message in required_keys.items():
+        if environments_config.get(key) is None:
             print()
-            print("Warning: HTK_ASSISTANT_API_KEY_LLM_GROQ is not set. Please set it in your environment variables.")
+            print(warning_message)
             print()
         
