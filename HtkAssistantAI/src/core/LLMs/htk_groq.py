@@ -5,6 +5,7 @@ from langchain.prompts import ChatPromptTemplate
 from pydantic import BaseModel
 from langchain.schema import SystemMessage, HumanMessage
 from .model.roles import RoleType
+import warnings
 
 
 """
@@ -62,8 +63,14 @@ class HtkGroqClient:
                                max_tokens=1000
                                )
         
+        with warnings.catch_warnings():
+            warnings.filterwarnings('ignore', category=DeprecationWarning)
+            try: 
+                self.memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+            except Exception as e:
+                print("Error initializing ConversationBufferMemory:", str(e))
+                self.memory = None
         
-        self.memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
     def generate_text_with_prompt(self, prompt):
         pass
