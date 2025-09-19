@@ -19,8 +19,11 @@ def initialize_environment():
    
     if(environments_config['HTK_ASSISTANT_ENV'] == 'development' and environments_config['HTK_ASSISTANT_DEBUG'] == 'True'):
         print("Development environment detected. Debug mode is enabled.")
+        print()
         load_prompt("HTK Assistant Environment", timeSleep=2, loadingPercentSimulate=100)  # Simulate loading a development prompt
+        print()
         if(environments_config['HTK_ASSISTANT_LOG_LEVEL'] == 'DEBUG'):
+            print()
             print('Environments configuration is loaded', environments_config)  # Print the environment configuration for debugging
         
         
