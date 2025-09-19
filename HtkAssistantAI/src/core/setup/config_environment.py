@@ -10,7 +10,7 @@ environments_config = {}
 def initialize_environment():
     environments_config['HTK_ASSISTANT_ENV'] = os.environ.get("HTK_ASSISTANT_ENV", 'development')  # Default to development if not set
     environments_config['HTK_ASSISTANT_VERSION'] = os.environ.get("HTK_ASSISTANT_VERSION", "1.0.0")  # Default version if not set
-    environments_config['HTK_ASSISTANT_DEBUG'] = os.environ.get('HTK_ASSISTANT_DEBUG', 'True') # Enable debug mode for development
+    environments_config['HTK_ASSISTANT_DEBUG'] = os.environ.get('HTK_ASSISTANT_DEBUG', 'False') # Enable debug mode for development
     environments_config['HTK_ASSISTANT_LOG_LEVEL'] = os.environ.get('HTK_ASSISTANT_LOG_LEVEL', 'DEBUG') # Set log level to DEBUG for detailed logs
     environments_config['HTK_ASSISTANT_API_KEY_LLM_GROQ'] = os.environ.get('HTK_ASSISTANT_API_KEY_LLM_GROQ') # Placeholder for API key, should be set securely, set the key for the LLM Groq Service
     environments_config['HTK_ASSISTANT_API_KEY_LLM_CHATGPT'] = os.environ.get('HTK_ASSISTANT_API_KEY_LLM_CHATGPT') # Placeholder for API key, should be set securely, set the key for the LLM ChatGPT Service
@@ -35,10 +35,10 @@ def initialize_environment():
             'HTK_ASSISTANT_STREAM_URL': "Warning: HTK_ASSISTANT_STREAM_URL is not set. Please set it in your environment variables."
         }
 
-    # Iterate through the required keys and check if they are None
-    for key, warning_message in required_keys.items():
-        if environments_config.get(key) is None:
-            print()
-            print(warning_message)
-            print()
+        # Iterate through the required keys and check if they are None
+        for key, warning_message in required_keys.items():
+            if environments_config.get(key) is None:
+                print()
+                print(warning_message)
+                print()
         
