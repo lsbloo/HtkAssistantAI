@@ -3,7 +3,9 @@ from core.extensions.prompt_fliget_appearence import setup_terminal_appearance
 from core.setup.config_environment import environments_config
 from core.LLMs.htk_groq import HtkGroqClient
 from core.LLMs.model.roles import RoleType
+from core.utils.design.observer.observer import ClientObserver
 from application.ui.main_frame import MainFrame
+
 
 def main():
     """Main function to initialize the HtkAssistantAI application.
@@ -40,7 +42,16 @@ def main():
     
     frame = MainFrame()
     
+    client_observer = ClientObserver(model=HtkGroqClient(environments_config.get('HTK_ASSISTANT_API_KEY_LLM_GROQ')))
+    
+    print("Registering observer...")
+    
+    frame.register_observer(client_observer)
+    
+    
     frame.run()
+    
+    
 
     
     
