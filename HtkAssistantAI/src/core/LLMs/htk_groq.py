@@ -3,7 +3,7 @@ from langchain_groq import ChatGroq
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import ChatPromptTemplate
 from pydantic import BaseModel
-from langchain.schema import SystemMessage, HumanMessage
+from langchain.schema import AIMessage, BaseMessage, ChatMessage, FunctionMessage, HumanMessage, SystemMessage
 from .model.roles import RoleType
 import warnings
 
@@ -70,12 +70,7 @@ class HtkGroqClient:
             except Exception as e:
                 print("Error initializing ConversationBufferMemory:", str(e))
                 self.memory = None
-        
-
-    def generate_text_with_prompt(self, prompt):
-        pass
-    
-    
+                
     """
         Handles a chat interaction by sending a message to the client and managing the chat history.
         Args:
@@ -105,21 +100,27 @@ class HtkGroqClient:
             
         return str(response.content)
     
-    def chat_with_roles(self, system_message, user_message):
-       pass
+    def chat_with_roles(self, message, role) -> str:
+        input_message = Message(content=message)
+        
+        chat_history = self.memory.chat_memory.messages
+        
+        if(role == RoleType.SYSTEM):
+            system_message = SystemMessage(content='You are a system.')
+        elif(role == RoleType.ASSISTANT):
+            system_message = AIMessage(content='You are the assistant.')
+        else:
+            system_message = HumanMessage(content='You are the user.')
+            
+        formatted_history = [system_message] + chat_history + [HumanMessage(content=input_message.content)]
+        
+        response = self.client.invoke(input = formatted_history)
+        
+        self.memory.save_context({"input": input_message.content}, {"output": str(response.content)})
+            
+        return str(response.content)
+       
    
 
 class Message(BaseModel):
     content: str
-    
-    
-
-class HtkAssistantAIGroqRoles(object):
-    def __init__(self, roleType):
-        if(roleType == "system"):
-            self.htkRole = RoleType.SYSTEM
-        elif(roleType == "assistant"):
-            self.htkRole = RoleType.ASSISTANT       
-        else:
-            self.htkRole = RoleType.USER
-    
