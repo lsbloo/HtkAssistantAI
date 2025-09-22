@@ -3,6 +3,7 @@ from tkinter import ttk
 from core.extensions.enviroments import getModelsAvailableInEnvironment
 from core.extensions.enviroments import getImageProfileInEnvironment
 from PIL import Image, ImageTk, ImageDraw
+import customtkinter as ctk
 
 
 class MainFrame:
@@ -55,30 +56,50 @@ class MainFrame:
         self.title_label = tk.Label(self.header_frame, text='HTK Assistant AI', bg='#252526', fg='white', font=('Arial', 18, 'bold'))
         self.title_label.place(x=20, y=30)
 
+    def draw_rounded_rectangle(self, canvas, x1, y1, x2, y2, radius=25, fill='white'):
+        points = [
+            (x1 + radius, y1),
+            (x2 - radius, y1),
+            (x2 - radius, y1),
+            (x2, y1),
+            (x2, y1 + radius),
+            (x2, y2 - radius),
+            (x2, y2 - radius),
+            (x2, y2),
+            (x2 - radius, y2),
+            (x1 + radius, y2),
+            (x1 + radius, y2),
+            (x1, y2),
+            (x1, y2 - radius),
+            (x1, y1 + radius),
+            (x1, y1 + radius),
+            (x1, y1),
+        ]
+        return canvas.create_polygon(points, smooth=True, fill=fill)
     
     def create_input_area(self):
         # Create a label for the text input
-        self.input_label = tk.Label(self.root, text="Enter your text:", bg="white", font=("Arial", 12))
-        self.input_label.place(x=20, y=160)
-
+        self.input_label = tk.Label(self.root, text="No que você está pensando hoje?", bg="#1E1E1E", fg='white', font=("Arial", 12))
+        self.input_label.place(x=300, y=210)
+                
         # Create a text box for user input
-        self.text_input = tk.Text(self.root, height=10, width=60, font=("Arial", 12))
-        self.text_input.place(x=20, y=180)
+        self.text_input = ctk.CTkTextbox(self.root, height=75, width=700, font=('Arial', 12), fg_color='#252526', text_color='white', corner_radius=10)
+        self.text_input.place(x=30, y=240)
 
     def create_model_selection(self):
         # Create a label for the model selection
-        self.model_label = tk.Label(self.root, text="Select Model:", bg="white", font=("Arial", 12))
-        self.model_label.place(x=10, y=40)
+        self.model_label = tk.Label(self.root, text="Modelos Disponiveis", bg='#1E1E1E', fg='white', font=("Arial", 12))
+        self.model_label.place(x=30, y=40)
 
         # Create a dropdown menu for model selection
-        self.model_var = tk.StringVar(value="Select a model")
+        self.model_var = tk.StringVar(value="Selecione um modelo")
         self.model_dropdown = ttk.Combobox(self.root, textvariable=self.model_var, state="readonly", font=("Arial", 12))
         self.model_dropdown['values'] = self.setupModelsBasedInEnvironment()
         self.model_dropdown.place(x=10, y=120)
       
     def create_button(self): 
         # Create a submit button
-        self.submit_button = tk.Button(self.root, text="Submit", command=self.submit, bg="blue", fg="white", font=("Arial", 12))
+        self.submit_button = ctk.CTkButton(self.root, text='Submeter', command=self.submit)
         self.submit_button.place(x=400, y=500)
        
     def setupModelsBasedInEnvironment(self):
