@@ -2,6 +2,7 @@ from core.setup.config_environment import initialize_environment
 from core.extensions.prompt_fliget_appearence import setup_terminal_appearance
 from core.setup.config_environment import environments_config
 from core.LLMs.htk_groq import HtkGroqClient
+from core.LLMs.model.roles import RoleType
 
 def main():
     """Main function to initialize the HtkAssistantAI application.
@@ -24,8 +25,8 @@ def main():
         if user_input.lower() in ['exit', 'quit']:
             print("Exiting the application.")
             break
-        response = groq_client.chat(
-            message=user_input)
+        response = groq_client.chat_with_roles(
+            message=user_input, role = RoleType.ASSISTANT)
         print(f"HTK Assistant AI: {response}")
     
     
