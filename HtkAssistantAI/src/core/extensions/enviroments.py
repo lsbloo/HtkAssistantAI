@@ -12,4 +12,8 @@ def getModelsAvailableInEnvironment():
         if environments_config.get(key) != None:
             available_models.append(key)
     return available_models
+
+def getImageProfileInEnvironment():
+    image_path = environments_config.get('HTK_ASSISTANT_PROFILE_IMAGE_PATH', 'application/ui/assets/htk_profile.png')
+    return image_path
     

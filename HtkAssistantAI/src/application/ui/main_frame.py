@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from core.extensions.enviroments import getModelsAvailableInEnvironment
+from core.extensions.enviroments import getImageProfileInEnvironment
 from PIL import Image, ImageTk, ImageDraw
 
 
@@ -14,15 +15,19 @@ class MainFrame:
         
     def create_circular_widget(self):
         # Create a canvas for the circular widget
-        self.circle_canvas = tk.Canvas(self.root, width=100, height=100, bg='#1E1E1E', highlightthickness=0)
-        self.circle_canvas.place(x=680, y=10)  # Position the widget in the top-right corner
+        
+        self.header_frame = tk.Frame(self.root, bg='#252526', height=100)
+        self.header_frame.pack(fill='x')
+
+        self.circle_canvas = tk.Canvas(self.root, width=100, height=100, bg='#252526', highlightthickness=0)
+        self.circle_canvas.place(x=680, y=1)  # Position the widget in the top-right corner
 
         # Draw a circle
-        self.circle_canvas.create_oval(5, 5, 95, 95, outline='', fill='#1E1E1E')  # Circle background
+        self.circle_canvas.create_oval(5, 5, 95, 95, outline='', fill='#252526')  # Circle background
 
         # Load and resize the image
         try:
-            image_path = Image.open('D:/Projetos Python/HtkAssistantAI/HtkAssistantAI/res/hatake.jpg')  #  # Replace with your image path
+            image_path = Image.open(getImageProfileInEnvironment())  #  # Replace with your image path
             self.profile_image = image_path
             self.profile_image = self.profile_image.resize((90, 90))
 
@@ -44,6 +49,11 @@ class MainFrame:
             self.circle_canvas.create_image(50, 50, image=self.profile_photo, anchor='center')
         except FileNotFoundError:
             print('Profile image not found. Please check the path.')
+            
+        
+        # Add a title label
+        self.title_label = tk.Label(self.header_frame, text='HTK Assistant AI', bg='#252526', fg='white', font=('Arial', 18, 'bold'))
+        self.title_label.place(x=20, y=30)
 
     
     def create_input_area(self):
@@ -88,7 +98,6 @@ class MainFrame:
                 avialiableModels.append('Gemini')
         return avialiableModels
         
-                 
         
     def __init__(self, title="HTK Assistant AI"):
         self.title = title
