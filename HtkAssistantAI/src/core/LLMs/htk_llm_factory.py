@@ -1,5 +1,6 @@
 from core.LLMs.groq.htk_groq import HtkGroqClient
 from core.LLMs.groq.htk_groq_facade import GroqClientFacade
+from core.LLMs.model.roles import RoleType
 from core.extensions.enviroments import environments_config
 
 def setupHtkAssistantModel(response, callback=None):
@@ -13,7 +14,7 @@ def setupHtkAssistantModel(response, callback=None):
             response = groq.chat(message=response['user_input'])
             callback(response)
         elif option == 'chat_with_roles':
-            response = groq.chat_with_roles(message=response['user_input'], role='assistant')
+            response = groq.chat_with_roles(message=response['user_input'], role=RoleType.fromType(response['option_role_choice']))
             callback(response)
         
     else:
