@@ -2,3 +2,10 @@
 2025-09-23 07:58:33,883 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
 2025-09-23 07:59:39,002 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
 2025-09-23 08:00:21,546 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:05:52,178 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:06:24,602 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:06:56,482 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:07:38,402 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:08:27,538 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:09:07,755 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:12:09,738 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}

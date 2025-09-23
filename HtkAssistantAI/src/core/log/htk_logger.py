@@ -1,4 +1,5 @@
 import logging
+import datetime
 from core.extensions.enviroments import isDebugEnvinronmentWithLogEnabled
 
 
@@ -15,8 +16,8 @@ class HtkApplicationLogger:
     def log(self, message):
         if (self.isDebug): 
             self.logger.debug(message) 
-            print(f"DEBUG: {message}")
+            print("",datetime.datetime.now().strftime("%A %D %B %y %I:%M"), "--",f"DEBUG: {message}")
         else: 
             self.logger.info(message)
-            print(f"INFO: {message}")
+            print("",datetime.datetime.now().strftime("%A %D %B %y %I:%M"), "--",f"INFO: {message}")
     
