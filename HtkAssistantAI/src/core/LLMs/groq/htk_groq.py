@@ -4,9 +4,9 @@ from langchain.memory import ConversationBufferMemory
 from langchain.prompts import ChatPromptTemplate
 from pydantic import BaseModel
 from langchain.schema import AIMessage, BaseMessage, ChatMessage, FunctionMessage, HumanMessage, SystemMessage
-from .model.roles import RoleType
+from ..model.roles import RoleType
 import warnings
-from .base.htk_base import HtkClientBase
+from ..base.htk_base import HtkClientBase
 
 
 """

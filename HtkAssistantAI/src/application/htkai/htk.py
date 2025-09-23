@@ -1,9 +1,10 @@
 from core.setup.config_environment import initialize_environment
 from core.extensions.prompt_fliget_appearence import setup_terminal_appearance
 from core.setup.config_environment import environments_config
-from core.LLMs.htk_groq import HtkGroqClient
 from core.LLMs.model.roles import RoleType
+from application.ui.utils import show_toast
 from core.utils.design.observer.observer import ClientObserver
+from core.LLMs.htk_llm_factory import setupHtkAssistantModel
 from application.ui.main_frame import MainFrame
 
 
@@ -42,8 +43,13 @@ def main():
     
     frame = MainFrame()
     
-    client_observer = ClientObserver(model=HtkGroqClient(environments_config.get('HTK_ASSISTANT_API_KEY_LLM_GROQ')))
     
+    client_observer = ClientObserver(
+        callback=lambda response: setupHtkAssistantModel(response = response,
+        callback=lambda res: frame.update_chat(res)
+        ))
+    
+   
     print("Registering observer...")
     
     frame.register_observer(client_observer)

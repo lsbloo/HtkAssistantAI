@@ -6,9 +6,8 @@ its used to allow a subject (MainFrame) to notify multiple observers (e.g., clie
 """
 class ClientObserver:
     
-    def __init__(self, model):
-        self.model = model
-    
+    def __init__(self, callback = None):
+        self.callback = callback
     
     def update(self, data):
         data = data
@@ -19,14 +18,8 @@ class ClientObserver:
             print("No user input provided.")
             return
         
-        if data['selected_model'] == 'Groq':
-            response = self.model.chat_with_roles(message=data['user_input'], role='user')
-            print(f"Response from Groq model: {response}")
-        
-        
-        
-
-
+        self.callback(data)
+            
 
 class Subject:
     def register_observer(self, observer):

@@ -3,8 +3,10 @@ from tkinter import ttk
 from core.extensions.enviroments import getModelsAvailableInEnvironment
 from core.extensions.enviroments import getImageProfileInEnvironment
 from core.utils.design.observer.observer import Subject
+from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
 import customtkinter as ctk
+
 
 class MainFrame(Subject):
     def create_root(self):
@@ -130,8 +132,7 @@ class MainFrame(Subject):
             elif(avialiableModelsByEnv[i] == 'HTK_ASSISTANT_API_KEY_LLM_GEMINI'):
                 avialiableModels.append('Gemini')
         return avialiableModels
-        
-        
+    
     def __init__(self, title="HTK Assistant AI"):
         self._observers = []
         self.title = title
@@ -142,6 +143,7 @@ class MainFrame(Subject):
         self.create_input_area()
         self.create_output_area()
         self.create_button()
+       
 
     def submit(self):
         # Get the text input and selected model
@@ -152,10 +154,20 @@ class MainFrame(Subject):
         #print(f"User Input: {user_input}")
         #print(f"Selected Model: {selected_model}")
         
+        if(selected_model == "Selecione um modelo" or selected_model == "No models available"):
+            show_toast("Por favor, selecione um modelo válido.", duration=3000)
+            return
+        
         self.notify_observers({
             'user_input': user_input,
             'selected_model': selected_model
         })
+        
+    def update_chat(self, response):
+        self.text_input_output.configure(state='normal')
+        self.text_input_output.delete("1.0", tk.END)
+        self.text_input_output.insert(tk.END, response)
+        self.text_input_output.configure(state='disabled')
 
     def run(self):
         self.root.mainloop()
