@@ -3,6 +3,8 @@ from tkinter import ttk
 from core.extensions.enviroments import getModelsAvailableInEnvironment
 from core.extensions.enviroments import getImageProfileInEnvironment
 from core.utils.design.observer.observer import Subject
+from core.LLMs.groq.options import set_input_groq_options
+from core.log.htk_logger import HtkApplicationLogger
 from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
 import customtkinter as ctk
@@ -110,6 +112,21 @@ class MainFrame(Subject):
         self.model_dropdown = ttk.Combobox(self.root, textvariable=self.model_var, state="readonly", font=("Arial", 12))
         self.model_dropdown['values'] = self.setupModelsBasedInEnvironment()
         self.model_dropdown.place(x=10, y=120)
+        
+        self.model_dropdown.bind("<<ComboboxSelected>>", self.on_model_change)
+    
+    def on_model_change(self, event):
+        selected_model = self.model_var.get()
+        
+        input_options = {}
+        if selected_model == "Groq":
+            input_options = set_input_groq_options()
+        
+        
+        self.logger.log(f"Selected Model: {selected_model} with Input Options: {input_options}")
+        # You can add more conditions for other models and set their input options accordingly
+        
+        
       
     def create_button(self): 
         # Create a submit button
@@ -143,6 +160,7 @@ class MainFrame(Subject):
         self.create_input_area()
         self.create_output_area()
         self.create_button()
+        self.logger = HtkApplicationLogger()
        
 
     def submit(self):

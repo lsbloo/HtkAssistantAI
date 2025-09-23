@@ -17,3 +17,5 @@ def getImageProfileInEnvironment():
     image_path = environments_config.get('HTK_ASSISTANT_PROFILE_IMAGE_PATH', 'application/ui/assets/htk_profile.png')
     return image_path
     
+def isDebugEnvinronmentWithLogEnabled():
+    return environments_config.get('HTK_ASSISTANT_DEBUG', 'False') == 'True' and environments_config.get('HTK_ASSISTANT_LOG_LEVEL', 'INFO') == 'DEBUG'
