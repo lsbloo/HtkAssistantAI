@@ -4,8 +4,9 @@ from langchain.memory import ConversationBufferMemory
 from langchain.prompts import ChatPromptTemplate
 from pydantic import BaseModel
 from langchain.schema import AIMessage, BaseMessage, ChatMessage, FunctionMessage, HumanMessage, SystemMessage
-from .model.roles import RoleType
+from ..model.roles import RoleType
 import warnings
+from ..base.htk_base import HtkClientBase
 
 
 """
@@ -51,7 +52,7 @@ Dependencies:
 GROQ_CLIENT_DEFAULT_ROLE = "user"
 GROQ_CLIENT_DEFAULT_MODEL = "llama-3.3-70b-versatile"
 
-class HtkGroqClient:
+class HtkGroqClient(HtkClientBase):
     def __init__(self, api_key=None):
         api_key = api_key
         if not api_key:

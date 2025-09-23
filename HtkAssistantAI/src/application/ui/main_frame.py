@@ -2,11 +2,13 @@ import tkinter as tk
 from tkinter import ttk
 from core.extensions.enviroments import getModelsAvailableInEnvironment
 from core.extensions.enviroments import getImageProfileInEnvironment
+from core.utils.design.observer.observer import Subject
+from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
 import customtkinter as ctk
 
 
-class MainFrame:
+class MainFrame(Subject):
     def create_root(self):
         self.root.title(self.title)  # Set the title of the main window
         self.root.geometry("800x600")  # Set the size of the main window
@@ -85,11 +87,23 @@ class MainFrame:
         # Create a text box for user input
         self.text_input = ctk.CTkTextbox(self.root, height=75, width=700, font=('Arial', 12), fg_color='#252526', text_color='white', corner_radius=10)
         self.text_input.place(x=30, y=240)
+    
+    def create_output_area(self):
+        # Create a text box for user input
+        self.text_input_output = ctk.CTkTextbox(self.root, height=120, 
+                                                width=700, font=('Arial', 12), 
+                                                fg_color='#252526', 
+                                                text_color='white', 
+                                                corner_radius=10,
+                                                )
+        self.text_input_output.place(x=30, y=330)
+        self.text_input_output.configure(state='disabled')
+        
 
     def create_model_selection(self):
         # Create a label for the model selection
-        self.model_label = tk.Label(self.root, text="Modelos Disponiveis", bg='#1E1E1E', fg='white', font=("Arial", 12))
-        self.model_label.place(x=30, y=40)
+        #self.model_label = tk.Label(self.root, text="Modelos Disponiveis", bg='#1E1E1E', fg='white', font=("Arial", 12))
+        #self.model_label.place(x=30, y=40)
 
         # Create a dropdown menu for model selection
         self.model_var = tk.StringVar(value="Selecione um modelo")
@@ -118,16 +132,18 @@ class MainFrame:
             elif(avialiableModelsByEnv[i] == 'HTK_ASSISTANT_API_KEY_LLM_GEMINI'):
                 avialiableModels.append('Gemini')
         return avialiableModels
-        
-        
+    
     def __init__(self, title="HTK Assistant AI"):
+        self._observers = []
         self.title = title
         self.root = tk.Tk()  # Create the main window
         self.create_root()
         self.create_circular_widget()
         self.create_model_selection()
         self.create_input_area()
+        self.create_output_area()
         self.create_button()
+       
 
     def submit(self):
         # Get the text input and selected model
@@ -135,8 +151,23 @@ class MainFrame:
         selected_model = self.model_var.get()
 
         # Print the input and selected model (replace this with your processing logic)
-        print(f"User Input: {user_input}")
-        print(f"Selected Model: {selected_model}")
+        #print(f"User Input: {user_input}")
+        #print(f"Selected Model: {selected_model}")
+        
+        if(selected_model == "Selecione um modelo" or selected_model == "No models available"):
+            show_toast("Por favor, selecione um modelo válido.", duration=3000)
+            return
+        
+        self.notify_observers({
+            'user_input': user_input,
+            'selected_model': selected_model
+        })
+        
+    def update_chat(self, response):
+        self.text_input_output.configure(state='normal')
+        self.text_input_output.delete("1.0", tk.END)
+        self.text_input_output.insert(tk.END, response)
+        self.text_input_output.configure(state='disabled')
 
     def run(self):
         self.root.mainloop()

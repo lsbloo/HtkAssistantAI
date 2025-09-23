@@ -1,0 +1,4 @@
+
+
+class HtkClientBase(object):
+    pass
