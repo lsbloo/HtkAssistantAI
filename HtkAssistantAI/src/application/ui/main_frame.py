@@ -3,7 +3,7 @@ from tkinter import ttk
 from core.extensions.enviroments import getModelsAvailableInEnvironment
 from core.extensions.enviroments import getImageProfileInEnvironment
 from core.utils.design.observer.observer import Subject
-from core.LLMs.groq.options import set_input_groq_options
+from core.LLMs.groq.options import input_groq_options
 from core.log.htk_logger import HtkApplicationLogger
 from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
@@ -120,13 +120,54 @@ class MainFrame(Subject):
         
         input_options = {}
         if selected_model == "Groq":
-            input_options = set_input_groq_options()
+            input_options = input_groq_options()
         
         
         self.logger.log(f"Selected Model: {selected_model} with Input Options: {input_options}")
-        # You can add more conditions for other models and set their input options accordingly
         
+        if input_options is not None:
+            self.create_options_area(input_options)
+            
         
+    
+    def setupOptionsBasedInModelOptions(self, input_options):
+        values = []
+        for key, value in input_options.items():
+            if value:
+                values.append(key)
+        
+        self.logger.log(f"Input Options Values: {values}")
+        return values
+            
+        
+    def create_options_area(self, input_options):
+        self.model_label = tk.Label(self.root, text="Opções do modelo:", bg='#1E1E1E', fg='white', font=("Arial", 12))
+        self.model_label.place(x=570, y=120)
+        
+        self.model_input_option_var = tk.StringVar(value="Chats")
+        self.model_input_option_dropdown = ttk.Combobox(self.root, textvariable=self.model_input_option_var, state="readonly", font=("Arial", 12))
+        self.model_input_option_dropdown['values'] = self.setupOptionsBasedInModelOptions(input_options=input_options)
+        self.model_input_option_dropdown.place(x=575, y=150)
+        self.model_input_option_dropdown.bind("<<ComboboxSelected>>", self.on_model_change_options_area)
+        
+    
+    def on_model_change_options_area(self, event):
+        selected_option = self.model_input_option_var.get()
+        self.logger.log(f"Selected Model Option: {selected_option}")
+
+        if selected_option == "chat_with_roles":
+            self.option_role_menu = ctk.CTkOptionMenu(self.root, values=["assistant", "user", "system"], 
+                              command=lambda choice: self.set_option_role_choice(choice))
+            
+            self.option_role_menu.place(x=575, y=180) 
+        else:
+            self.option_role_menu.pack_forget()
+            self.option_role_menu.destroy()
+            self.root.update()
+            
+    def set_option_role_choice(self, choice):
+        self.option_role_choice = choice
+        self.logger.log(f"Selected Role: {self.option_role_choice}")
       
     def create_button(self): 
         # Create a submit button
@@ -160,6 +201,8 @@ class MainFrame(Subject):
         self.create_input_area()
         self.create_output_area()
         self.create_button()
+        self.option_role_menu = None
+        self.option_role_choice = None
         self.logger = HtkApplicationLogger()
        
 
@@ -167,6 +210,7 @@ class MainFrame(Subject):
         # Get the text input and selected model
         user_input = self.text_input.get("1.0", tk.END).strip()
         selected_model = self.model_var.get()
+        selected_option = self.model_input_option_var.get() if hasattr(self, 'model_input_option_var') else None
 
         # Print the input and selected model (replace this with your processing logic)
         #print(f"User Input: {user_input}")
@@ -178,7 +222,9 @@ class MainFrame(Subject):
         
         self.notify_observers({
             'user_input': user_input,
-            'selected_model': selected_model
+            'selected_model': selected_model,
+            'selected_option': selected_option,
+            'option_role_choice': self.option_role_choice
         })
         
     def update_chat(self, response):

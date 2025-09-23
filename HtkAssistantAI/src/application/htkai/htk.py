@@ -45,9 +45,10 @@ def main():
     
     
     client_observer = ClientObserver(
-        callback=lambda response: setupHtkAssistantModel(response = response,
-        callback=lambda res: frame.update_chat(res)
-        ))
+        onSuccess=lambda response: setupHtkAssistantModel(
+            response = response,callback=lambda res: frame.update_chat(res)
+        ),
+        onFailure=lambda _: show_toast(f"Digite algo", duration=5000))
     
    
     print("Registering observer...")

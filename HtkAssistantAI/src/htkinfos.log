@@ -9,3 +9,173 @@
 2025-09-23 08:08:27,538 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
 2025-09-23 08:09:07,755 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
 2025-09-23 08:12:09,738 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:17:37,841 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:17:40,402 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:18:07,225 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:18:08,850 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:25:11,545 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:25:13,881 - DEBUG - Observer received data: {'user_input': '', 'selected_model': 'Groq'}
+2025-09-23 08:25:13,881 - DEBUG - No user input provided.
+2025-09-23 08:25:17,857 - DEBUG - Observer received data: {'user_input': '', 'selected_model': 'Groq'}
+2025-09-23 08:25:17,857 - DEBUG - No user input provided.
+2025-09-23 08:26:13,409 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 08:26:14,128 - DEBUG - Observer received data: {'user_input': '', 'selected_model': 'Groq'}
+2025-09-23 08:26:14,160 - DEBUG - No user input provided.
+2025-09-23 08:46:55,392 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:00:45,382 - DEBUG - Observer received data: {'user_input': 'pensando em ficar deitado', 'selected_model': 'Groq'}
+2025-09-23 09:00:45,454 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 09:00:45,458 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 09:00:45,469 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 09:00:45,469 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 09:00:45,541 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'You are the user.'}, {'role': 'user', 'content': 'pensando em ficar deitado'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1000, 'n': 1, 'stop': None, 'stream': False, 'temperature': 0.7}}
+2025-09-23 09:00:45,564 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=None socket_options=None
+2025-09-23 09:00:45,912 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021E3FCA0130>
+2025-09-23 09:00:45,912 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000021E3FAD9940> server_hostname='api.groq.com' timeout=None
+2025-09-23 09:00:45,966 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021E3FC5BFA0>
+2025-09-23 09:00:45,967 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-09-23 09:00:45,967 - DEBUG - send_request_headers.complete
+2025-09-23 09:00:45,967 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-09-23 09:00:45,967 - DEBUG - send_request_body.complete
+2025-09-23 09:00:45,967 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-09-23 09:00:51,508 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 23 Sep 2025 12:00:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'gzip'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'bra'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11979'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'105ms'), (b'x-request-id', b'req_01k5v755xfe1nvcz1ext03a298'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=p78yl0a4AcS6o2JL00xUEm5ujWv7acdgtJoB8RWEMHY-1758628850-1.0.1.1-dDFkJ_5ZLKPX82Jph1UPBFrRUZhyTMRY9VmbV5fzaoXr70pLxdH55VZGC1j2uPo7cClgWs2PH.fWq9.Li95eYPAZNMJ7Gb_QcdGhEYP6Z00; path=/; expires=Tue, 23-Sep-25 12:30:50 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9839e22bf977cb64-GIG'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-23 09:00:51,509 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-23 09:00:51,509 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-09-23 09:00:51,509 - DEBUG - receive_response_body.complete
+2025-09-23 09:00:51,510 - DEBUG - response_closed.started
+2025-09-23 09:00:51,510 - DEBUG - response_closed.complete
+2025-09-23 09:00:51,510 - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2025-09-23 09:00:55,428 - DEBUG - close.started
+2025-09-23 09:00:55,431 - DEBUG - close.complete
+2025-09-23 09:01:12,022 - DEBUG - Observer received data: {'user_input': 'me de uma dica do que fazer', 'selected_model': 'Groq'}
+2025-09-23 09:01:12,023 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 09:01:12,023 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 09:01:12,033 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 09:01:12,033 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 09:01:12,044 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'user', 'content': 'You are the user.'}, {'role': 'user', 'content': 'me de uma dica do que fazer'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1000, 'n': 1, 'stop': None, 'stream': False, 'temperature': 0.7}}
+2025-09-23 09:01:12,045 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=None socket_options=None
+2025-09-23 09:01:12,094 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021E3FCA2AD0>
+2025-09-23 09:01:12,094 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000021E3FAD9FC0> server_hostname='api.groq.com' timeout=None
+2025-09-23 09:01:12,149 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021E3FCA2AA0>
+2025-09-23 09:01:12,150 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-09-23 09:01:12,150 - DEBUG - send_request_headers.complete
+2025-09-23 09:01:12,150 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-09-23 09:01:12,150 - DEBUG - send_request_body.complete
+2025-09-23 09:01:12,150 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-09-23 09:01:13,836 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 23 Sep 2025 12:01:13 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'gzip'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'bra'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'11979'), (b'x-ratelimit-reset-requests', b'2m26.649999999s'), (b'x-ratelimit-reset-tokens', b'105ms'), (b'x-request-id', b'req_01k5v75zete1prszftc9pym8w0'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=n9zXHn3nlNABiV59uFr1a89PgdXvmoO53GoMD5mBsaw-1758628873-1.0.1.1-iR_E35J4601YfCTnxZbQMQfdNo3yXzwV2BVPUGmEXPrzqu5k4g.K_DZcwreTxkKENJahHr9ugXjSV_05iyonPsnIdS.eZnNPUSZA25BsEBE; path=/; expires=Tue, 23-Sep-25 12:31:13 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9839e2cf990b644b-GIG'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-23 09:01:13,837 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-23 09:01:13,837 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-09-23 09:01:13,837 - DEBUG - receive_response_body.complete
+2025-09-23 09:01:13,837 - DEBUG - response_closed.started
+2025-09-23 09:01:13,837 - DEBUG - response_closed.complete
+2025-09-23 09:01:13,837 - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2025-09-23 09:02:20,532 - DEBUG - close.started
+2025-09-23 09:02:20,533 - DEBUG - close.complete
+2025-09-23 09:04:37,086 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:05:26,615 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:05:48,470 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:07:29,159 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:08:02,719 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:09:15,143 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:09:37,038 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:12:09,238 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:13:02,318 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:13:31,598 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:13:51,518 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:14:19,614 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:14:37,334 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:15:14,542 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': True, 'image_generation': False}
+2025-09-23 09:16:47,582 - DEBUG - Selected Model: Groq with Input Options: {'chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:16:47,583 - DEBUG - Input Options Values: ['chat', 'chat_with_roles']
+2025-09-23 09:17:16,966 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:17:16,967 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:19:25,894 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:19:25,895 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:21:25,998 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:21:25,999 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:21:33,478 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:21:37,061 - DEBUG - Observer received data: {'user_input': '', 'selected_model': 'Groq', 'selected_option': 'chat_with_roles'}
+2025-09-23 09:21:37,102 - DEBUG - No user input provided.
+2025-09-23 09:21:52,182 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:21:53,190 - DEBUG - Observer received data: {'user_input': '', 'selected_model': 'Groq', 'selected_option': 'simple_chat'}
+2025-09-23 09:21:53,200 - DEBUG - No user input provided.
+2025-09-23 09:24:41,382 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:24:41,383 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:24:43,398 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:24:50,453 - DEBUG - Observer received data: {'user_input': 'oii tudo bem', 'selected_model': 'Groq', 'selected_option': 'simple_chat'}
+2025-09-23 09:24:50,507 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 09:24:50,508 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 09:24:50,519 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 09:24:50,519 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 09:24:50,530 - DEBUG - GroqClientFacade: chat called
+2025-09-23 09:24:50,559 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': 'oii tudo bem'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1000, 'n': 1, 'stop': None, 'stream': False, 'temperature': 0.7}}
+2025-09-23 09:24:50,582 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=None socket_options=None
+2025-09-23 09:24:50,633 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001A785ECC0A0>
+2025-09-23 09:24:50,633 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001A785D098C0> server_hostname='api.groq.com' timeout=None
+2025-09-23 09:24:50,687 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001A785ECC070>
+2025-09-23 09:24:50,687 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-09-23 09:24:50,687 - DEBUG - send_request_headers.complete
+2025-09-23 09:24:50,687 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-09-23 09:24:50,687 - DEBUG - send_request_body.complete
+2025-09-23 09:24:50,687 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-09-23 09:24:51,175 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 23 Sep 2025 12:24:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'gzip'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'bra'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11979'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'105ms'), (b'x-request-id', b'req_01k5v8h8pte59bj82rjh5x1ak1'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=UNSIyBqKANYVNKs.9B8D_t9itJlo5DowOzszmXkZA3s-1758630290-1.0.1.1-t2jd0oH0VjO6amHAkQnbbQwfkMpBi.snZDtCFH_gwK7nmyQOHJ8oBLb1ME0gu_UyuJ1pRkISCdILmbOLkPfbzaBVrvxZJaDiVWC3aBpztrU; path=/; expires=Tue, 23-Sep-25 12:54:50 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'983a0571387ee2bd-GIG'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-23 09:24:51,176 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-23 09:24:51,176 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-09-23 09:24:51,176 - DEBUG - receive_response_body.complete
+2025-09-23 09:24:51,176 - DEBUG - response_closed.started
+2025-09-23 09:24:51,176 - DEBUG - response_closed.complete
+2025-09-23 09:24:51,177 - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2025-09-23 09:25:20,992 - DEBUG - close.started
+2025-09-23 09:25:20,992 - DEBUG - close.complete
+2025-09-23 09:37:37,085 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:37:37,086 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:37:38,389 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:37:45,318 - DEBUG - Selected Role: system
+2025-09-23 09:37:54,430 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:37:56,431 - DEBUG - Selected Role: assistant
+2025-09-23 09:38:31,005 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:38:31,006 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:38:32,860 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:38:33,957 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:38:35,686 - DEBUG - Selected Role: assistant
+2025-09-23 09:38:37,006 - DEBUG - Selected Role: user
+2025-09-23 09:38:38,181 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:39:01,109 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:39:01,111 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:39:02,373 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:39:03,445 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:39:05,964 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:39:43,854 - DEBUG - Selected Role: system
+2025-09-23 09:39:44,999 - DEBUG - Selected Role: assistant
+2025-09-23 09:39:45,926 - DEBUG - Selected Role: user
+2025-09-23 09:39:48,719 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:41:19,440 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:41:19,442 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:41:20,781 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:41:21,708 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:41:26,628 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:41:28,582 - DEBUG - Selected Role: user
+2025-09-23 09:41:29,799 - DEBUG - Selected Role: system
+2025-09-23 09:41:30,655 - DEBUG - Selected Role: assistant
+2025-09-23 09:44:44,557 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:44:44,558 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:44:45,909 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:44:46,973 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:44:48,156 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:44:49,748 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:49:08,940 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:49:10,557 - DEBUG - Selected Role: user
+2025-09-23 09:49:12,484 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:52:46,180 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:52:46,181 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:52:48,332 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:52:49,317 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:52:50,892 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:53:19,253 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 09:53:19,256 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 09:53:20,516 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:53:21,492 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 09:53:30,364 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 09:53:31,149 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 10:03:38,067 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 10:03:38,069 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 10:03:40,188 - DEBUG - Selected Model Option: chat_with_roles

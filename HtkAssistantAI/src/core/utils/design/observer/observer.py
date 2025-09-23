@@ -1,24 +1,26 @@
 
-
+from core.log.htk_logger import HtkApplicationLogger
 """
 Observer Design Pattern Implementation.
 its used to allow a subject (MainFrame) to notify multiple observers (e.g., clients) about state changes.
 """
 class ClientObserver:
     
-    def __init__(self, callback = None):
-        self.callback = callback
+    def __init__(self, onSuccess = None, onFailure = None):
+        self.onSuccess = onSuccess
+        self.onFailure = onFailure
+        self.logger = HtkApplicationLogger()
     
     def update(self, data):
         data = data
         """Handle the notification from the MainFrame."""
-        print(f'Observer received data: {data}')
-        
+        self.logger.log(f'Observer received data: {data}')
         if not data['user_input']:
-            print("No user input provided.")
+            self.onFailure("No user input provided.")
+            self.logger.log("No user input provided.")
             return
         
-        self.callback(data)
+        self.onSuccess(data)
             
 
 class Subject:
