@@ -17,6 +17,7 @@ def initialize_environment():
     environments_config['HTK_ASSISTANT_API_KEY_LLM_GEMINI'] = os.environ.get('HTK_ASSISTANT_API_KEY_LLM_GEMINI') # Placeholder for API key, should be set securely, set the key for the LLM Gemini Service
     environments_config['HTK_ASSISTANT_STREAM_URL'] = os.environ.get('HTK_ASSISTANT_STREAM_URL')
     environments_config['HTK_ASSISTANT_PROFILE_IMAGE_PATH'] = os.environ.get('HTK_ASSISTANT_PROFILE_IMAGE_PATH', '')
+    environments_config['HTK_ASSISTANT_LOG_FILE_PATH'] = os.environ.get('HTK_ASSISTANT_LOG_FILE_PATH', 'htkinfos.log')
    
     if(environments_config['HTK_ASSISTANT_ENV'] == 'development' and environments_config['HTK_ASSISTANT_DEBUG'] == 'True'):
         print("Development environment detected. Debug mode is enabled.")

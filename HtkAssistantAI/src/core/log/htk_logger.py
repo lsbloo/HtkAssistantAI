@@ -6,9 +6,10 @@ from core.utils.os_env.os_env import HtkOsEnvironment
 class HtkApplicationLogger:
     def __init__(self):
         self.isDebug = HtkOsEnvironment.isDebugEnvinronmentWithLogEnabled()
-    
+        self.logPath = HtkOsEnvironment.getFileLogPath()
         self.logger = logging.getLogger(__name__)
-        logging.basicConfig(filename='htkinfos.log', encoding='utf-8', level=logging.DEBUG if self.isDebug else logging.INFO,
+        
+        logging.basicConfig(filename= self.logPath, encoding='utf-8', level=logging.DEBUG if self.isDebug else logging.INFO,
                             format='%(asctime)s - %(levelname)s - %(message)s')
         self.logger.setLevel(logging.DEBUG if self.isDebug else logging.INFO)
     
