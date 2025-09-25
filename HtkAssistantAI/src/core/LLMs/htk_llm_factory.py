@@ -1,7 +1,7 @@
 from core.LLMs.groq.htk_groq import HtkGroqClient
 from core.LLMs.groq.htk_groq_facade import GroqClientFacade
 from core.LLMs.model.roles import RoleType
-from core.extensions.enviroments import environments_config
+from core.setup.config_environment import environments_config
 
 def setupHtkAssistantModel(response, callback=None):
     if response['selected_model'] == 'Groq':

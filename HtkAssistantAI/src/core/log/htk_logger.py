@@ -1,11 +1,11 @@
 import logging
 import datetime
-from core.extensions.enviroments import isDebugEnvinronmentWithLogEnabled
+from core.utils.os_env.os_env import HtkOsEnvironment
 
 
 class HtkApplicationLogger:
     def __init__(self):
-        self.isDebug = isDebugEnvinronmentWithLogEnabled()
+        self.isDebug = HtkOsEnvironment.isDebugEnvinronmentWithLogEnabled()
     
         self.logger = logging.getLogger(__name__)
         logging.basicConfig(filename='htkinfos.log', encoding='utf-8', level=logging.DEBUG if self.isDebug else logging.INFO,

@@ -1,12 +1,11 @@
 import tkinter as tk
 from tkinter import ttk
-from core.extensions.enviroments import getModelsAvailableInEnvironment
-from core.extensions.enviroments import getImageProfileInEnvironment
 from core.utils.design.observer.observer import Subject
 from core.LLMs.groq.options import input_groq_options
 from core.log.htk_logger import HtkApplicationLogger
 from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
+from core.utils.os_env.os_env import HtkOsEnvironment
 import customtkinter as ctk
 
 
@@ -16,6 +15,7 @@ class MainFrame(Subject):
         self.root.geometry("800x600")  # Set the size of the main window
         self.root.configure(bg='#1E1E1E')  # Set the background color of the main window
         self.root.resizable(False, False)  # Make the window non-resizable
+        self.root.iconbitmap(HtkOsEnvironment.get_absolute_path_for_resource(resource_file="no-face.ico"))  # Set the window icon
         
         
     def create_circular_widget(self):
@@ -32,7 +32,7 @@ class MainFrame(Subject):
 
         # Load and resize the image
         try:
-            image_path = Image.open(getImageProfileInEnvironment())  #  # Replace with your image path
+            image_path = Image.open(HtkOsEnvironment.getImageProfileInEnvironment())  #  # Replace with your image path
             self.profile_image = image_path
             self.profile_image = self.profile_image.resize((90, 90))
 
@@ -175,7 +175,7 @@ class MainFrame(Subject):
         self.submit_button.place(x=400, y=500)
        
     def setupModelsBasedInEnvironment(self):
-        avialiableModelsByEnv = getModelsAvailableInEnvironment()
+        avialiableModelsByEnv = HtkOsEnvironment.getModelsAvailableInEnvironment()
         avialiableModels = []
         
         if len(avialiableModelsByEnv) == 0:

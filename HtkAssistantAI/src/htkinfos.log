@@ -291,3 +291,71 @@
 2025-09-23 11:01:08,795 - DEBUG - response_closed.complete
 2025-09-23 11:01:08,795 - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
 2025-09-23 11:01:36,524 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 14:42:19,659 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 14:42:19,660 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 14:42:25,395 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 14:42:29,747 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 14:42:31,987 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 14:42:33,787 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 14:48:17,955 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-23 14:48:20,076 - DEBUG - Selected Role: system
+2025-09-23 14:48:22,245 - DEBUG - Selected Role: user
+2025-09-23 14:48:23,276 - DEBUG - Selected Role: assistant
+2025-09-23 14:48:24,412 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 14:48:25,802 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-23 14:48:25,803 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-23 20:53:05,701 - DEBUG - Selected Model Option: simple_chat
+2025-09-23 20:53:11,741 - DEBUG - Observer received data: {'user_input': 'sei la to meio pra baixo hoje', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': 'assistant'}
+2025-09-23 20:53:11,999 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 20:53:12,049 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 20:53:12,072 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 20:53:12,072 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 20:53:12,083 - DEBUG - GroqClientFacade: chat called
+2025-09-23 20:53:12,301 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': 'sei la to meio pra baixo hoje'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1000, 'n': 1, 'stop': None, 'stream': False, 'temperature': 0.7}}
+2025-09-23 20:53:12,335 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=None socket_options=None
+2025-09-23 20:53:12,809 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000016B67EF8A60>
+2025-09-23 20:53:12,809 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000016B67D45BC0> server_hostname='api.groq.com' timeout=None
+2025-09-23 20:53:12,881 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000016B67EF8A30>
+2025-09-23 20:53:12,881 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-09-23 20:53:12,882 - DEBUG - send_request_headers.complete
+2025-09-23 20:53:12,882 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-09-23 20:53:12,882 - DEBUG - send_request_body.complete
+2025-09-23 20:53:12,882 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-09-23 20:53:13,917 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 23 Sep 2025 23:53:12 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'gzip'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'bra'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'999'), (b'x-ratelimit-remaining-tokens', b'11975'), (b'x-ratelimit-reset-requests', b'1m26.4s'), (b'x-ratelimit-reset-tokens', b'125ms'), (b'x-request-id', b'req_01k5wfxpb3fx9bde5sdcr9nh73'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=1R5r4N27cf9Zn3Zh53ZpQLu3Othf.6Fqp8TFkXyxhok-1758671592-1.0.1.1-MzY_EyAeMUO4DLl6vf3MKAaMXODn.XdhGQs3D36jF937mTowWFLbidp5gP7xSJXiw_DzszsajnAB0Rq3InDsehG1E9NmF6TG.P8Ha7jKB48; path=/; expires=Wed, 24-Sep-25 00:23:12 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'983df5c859e4e2bf-GIG'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-23 20:53:13,918 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-23 20:53:13,919 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-09-23 20:53:13,921 - DEBUG - receive_response_body.complete
+2025-09-23 20:53:13,922 - DEBUG - response_closed.started
+2025-09-23 20:53:13,922 - DEBUG - response_closed.complete
+2025-09-23 20:53:13,922 - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2025-09-23 20:53:53,501 - DEBUG - Observer received data: {'user_input': 'os impostos me deixa triste, parece que so trabalho para pagar dividas. Alias meu nome é osvaldo', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': 'assistant'}
+2025-09-23 20:53:53,502 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 20:53:53,502 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 20:53:53,512 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2025-09-23 20:53:53,513 - DEBUG - load_verify_locations cafile='C:\\Users\\osval\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\certifi\\cacert.pem'
+2025-09-23 20:53:53,523 - DEBUG - GroqClientFacade: chat called
+2025-09-23 20:53:53,524 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant.'}, {'role': 'user', 'content': 'os impostos me deixa triste, parece que so trabalho para pagar dividas. Alias meu nome é osvaldo'}], 'model': 'llama-3.3-70b-versatile', 'max_tokens': 1000, 'n': 1, 'stop': None, 'stream': False, 'temperature': 0.7}}
+2025-09-23 20:53:53,525 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=None socket_options=None
+2025-09-23 20:53:53,576 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000016B67F4C790>
+2025-09-23 20:53:53,576 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000016B67E3A540> server_hostname='api.groq.com' timeout=None
+2025-09-23 20:53:53,631 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000016B67F4C760>
+2025-09-23 20:53:53,631 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-09-23 20:53:53,631 - DEBUG - send_request_headers.complete
+2025-09-23 20:53:53,631 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-09-23 20:53:53,631 - DEBUG - send_request_body.complete
+2025-09-23 20:53:53,631 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-09-23 20:53:55,251 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 23 Sep 2025 23:53:54 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-Encoding', b'gzip'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'vary', b'Origin'), (b'x-groq-region', b'bra'), (b'x-ratelimit-limit-requests', b'1000'), (b'x-ratelimit-limit-tokens', b'12000'), (b'x-ratelimit-remaining-requests', b'998'), (b'x-ratelimit-remaining-tokens', b'11958'), (b'x-ratelimit-reset-requests', b'2m12.07s'), (b'x-ratelimit-reset-tokens', b'210ms'), (b'x-request-id', b'req_01k5wfyy47e9sbnevqv6czrpeg'), (b'via', b'1.1 google'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=fBl151t1EFRuEMghv_.5tTyea0asT0N9DQ38Ji658qY-1758671634-1.0.1.1-L7dklhF.D9E2el3My.N6GPia8tZj9pdNVVdteG35t5U1XuwgQ79.AouSDN0_vvRnOxw7XjsKbOUw.aO8hg4sZZkvNPzBkY8.MhcFHzSbY5A; path=/; expires=Wed, 24-Sep-25 00:23:54 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'983df6c70e11cadb-GIG'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-23 20:53:55,251 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-23 20:53:55,251 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-09-23 20:53:55,252 - DEBUG - receive_response_body.complete
+2025-09-23 20:53:55,252 - DEBUG - response_closed.started
+2025-09-23 20:53:55,252 - DEBUG - response_closed.complete
+2025-09-23 20:53:55,252 - DEBUG - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "200 OK"
+2025-09-23 20:53:58,464 - DEBUG - close.started
+2025-09-23 20:53:58,464 - DEBUG - close.complete
+2025-09-25 16:44:49,759 - DEBUG - close.started
+2025-09-25 16:44:49,760 - DEBUG - close.complete
+2025-09-25 17:02:04,541 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-25 17:02:04,542 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-25 17:02:06,764 - DEBUG - Selected Model Option: chat_with_roles
+2025-09-25 17:06:16,255 - DEBUG - Absolute path for resource no-face.ico: D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\no-face.ico
