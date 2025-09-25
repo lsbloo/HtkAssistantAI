@@ -359,3 +359,5 @@
 2025-09-25 17:02:04,542 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
 2025-09-25 17:02:06,764 - DEBUG - Selected Model Option: chat_with_roles
 2025-09-25 17:06:16,255 - DEBUG - Absolute path for resource no-face.ico: D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\no-face.ico
+2025-09-25 17:19:26,372 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2025-09-25 17:19:26,373 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
