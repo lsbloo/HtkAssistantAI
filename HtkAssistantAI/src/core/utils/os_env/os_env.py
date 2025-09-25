@@ -30,3 +30,7 @@ class HtkOsEnvironment:
     @staticmethod
     def isDebugEnvinronmentWithLogEnabled():
         return environments_config.get('HTK_ASSISTANT_DEBUG', 'False') == 'True' and environments_config.get('HTK_ASSISTANT_LOG_LEVEL', 'INFO') == 'DEBUG'
+    
+    @staticmethod
+    def getFileLogPath():
+        return environments_config.get('HTK_ASSISTANT_LOG_FILE_PATH', 'htkinfos.log')
