@@ -5,7 +5,9 @@ from core.LLMs.model.roles import RoleType
 from application.ui.utils import show_toast
 from core.utils.design.observer.observer import ClientObserver
 from core.LLMs.htk_llm_factory import setupHtkAssistantModel
+from core.audio.htk_player import HtkAudioPlayer
 from application.ui.main_frame import MainFrame
+
 
 
 def main():
@@ -20,6 +22,9 @@ def main():
     initialize_environment()
     
     frame = MainFrame()
+    
+    htkPlayer = HtkAudioPlayer()
+    htkPlayer.initializeRecon()
     
     
     client_observer = ClientObserver(
