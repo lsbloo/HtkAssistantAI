@@ -1,10 +1,16 @@
 import speech_recognition as sr
 from core.log.htk_logger import HtkApplicationLogger
 from core.utils.design.observer.observer import Subject
+from core.utils.os_env.os_env import HtkOsEnvironment
+from gtts import gTTS
+import pygame
 import threading
+import os
 
 class HtkAudioPlayer(Subject):
     def __init__(self):
+        self._observers = []
+        self.gtts = None
         self.rec = sr.Recognizer()
         self.logger = HtkApplicationLogger()
         self.logger.log("HtkAudioPlayer initialized.")
@@ -18,8 +24,11 @@ class HtkAudioPlayer(Subject):
                 input_audio = self.rec.listen(FONT)
                 try:
                     output_in_text = self.rec.recognize_google(input_audio, language="pt-BR")
+                    self.output_text = output_in_text
+                    self.enableOutputAudio(output_in_text)
                     print("HTK Assistant AI YOU SAY:", output_in_text)
                     self.logger.log(f"Audio recognized: {output_in_text}")
+                    
                     
                     self.notify_observers({'recon_output_in_text': output_in_text})
                     
@@ -43,7 +52,24 @@ class HtkAudioPlayer(Subject):
             
     def enableOutputAudio(self, text):
         # Implement text-to-speech functionality here if needed
-        pass
+        path_output_audio = HtkOsEnvironment.get_absolute_path() + "\\audio\output.mp3"
+        self.gtts = gTTS(text=text, lang='PT-BR')
+        self.gtts.save(path_output_audio)
+        self.logger.log(f"Audio output generated and saved to {path_output_audio}.")
+        q = os.path.join(HtkOsEnvironment.get_absolute_path(), "audio", "output.mp3")
+      
+        pygame.mixer.init()
+        pygame.mixer.music.load(q)
+        pygame.mixer.music.play()
+        
+        # Espera terminar
+        while pygame.mixer.music.get_busy():
+            pygame.time.Clock().tick(10)
+            
+        # Libera o arquivo
+        pygame.mixer.music.stop()
+        pygame.mixer.quit()
+        
     
     def disableOutputAudio(self):
         pass
