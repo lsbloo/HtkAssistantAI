@@ -36,5 +36,12 @@ class HtkAudioPlayer:
             # You would need to implement a flag to signal the thread to exit gracefully.
             self.logger.log("Stopping audio recognition thread is not implemented.")
             print("Stopping audio recognition thread is not implemented.")
+            
+    def enableOutputAudio(self, text):
+        # Implement text-to-speech functionality here if needed
+        pass
+    
+    def disableOutputAudio(self):
+        pass
         
             
