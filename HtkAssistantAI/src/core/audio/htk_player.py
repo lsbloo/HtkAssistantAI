@@ -7,6 +7,7 @@ class HtkAudioPlayer:
         self.rec = sr.Recognizer()
         self.logger = HtkApplicationLogger()
         self.logger.log("HtkAudioPlayer initialized.")
+        self.thread = None
 
     def initRecon(self):
         self.logger.log("Microphone initialized for audio recognition.")
@@ -26,7 +27,14 @@ class HtkAudioPlayer:
                     self.logger.log("Audio recognition failed: RequestError - service connection error.")
             
     def initializeRecon(self):
-        thread = threading.Thread(target=self.initRecon)
-        thread.start()
+        self.thread = threading.Thread(target=self.initRecon)
+        self.thread.start()
+    
+    def stopRecon(self):
+        if self.thread and self.thread.is_alive():
+            # Note: There's no direct way to stop the thread safely in Python.
+            # You would need to implement a flag to signal the thread to exit gracefully.
+            self.logger.log("Stopping audio recognition thread is not implemented.")
+            print("Stopping audio recognition thread is not implemented.")
         
             
