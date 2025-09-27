@@ -1,8 +1,9 @@
 import speech_recognition as sr
 from core.log.htk_logger import HtkApplicationLogger
+from core.utils.design.observer.observer import Subject
 import threading
 
-class HtkAudioPlayer:
+class HtkAudioPlayer(Subject):
     def __init__(self):
         self.rec = sr.Recognizer()
         self.logger = HtkApplicationLogger()
@@ -19,6 +20,9 @@ class HtkAudioPlayer:
                     output_in_text = self.rec.recognize_google(input_audio, language="pt-BR")
                     print("HTK Assistant AI YOU SAY:", output_in_text)
                     self.logger.log(f"Audio recognized: {output_in_text}")
+                    
+                    self.notify_observers({'recon_output_in_text': output_in_text})
+                    
                 except sr.UnknownValueError:
                     print("HTK Assistant AI - could not understand audio.")
                     self.logger.log("Audio recognition failed: UnknownValueError - could not understand audio.")
