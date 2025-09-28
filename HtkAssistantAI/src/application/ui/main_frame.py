@@ -7,12 +7,15 @@ from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
 from core.utils.os_env.os_env import HtkOsEnvironment
 from core.utils.design.observer.observer import ClientObserver as ConfigurationInterfaceObserver
+from core.utils.design.observer.observer import ClientObserver as AudioInterfaceObserver
+from core.audio.htk_player import HtkAudioPlayer
 from core.setup.interface.config_options_interface import HtkLoaderConfigInterface
+from core.concurrency.htk_threads_manager import htkThreadsManager
 import customtkinter as ctk
 import webbrowser
 
 
-class MainFrame(Subject, ctk.CTk):
+class MainFrame(Subject):
     def create_root(self):
         self.root.title(self.title)  # Set the title of the main window
         self.root.geometry("800x750")  # Set the size of the main window
@@ -177,7 +180,24 @@ class MainFrame(Subject, ctk.CTk):
         # Create a submit button
         self.submit_button = ctk.CTkButton(self.root, text='Submeter', command=self.submit, corner_radius=24)
         self.submit_button.place(x=590, y=460)
+    
+    def on_toggle_configurations(self, option, isChecked):
+        for role in self.configurations_role:
+            if role.name == option.label:
+                role.isChecked = isChecked.get()
+                if role.isChecked and self.actions.get(option.id) != None:
+                        self.actions[option.id]()
+                elif role.isChecked == False and self.actions.get(option.id) != None:
+                        self.stop_recon()
+                
 
+        
+    def init_recon(self):
+        self._htkAudioPlayer.initializeRecon()
+    
+    def stop_recon(self):
+        self._htkAudioPlayer.stopRecon()
+        
     def create_configuration_view(self):
         self.notebook = ctk.CTkTabview(
             self.root,
@@ -197,29 +217,38 @@ class MainFrame(Subject, ctk.CTk):
         # --------------------
         # Aba de Configurações
         # --------------------
+        
         if len(self._configuration_interface) >= 2:
-            config_frame = self.notebook.tab(self._configuration_interface[0].name)
-            settings_frame = self.notebook.tab(self._configuration_interface[1].name)
+            config_frame = self._configuration_interface[0].items
+            settins_frame = self._configuration_interface[1].items[0]
             self.notebook.set(self._configuration_interface[1].name)
             
-            for options in self._configuration_interface[1].propertie:
-                about_link = ctk.CTkLabel(settings_frame, text=options, bg_color="transparent", fg_color="transparent", font=("Arial", 12),
-                                    height=15, text_color="white")
-                about_link.pack(pady=10, anchor="w")
-                
-                url = str(self._configuration_interface[1].propertie.get(options))
-                about_link.bind("<Button-1>", lambda e: webbrowser.open( url ))
+            
+            about_link = ctk.CTkLabel(self.notebook.tab(self._configuration_interface[1].name), 
+                                      text=settins_frame.label, 
+                                      bg_color="transparent", 
+                                      fg_color="transparent", 
+                                      font=("Arial", 12),
+                                      height=15, text_color="white")
+            about_link.pack(pady=10, anchor="w")
+            url = str(settins_frame.url)
+            about_link.bind("<Button-1>", lambda e: webbrowser.open( url ))
+            
         else:
-            config_frame = self.notebook.tab(self._configuration_interface[0].name)
             self.notebook.set(self._configuration_interface[0].name)
             
-        options = self._configuration_interface[0].propertie
-        scroll_frame = ctk.CTkScrollableFrame(config_frame, width=140, height=1)
-        scroll_frame.pack(fill=None, expand=False)
-        for option in options:
-            cb = ctk.CTkCheckBox(scroll_frame, text=option, variable=ctk.BooleanVar(value = options.get(option)))
+        
+        scroll_frame = ctk.CTkScrollableFrame(self.notebook.tab(self._configuration_interface[0].name), width=140, height=1)
+        scroll_frame.pack(fill=None, expand=False)   
+        
+        for options in config_frame:
+            var = ctk.BooleanVar(value = options.default)
+            cb = ctk.CTkCheckBox(scroll_frame, text=options.label, variable=var, 
+                                 command= lambda n=options, v=var: self.on_toggle_configurations(n,v))
             cb.pack(pady=10, anchor="w")
+            self.configurations_role.append(HtkConfigurationInterfaceOptionRule(name=options.label,isChecked=False))
         scroll_frame.update_idletasks()
+        
         
         
     def setupModelsBasedInEnvironment(self):
@@ -239,21 +268,61 @@ class MainFrame(Subject, ctk.CTk):
                 avialiableModels.append('Gemini')
         return avialiableModels
     
+    def submit_on_recon(self, response):
+        selected_model = self.model_var.get()
+        selected_option = self.model_input_option_var.get() if hasattr(self, 'model_input_option_var') else None
+
+        if(selected_model == "Selecione um modelo" or selected_model == "No models available"):
+            show_toast("Por favor, selecione um modelo válido.", duration=3000)
+            return
+        
+        self.notify_observers({
+            'selected_model': selected_model,
+            'selected_option': selected_option,
+            'option_role_choice': self.option_role_choice,
+            'input_from_recon': response['recon_output_in_text'],
+            'is_recon_enabled': True,
+        })
+        
+    def play_audio_with_recon(self, response):
+        self._htkAudioPlayer.enableOutputAudio(response['response'])
+        
     def setup_configuration_interface(self, response):
         self._configuration_interface = response
         
     def __init__(self, title="HTK Assistant AI"):
         self._observers = []
+        
+        self.actions = {
+            "recon": self.init_recon
+        }
+        
+        ## Reconginition Audio
+        self._htkAudioPlayer = HtkAudioPlayer()
+        self._htkAudioPlayerObsever = AudioInterfaceObserver(
+            onSuccess=lambda response: (self.submit_on_recon(response)),
+            onFailure=lambda error: ()
+        )
+        self._htkAudioPlayer.register_observer(self._htkAudioPlayerObsever)
+        
         self._configuration_interface = None
+        ## Logger Application
+        self.logger = HtkApplicationLogger()
+        
+        ## Resource loader of configurations interface
         self._htkConfigurationInterface = HtkLoaderConfigInterface()
         configuration_interface_observer = ConfigurationInterfaceObserver(
         onSuccess= lambda response: (self.setup_configuration_interface(response)))
-        
         self._htkConfigurationInterface.register_observer(configuration_interface_observer)
         self._htkConfigurationInterface.init()
+        
     
         self.title = title
-        self.root = tk.Tk()  # Create the main window
+        self.root = tk.Tk()  
+        self.option_role_menu = None
+        self.option_role_choice = None
+        self.configurations_role = []
+        
         self.create_root()
         self.create_circular_widget()
         self.create_model_selection()
@@ -261,9 +330,6 @@ class MainFrame(Subject, ctk.CTk):
         self.create_output_area()
         self.create_button()
         self.create_configuration_view()
-        self.option_role_menu = None
-        self.option_role_choice = None
-        self.logger = HtkApplicationLogger()
        
 
     def submit(self):
@@ -284,14 +350,29 @@ class MainFrame(Subject, ctk.CTk):
             'user_input': user_input,
             'selected_model': selected_model,
             'selected_option': selected_option,
-            'option_role_choice': self.option_role_choice
+            'option_role_choice': self.option_role_choice,
+            'is_recon_enabled': False,
         })
         
     def update_chat(self, response):
-        self.text_input_output.configure(state='normal')
-        self.text_input_output.delete("1.0", tk.END)
-        self.text_input_output.insert(tk.END, response)
-        self.text_input_output.configure(state='disabled')
+        
+        if response["is_recon_enabled"]: 
+            self.text_input_output.configure(state='normal')
+            self.text_input_output.delete("1.0", tk.END)
+            self.text_input_output.insert(tk.END, response['response'])
+            self.text_input_output.configure(state='disabled')
+            htkThreadsManager().createThreadAndInitialize(threadName="Output Chat Recon ->", target = self.play_audio_with_recon(response))
+        else:
+            self.text_input_output.configure(state='normal')
+            self.text_input_output.delete("1.0", tk.END)
+            self.text_input_output.insert(tk.END, response['response'])
+            self.text_input_output.configure(state='disabled')
 
     def run(self):
         self.root.mainloop()
+        
+
+class HtkConfigurationInterfaceOptionRule:
+    def __init__(self, name, isChecked = False):
+        self.name = name
+        self.isChecked = isChecked

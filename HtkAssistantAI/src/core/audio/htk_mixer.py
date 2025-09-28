@@ -16,8 +16,6 @@ class HtkAudioMixer:
             while pygame.mixer.music.get_busy():
                 pygame.time.Clock().tick(10)
             
-            self.stop_audio()
-            
         except Exception as e:
             self.logger.log(f"Error playing audio file {file_path}: {e}")
 

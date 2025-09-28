@@ -1,6 +1,5 @@
 
 import threading
-import time
 from core.log.htk_logger import HtkApplicationLogger
 
 class HtkThreadManager:
@@ -44,9 +43,8 @@ class HtkThreadWrapper(threading.Thread):
         self._logger = HtkApplicationLogger()
 
     def run(self):
-        while not self.kill.is_set():
-            self._logger.log("Thread executando ->")
-            time.sleep(1)
+       if self._target:
+            self._target()
 
     def stop(self):
         self._logger.log("Thread parando ->")

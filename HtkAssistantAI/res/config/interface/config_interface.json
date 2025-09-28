@@ -1,0 +1,22 @@
+{
+    "Configurações":{
+       "recon":{
+          "label":"Ativar Recoginição",
+          "default":false
+       },
+       "modo_escuro":{
+          "label":"Modo Escuro",
+          "default":false
+       },
+       "som":{
+          "label":"Ativar Som",
+          "default":false
+       }
+    },
+    "Documentação":{
+       "github":{
+          "label":"⚡️Github⚡️",
+          "url":"https://github.com/lsbloo/HtkAssistantAI"
+       }
+    }
+ }
