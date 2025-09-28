@@ -9,8 +9,6 @@ from core.LLMs.htk_llm_factory import setupHtkAssistantModel
 from core.audio.htk_player import HtkAudioPlayer
 from application.ui.main_frame import MainFrame
 
-
-
 def main():
     """Main function to initialize the HtkAssistantAI application.
     This function sets up the terminal appearance, initializes the environment configuration,
@@ -25,7 +23,10 @@ def main():
     frame = MainFrame()
     
     htkPlayer = HtkAudioPlayer()
-    ##htkPlayer.initializeRecon()
+    htkPlayer.initializeRecon()
+    htkPlayer.stopRecon()
+    
+    
     
     audio_observer = AudioInterfaceObserver(
         onSuccess=lambda response: setupHtkAssistantModel(

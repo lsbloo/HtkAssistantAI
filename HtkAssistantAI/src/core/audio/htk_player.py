@@ -3,19 +3,20 @@ from core.log.htk_logger import HtkApplicationLogger
 from core.utils.design.observer.observer import Subject
 from core.utils.os_env.os_env import HtkOsEnvironment
 from core.audio.htk_mixer import HtkAudioMixer
+from core.concurrency.htk_threads_manager import htkThreadsManager
 from gtts import gTTS
-import threading
 import os
 
 class HtkAudioPlayer(Subject):
     def __init__(self):
         self._observers = []
         self._gtts = None
+        self._threadManager = htkThreadsManager()
         self._rec = sr.Recognizer()
         self._logger = HtkApplicationLogger()
         self._mixer = HtkAudioMixer(logger=self._logger)
         self._logger.log("HtkAudioPlayer initialized.")
-        self._thread = None
+        self._threadName = "HtkAudioPlayer - Recongnize"
         self._isEnabledOutputAudio = True # Flag to control audio output
         
 
@@ -35,7 +36,7 @@ class HtkAudioPlayer(Subject):
                         self.disableOutputAudio()
                     
                     print("HTK Assistant AI YOU SAY:", output_in_text)
-                    self.logger.log(f"Audio recognized: {output_in_text}")
+                    self._logger.log(f"Audio recognized: {output_in_text}")
                     
                     
                     self.notify_observers({'recon_output_in_text': output_in_text})
@@ -48,15 +49,10 @@ class HtkAudioPlayer(Subject):
                     self._logger.log("Audio recognition failed: RequestError - service connection error.")
             
     def initializeRecon(self):
-        self._thread = threading.Thread(target=self.initRecon)
-        self._thread.start()
+        self._threadManager.createThreadAndInitialize(threadName = self._threadName, target=self.initRecon)
     
     def stopRecon(self):
-        if self._thread and self._thread.is_alive():
-            # Note: There's no direct way to stop the thread safely in Python.
-            # You would need to implement a flag to signal the thread to exit gracefully.
-            self._logger.log("Stopping audio recognition thread is not implemented.")
-            print("Stopping audio recognition thread is not implemented.")
+        self._threadManager.stopThread(threadName=self._threadName)
             
     def enableOutputAudio(self, text):
         # Implement text-to-speech functionality here if needed

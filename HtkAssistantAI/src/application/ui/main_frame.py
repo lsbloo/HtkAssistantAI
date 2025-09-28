@@ -6,6 +6,8 @@ from core.log.htk_logger import HtkApplicationLogger
 from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
 from core.utils.os_env.os_env import HtkOsEnvironment
+from core.utils.design.observer.observer import ClientObserver as ConfigurationInterfaceObserver
+from core.setup.interface.config_options_interface import HtkLoaderConfigInterface
 import customtkinter as ctk
 import webbrowser
 
@@ -175,7 +177,7 @@ class MainFrame(Subject, ctk.CTk):
         # Create a submit button
         self.submit_button = ctk.CTkButton(self.root, text='Submeter', command=self.submit, corner_radius=24)
         self.submit_button.place(x=590, y=460)
-        
+
     def create_configuration_view(self):
         self.notebook = ctk.CTkTabview(
             self.root,
@@ -185,8 +187,9 @@ class MainFrame(Subject, ctk.CTk):
             corner_radius=24,)
         
         self.notebook.place(x=30, y=450)
-        self.notebook.add("Configurações")
-        self.notebook.add("Documentação")
+        
+        for config in self._configuration_interface:
+            self.notebook.add(config.name)
         
         #self.notebook.tab("Configurações").grid_columnconfigure(0, weight=1)
         #self.notebook.tab("Sobre").grid_rowconfigure(1, weight=1)
@@ -194,34 +197,30 @@ class MainFrame(Subject, ctk.CTk):
         # --------------------
         # Aba de Configurações
         # --------------------
-        config_frame = self.notebook.tab("Configurações")
-        settings_frame = self.notebook.tab("Documentação")
-        self.notebook.set("Documentação")
-
-        var_opcao1 = ctk.BooleanVar(value=False)
-        var_opcao2 = ctk.BooleanVar(value=False)
-        var_opcao3 = ctk.BooleanVar(value=False)
-        
+        if len(self._configuration_interface) >= 2:
+            config_frame = self.notebook.tab(self._configuration_interface[0].name)
+            settings_frame = self.notebook.tab(self._configuration_interface[1].name)
+            self.notebook.set(self._configuration_interface[1].name)
+            
+            for options in self._configuration_interface[1].propertie:
+                about_link = ctk.CTkLabel(settings_frame, text=options, bg_color="transparent", fg_color="transparent", font=("Arial", 12),
+                                    height=15, text_color="white")
+                about_link.pack(pady=10, anchor="w")
+                
+                url = str(self._configuration_interface[1].propertie.get(options))
+                about_link.bind("<Button-1>", lambda e: webbrowser.open( url ))
+        else:
+            config_frame = self.notebook.tab(self._configuration_interface[0].name)
+            self.notebook.set(self._configuration_interface[0].name)
+            
+        options = self._configuration_interface[0].propertie
         scroll_frame = ctk.CTkScrollableFrame(config_frame, width=140, height=1)
         scroll_frame.pack(fill=None, expand=False)
+        for option in options:
+            cb = ctk.CTkCheckBox(scroll_frame, text=option, variable=ctk.BooleanVar(value = options.get(option)))
+            cb.pack(pady=10, anchor="w")
+        scroll_frame.update_idletasks()
         
-        cb1 = ctk.CTkCheckBox(scroll_frame, text="Ativar Recoginição", variable=var_opcao1)
-        cb1.pack(pady=10, anchor="w")
-        cb2 = ctk.CTkCheckBox(scroll_frame, text="Ativar Som", variable=var_opcao2)
-        cb2.pack(pady=10, anchor="w")
-        cb3 = ctk.CTkCheckBox(scroll_frame, text="Modo Escuro", variable=var_opcao3)
-        cb3.pack(pady=10, anchor="w")
-        
-        scroll_frame.update_idletasks()    
-
-        about_link = ctk.CTkLabel(settings_frame, text="⚡️Github⚡️", bg_color="transparent", fg_color="transparent", font=("Arial", 12),
-                                  height=15, text_color="white")
-        about_link.pack(pady=10, anchor="w")
-        
-        about_link.bind("<Button-1>", lambda e: webbrowser.open("https://github.com/lsbloo/HtkAssistantAI"))
-            
-        
-    
         
     def setupModelsBasedInEnvironment(self):
         avialiableModelsByEnv = HtkOsEnvironment.getModelsAvailableInEnvironment()
@@ -240,8 +239,19 @@ class MainFrame(Subject, ctk.CTk):
                 avialiableModels.append('Gemini')
         return avialiableModels
     
+    def setup_configuration_interface(self, response):
+        self._configuration_interface = response
+        
     def __init__(self, title="HTK Assistant AI"):
         self._observers = []
+        self._configuration_interface = None
+        self._htkConfigurationInterface = HtkLoaderConfigInterface()
+        configuration_interface_observer = ConfigurationInterfaceObserver(
+        onSuccess= lambda response: (self.setup_configuration_interface(response)))
+        
+        self._htkConfigurationInterface.register_observer(configuration_interface_observer)
+        self._htkConfigurationInterface.init()
+    
         self.title = title
         self.root = tk.Tk()  # Create the main window
         self.create_root()
