@@ -3,7 +3,8 @@ from core.extensions.prompt_fliget_appearence import setup_terminal_appearance
 from core.setup.config_environment import environments_config
 from core.LLMs.model.roles import RoleType
 from application.ui.utils import show_toast
-from core.utils.design.observer.observer import ClientObserver
+from core.utils.design.observer.observer import ClientObserver as OptionsObserver
+from core.utils.design.observer.observer import ClientObserver as AudioInterfaceObserver
 from core.LLMs.htk_llm_factory import setupHtkAssistantModel
 from core.audio.htk_player import HtkAudioPlayer
 from application.ui.main_frame import MainFrame
@@ -24,10 +25,19 @@ def main():
     frame = MainFrame()
     
     htkPlayer = HtkAudioPlayer()
-    htkPlayer.initializeRecon()
+    ##htkPlayer.initializeRecon()
+    
+    audio_observer = AudioInterfaceObserver(
+        onSuccess=lambda response: setupHtkAssistantModel(
+            response = response,callback=lambda res: frame.update_chat(res)
+        ),
+        onFailure=lambda _: show_toast(f"Audio Error", duration=5000)
+    )
+    
+    htkPlayer.register_observer(audio_observer)
     
     
-    client_observer = ClientObserver(
+    options_observer = OptionsObserver(
         onSuccess=lambda response: setupHtkAssistantModel(
             response = response,callback=lambda res: frame.update_chat(res)
         ),
@@ -36,7 +46,8 @@ def main():
    
     print("Registering observer...")
     
-    frame.register_observer(client_observer)
+    frame.register_observer(options_observer)
+    
     
     
     frame.run()

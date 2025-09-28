@@ -7,15 +7,17 @@ from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
 from core.utils.os_env.os_env import HtkOsEnvironment
 import customtkinter as ctk
+import webbrowser
 
 
-class MainFrame(Subject):
+class MainFrame(Subject, ctk.CTk):
     def create_root(self):
         self.root.title(self.title)  # Set the title of the main window
-        self.root.geometry("800x600")  # Set the size of the main window
+        self.root.geometry("800x750")  # Set the size of the main window
         self.root.configure(bg='#1E1E1E')  # Set the background color of the main window
         self.root.resizable(False, False)  # Make the window non-resizable
         self.root.iconbitmap(HtkOsEnvironment.get_absolute_path_for_resource(resource_file="no-face.ico"))  # Set the window icon
+        ctk.set_appearance_mode("dark")  # Set the appearance mode to dark
         
         
     def create_circular_widget(self):
@@ -104,14 +106,14 @@ class MainFrame(Subject):
 
     def create_model_selection(self):
         # Create a label for the model selection
-        #self.model_label = tk.Label(self.root, text="Modelos Disponiveis", bg='#1E1E1E', fg='white', font=("Arial", 12))
-        #self.model_label.place(x=30, y=40)
+        self.model_label_1 = tk.Label(self.root, text="Modelos Disponiveis", bg='#1E1E1E', fg='white', font=("Arial", 12))
+        self.model_label_1.place(x=30, y=120)
 
         # Create a dropdown menu for model selection
         self.model_var = tk.StringVar(value="Selecione um modelo")
         self.model_dropdown = ttk.Combobox(self.root, textvariable=self.model_var, state="readonly", font=("Arial", 12))
         self.model_dropdown['values'] = self.setupModelsBasedInEnvironment()
-        self.model_dropdown.place(x=10, y=120)
+        self.model_dropdown.place(x=30, y=150)
         
         self.model_dropdown.bind("<<ComboboxSelected>>", self.on_model_change)
     
@@ -171,9 +173,56 @@ class MainFrame(Subject):
       
     def create_button(self): 
         # Create a submit button
-        self.submit_button = ctk.CTkButton(self.root, text='Submeter', command=self.submit)
-        self.submit_button.place(x=400, y=500)
-       
+        self.submit_button = ctk.CTkButton(self.root, text='Submeter', command=self.submit, corner_radius=24)
+        self.submit_button.place(x=590, y=460)
+        
+    def create_configuration_view(self):
+        self.notebook = ctk.CTkTabview(
+            self.root,
+            width=75, 
+            height=1, 
+            bg_color='#1E1E1E',  
+            corner_radius=24,)
+        
+        self.notebook.place(x=30, y=450)
+        self.notebook.add("Configurações")
+        self.notebook.add("Sobre")
+        
+        #self.notebook.tab("Configurações").grid_columnconfigure(0, weight=1)
+        #self.notebook.tab("Sobre").grid_rowconfigure(1, weight=1)
+        
+        # --------------------
+        # Aba de Configurações
+        # --------------------
+        config_frame = self.notebook.tab("Configurações")
+        settings_frame = self.notebook.tab("Sobre")
+        self.notebook.set("Sobre")
+
+        var_opcao1 = ctk.BooleanVar(value=False)
+        var_opcao2 = ctk.BooleanVar(value=False)
+        var_opcao3 = ctk.BooleanVar(value=False)
+        
+        scroll_frame = ctk.CTkScrollableFrame(config_frame, width=140, height=1)
+        scroll_frame.pack(fill=None, expand=False)
+        
+        cb1 = ctk.CTkCheckBox(scroll_frame, text="Ativar Recoginição", variable=var_opcao1)
+        cb1.pack(pady=10, anchor="w")
+        cb2 = ctk.CTkCheckBox(scroll_frame, text="Ativar Som", variable=var_opcao2)
+        cb2.pack(pady=10, anchor="w")
+        cb3 = ctk.CTkCheckBox(scroll_frame, text="Modo Escuro", variable=var_opcao3)
+        cb3.pack(pady=10, anchor="w")
+        
+        scroll_frame.update_idletasks()    
+
+        about_link = ctk.CTkLabel(settings_frame, text="⚡️Documentação⚡️", bg_color="transparent", fg_color="transparent", font=("Arial", 12),
+                                  height=15, text_color="white")
+        about_link.pack(pady=10, anchor="w")
+        
+        about_link.bind("<Button-1>", lambda e: webbrowser.open("https://github.com/lsbloo/HtkAssistantAI"))
+            
+        
+    
+        
     def setupModelsBasedInEnvironment(self):
         avialiableModelsByEnv = HtkOsEnvironment.getModelsAvailableInEnvironment()
         avialiableModels = []
@@ -201,6 +250,7 @@ class MainFrame(Subject):
         self.create_input_area()
         self.create_output_area()
         self.create_button()
+        self.create_configuration_view()
         self.option_role_menu = None
         self.option_role_choice = None
         self.logger = HtkApplicationLogger()
