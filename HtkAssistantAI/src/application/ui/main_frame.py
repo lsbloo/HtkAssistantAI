@@ -186,7 +186,7 @@ class MainFrame(Subject, ctk.CTk):
         
         self.notebook.place(x=30, y=450)
         self.notebook.add("Configurações")
-        self.notebook.add("Sobre")
+        self.notebook.add("Documentação")
         
         #self.notebook.tab("Configurações").grid_columnconfigure(0, weight=1)
         #self.notebook.tab("Sobre").grid_rowconfigure(1, weight=1)
@@ -195,8 +195,8 @@ class MainFrame(Subject, ctk.CTk):
         # Aba de Configurações
         # --------------------
         config_frame = self.notebook.tab("Configurações")
-        settings_frame = self.notebook.tab("Sobre")
-        self.notebook.set("Sobre")
+        settings_frame = self.notebook.tab("Documentação")
+        self.notebook.set("Documentação")
 
         var_opcao1 = ctk.BooleanVar(value=False)
         var_opcao2 = ctk.BooleanVar(value=False)
@@ -214,7 +214,7 @@ class MainFrame(Subject, ctk.CTk):
         
         scroll_frame.update_idletasks()    
 
-        about_link = ctk.CTkLabel(settings_frame, text="⚡️Documentação⚡️", bg_color="transparent", fg_color="transparent", font=("Arial", 12),
+        about_link = ctk.CTkLabel(settings_frame, text="⚡️Github⚡️", bg_color="transparent", fg_color="transparent", font=("Arial", 12),
                                   height=15, text_color="white")
         about_link.pack(pady=10, anchor="w")
         
