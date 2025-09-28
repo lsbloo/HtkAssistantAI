@@ -361,3 +361,296 @@
 2025-09-25 17:06:16,255 - DEBUG - Absolute path for resource no-face.ico: D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\no-face.ico
 2025-09-25 17:19:26,372 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
 2025-09-25 17:19:26,373 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2025-09-28 17:45:39,393 - INFO - Initializing Thread Manager
+2025-09-28 17:45:39,432 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:45:39,433 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:45:39,433 - INFO - Initializing configuration interface
+2025-09-28 17:45:39,434 - INFO - Observer received data: []
+2025-09-28 17:46:05,871 - INFO - Initializing Thread Manager
+2025-09-28 17:46:05,909 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:46:05,909 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:46:05,910 - INFO - Initializing configuration interface
+2025-09-28 17:46:05,911 - INFO - Observer received data: []
+2025-09-28 17:46:47,058 - INFO - Initializing Thread Manager
+2025-09-28 17:46:47,095 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:46:47,096 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:46:47,096 - INFO - Initializing configuration interface
+2025-09-28 17:46:47,098 - INFO - Observer received data: []
+2025-09-28 17:49:31,025 - INFO - Initializing Thread Manager
+2025-09-28 17:49:31,064 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:49:31,064 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:49:31,065 - INFO - Initializing configuration interface
+2025-09-28 17:49:45,063 - INFO - Initializing Thread Manager
+2025-09-28 17:49:45,101 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:49:45,101 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:49:45,102 - INFO - Initializing configuration interface
+2025-09-28 17:49:45,103 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001819B385960>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001819B385A20>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001819B385AE0>]
+2025-09-28 17:49:45,103 - INFO - Finished loading configuration interface
+2025-09-28 17:50:15,936 - INFO - Initializing Thread Manager
+2025-09-28 17:50:15,974 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:50:15,974 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:50:15,975 - INFO - Initializing configuration interface
+2025-09-28 17:50:15,975 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000161766C5930>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000161766C59F0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000161766C5AB0>]
+2025-09-28 17:50:15,976 - INFO - Finished loading configuration interface
+2025-09-28 17:51:52,270 - INFO - Initializing Thread Manager
+2025-09-28 17:51:52,308 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:51:52,309 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:51:52,309 - INFO - Initializing configuration interface
+2025-09-28 17:52:03,148 - INFO - Initializing Thread Manager
+2025-09-28 17:52:03,184 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:52:03,185 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:52:03,185 - INFO - Initializing configuration interface
+2025-09-28 17:52:03,186 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C827045930>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C8270459F0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C827045AB0>]
+2025-09-28 17:52:03,186 - INFO - Finished loading configuration interface
+2025-09-28 17:53:24,117 - INFO - Initializing Thread Manager
+2025-09-28 17:53:24,158 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:53:24,159 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:53:24,159 - INFO - Initializing configuration interface
+2025-09-28 17:53:24,160 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028C120B58D0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028C120B5990>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028C120B5A50>]
+2025-09-28 17:53:24,161 - INFO - Finished loading configuration interface
+2025-09-28 17:53:43,700 - INFO - Initializing Thread Manager
+2025-09-28 17:53:43,740 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:53:43,740 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:53:43,740 - INFO - Initializing configuration interface
+2025-09-28 17:53:43,742 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028A2BCC5960>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028A2BCC5A20>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028A2BCC5AE0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028A2BCC5BA0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028A2BCC5C60>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000028A2BCC5D20>]
+2025-09-28 17:53:43,742 - INFO - Finished loading configuration interface
+2025-09-28 17:53:57,698 - INFO - Initializing Thread Manager
+2025-09-28 17:53:57,737 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:53:57,738 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:53:57,738 - INFO - Initializing configuration interface
+2025-09-28 17:54:02,625 - INFO - Initializing Thread Manager
+2025-09-28 17:54:02,660 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:54:02,660 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:54:02,661 - INFO - Initializing configuration interface
+2025-09-28 17:54:16,916 - INFO - Initializing Thread Manager
+2025-09-28 17:54:16,952 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:54:16,952 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:54:16,953 - INFO - Initializing configuration interface
+2025-09-28 17:55:00,584 - INFO - Initializing Thread Manager
+2025-09-28 17:55:00,625 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:55:00,625 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:55:00,626 - INFO - Initializing configuration interface
+2025-09-28 17:55:00,627 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000015D62745930>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000015D627459F0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000015D62745AB0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000015D62745B70>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000015D62745C30>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x0000015D62745CF0>]
+2025-09-28 17:55:00,627 - INFO - Finished loading configuration interface
+2025-09-28 17:55:29,609 - INFO - Initializing Thread Manager
+2025-09-28 17:55:29,649 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:55:29,649 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:55:29,650 - INFO - Initializing configuration interface
+2025-09-28 17:55:29,650 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C8084A5960>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C8084A5A20>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C8084A5AE0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C8084A5BA0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C8084A5C60>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000001C8084A5D20>]
+2025-09-28 17:55:29,650 - INFO - Finished loading configuration interface
+2025-09-28 17:55:45,940 - INFO - Initializing Thread Manager
+2025-09-28 17:55:45,980 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:55:45,980 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:55:45,983 - INFO - Initializing configuration interface
+2025-09-28 17:55:45,983 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000002ADED705990>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000002ADED705A50>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000002ADED705B10>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000002ADED705BD0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000002ADED705C90>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x000002ADED705D50>]
+2025-09-28 17:55:45,983 - INFO - Finished loading configuration interface
+2025-09-28 17:56:08,821 - INFO - Initializing Thread Manager
+2025-09-28 17:56:08,861 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:56:08,861 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:56:08,862 - INFO - Initializing configuration interface
+2025-09-28 17:56:08,863 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000246F0BC5960>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000246F0BC5A20>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000246F0BC5AE0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000246F0BC5BA0>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000246F0BC5C60>, <core.setup.interface.config_options_interface.HtkLoaderConfig object at 0x00000246F0BC5D20>]
+2025-09-28 17:56:08,864 - INFO - Finished loading configuration interface
+2025-09-28 17:56:36,296 - INFO - Initializing Thread Manager
+2025-09-28 17:56:36,340 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:56:36,340 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:56:36,341 - INFO - Initializing configuration interface
+2025-09-28 17:56:36,341 - INFO - Observer received data: []
+2025-09-28 17:59:17,193 - INFO - Initializing Thread Manager
+2025-09-28 17:59:17,235 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:59:17,236 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:59:17,236 - INFO - Initializing configuration interface
+2025-09-28 17:59:35,950 - INFO - Initializing Thread Manager
+2025-09-28 17:59:35,987 - INFO - HtkAudioMixer initialized.
+2025-09-28 17:59:35,987 - INFO - HtkAudioPlayer initialized.
+2025-09-28 17:59:35,988 - INFO - Initializing configuration interface
+2025-09-28 17:59:35,988 - INFO - Observer received data: []
+2025-09-28 18:01:01,058 - INFO - Initializing Thread Manager
+2025-09-28 18:01:01,130 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:01:01,131 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:01:01,131 - INFO - Initializing configuration interface
+2025-09-28 18:01:01,132 - INFO - Observer received data: [Item(id='recon', type='config', label='Ativar Recoginição', default=False, url=None), Item(id='modo_escuro', type='config', label='Modo Escuro', default=False, url=None), Item(id='som', type='config', label='Ativar Som', default=False, url=None), Item(id='github', type='link', label='⚡️Github⚡️', default=None, url='https://github.com/lsbloo/HtkAssistantAI')]
+2025-09-28 18:01:01,132 - INFO - Finished loading configuration interface
+2025-09-28 18:02:30,267 - INFO - Initializing Thread Manager
+2025-09-28 18:02:30,309 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:02:30,309 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:02:30,310 - INFO - Initializing configuration interface
+2025-09-28 18:02:30,310 - INFO - Observer received data: [Item(id='recon', type='config', label='Ativar Recoginição', default=False, url=None), Item(id='modo_escuro', type='config', label='Modo Escuro', default=False, url=None), Item(id='som', type='config', label='Ativar Som', default=False, url=None), Item(id='github', type='link', label='⚡️Github⚡️', default=None, url='https://github.com/lsbloo/HtkAssistantAI')]
+2025-09-28 18:02:30,310 - INFO - Finished loading configuration interface
+2025-09-28 18:03:28,309 - INFO - Initializing Thread Manager
+2025-09-28 18:03:28,345 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:03:28,345 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:03:28,345 - INFO - Initializing configuration interface
+2025-09-28 18:03:28,346 - INFO - Observer received data: [Item(text='Configurações', id='recon', type='config', label='Ativar Recoginição', default=False, url=None), Item(text='Configurações', id='modo_escuro', type='config', label='Modo Escuro', default=False, url=None), Item(text='Configurações', id='som', type='config', label='Ativar Som', default=False, url=None), Item(text='Documentação', id='github', type='link', label='⚡️Github⚡️', default=None, url='https://github.com/lsbloo/HtkAssistantAI')]
+2025-09-28 18:03:28,346 - INFO - Finished loading configuration interface
+2025-09-28 18:03:31,286 - INFO - Initializing Thread Manager
+2025-09-28 18:03:31,325 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:03:31,326 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:03:31,326 - INFO - Initializing configuration interface
+2025-09-28 18:03:31,327 - INFO - Observer received data: [Item(text='Configurações', id='recon', type='config', label='Ativar Recoginição', default=False, url=None), Item(text='Configurações', id='modo_escuro', type='config', label='Modo Escuro', default=False, url=None), Item(text='Configurações', id='som', type='config', label='Ativar Som', default=False, url=None), Item(text='Documentação', id='github', type='link', label='⚡️Github⚡️', default=None, url='https://github.com/lsbloo/HtkAssistantAI')]
+2025-09-28 18:03:31,327 - INFO - Finished loading configuration interface
+2025-09-28 18:09:33,821 - INFO - Initializing Thread Manager
+2025-09-28 18:09:33,868 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:09:33,868 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:09:33,869 - INFO - Initializing configuration interface
+2025-09-28 18:09:44,048 - INFO - Initializing Thread Manager
+2025-09-28 18:09:44,103 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:09:44,104 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:09:44,105 - INFO - Initializing configuration interface
+2025-09-28 18:09:44,105 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001ABB10A9960>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001ABB10A99C0>]
+2025-09-28 18:09:44,106 - INFO - Finished loading configuration interface
+2025-09-28 18:10:05,118 - INFO - Initializing Thread Manager
+2025-09-28 18:10:05,157 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:10:05,158 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:10:05,158 - INFO - Initializing configuration interface
+2025-09-28 18:10:05,158 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000023C11905B70>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000023C11905BD0>]
+2025-09-28 18:10:05,159 - INFO - Finished loading configuration interface
+2025-09-28 18:21:25,626 - INFO - Initializing Thread Manager
+2025-09-28 18:21:25,664 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:21:25,665 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:21:25,665 - INFO - Initializing configuration interface
+2025-09-28 18:21:25,666 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002BFFF919C60>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002BFFF919CC0>]
+2025-09-28 18:21:25,666 - INFO - Finished loading configuration interface
+2025-09-28 18:22:12,718 - INFO - Initializing Thread Manager
+2025-09-28 18:22:12,756 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:22:12,757 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:22:12,757 - INFO - Initializing configuration interface
+2025-09-28 18:22:12,758 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001D6F4399C00>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001D6F4399C60>]
+2025-09-28 18:22:12,758 - INFO - Finished loading configuration interface
+2025-09-28 18:22:40,170 - INFO - Initializing Thread Manager
+2025-09-28 18:22:40,207 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:22:40,207 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:22:40,208 - INFO - Initializing configuration interface
+2025-09-28 18:22:40,208 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001FE42A6DB40>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001FE42A6DBA0>]
+2025-09-28 18:22:40,209 - INFO - Finished loading configuration interface
+2025-09-28 18:23:07,184 - INFO - Initializing Thread Manager
+2025-09-28 18:23:07,228 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:23:07,229 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:23:07,229 - INFO - Initializing configuration interface
+2025-09-28 18:23:07,229 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000013F50015B10>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000013F50015B70>]
+2025-09-28 18:23:07,230 - INFO - Finished loading configuration interface
+2025-09-28 18:24:00,468 - INFO - Initializing Thread Manager
+2025-09-28 18:24:00,504 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:24:00,504 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:24:00,505 - INFO - Initializing configuration interface
+2025-09-28 18:24:00,506 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001C04D695AB0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001C04D695B10>]
+2025-09-28 18:24:00,506 - INFO - Finished loading configuration interface
+2025-09-28 18:24:31,291 - INFO - Initializing Thread Manager
+2025-09-28 18:24:31,329 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:24:31,330 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:24:31,330 - INFO - Initializing configuration interface
+2025-09-28 18:24:50,505 - INFO - Initializing Thread Manager
+2025-09-28 18:24:50,541 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:24:50,541 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:24:50,541 - INFO - Initializing configuration interface
+2025-09-28 18:25:10,731 - INFO - Initializing Thread Manager
+2025-09-28 18:25:10,770 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:25:10,770 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:25:10,771 - INFO - Initializing configuration interface
+2025-09-28 18:25:32,372 - INFO - Initializing Thread Manager
+2025-09-28 18:25:32,407 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:25:32,408 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:25:32,408 - INFO - Initializing configuration interface
+2025-09-28 18:26:21,618 - INFO - Initializing Thread Manager
+2025-09-28 18:26:21,654 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:26:21,654 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:26:21,654 - INFO - Initializing configuration interface
+2025-09-28 18:26:21,655 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000023596CE5AE0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000023596CE5B40>]
+2025-09-28 18:26:21,655 - INFO - Finished loading configuration interface
+2025-09-28 18:27:05,759 - INFO - Initializing Thread Manager
+2025-09-28 18:27:05,794 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:27:05,794 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:27:05,795 - INFO - Initializing configuration interface
+2025-09-28 18:27:05,795 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000018CC4029B40>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000018CC4029BA0>]
+2025-09-28 18:27:05,796 - INFO - Finished loading configuration interface
+2025-09-28 18:27:43,063 - INFO - Initializing Thread Manager
+2025-09-28 18:27:43,099 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:27:43,100 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:27:43,100 - INFO - Initializing configuration interface
+2025-09-28 18:27:43,100 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000019F821C9B10>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000019F821C9B70>]
+2025-09-28 18:27:43,101 - INFO - Finished loading configuration interface
+2025-09-28 18:28:44,445 - INFO - Initializing Thread Manager
+2025-09-28 18:28:44,482 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:28:44,482 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:28:44,483 - INFO - Initializing configuration interface
+2025-09-28 18:28:44,483 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001F1EA9B9C00>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001F1EA9B9C60>]
+2025-09-28 18:28:44,483 - INFO - Finished loading configuration interface
+2025-09-28 18:29:27,135 - INFO - Initializing Thread Manager
+2025-09-28 18:29:27,170 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:29:27,170 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:29:27,171 - INFO - Initializing configuration interface
+2025-09-28 18:29:27,171 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000023FFAA19AE0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000023FFAA19B40>]
+2025-09-28 18:29:27,171 - INFO - Finished loading configuration interface
+2025-09-28 18:30:16,857 - INFO - Initializing Thread Manager
+2025-09-28 18:30:16,903 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:30:16,904 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:30:16,904 - INFO - Initializing configuration interface
+2025-09-28 18:30:16,905 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001B57E7F5B70>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001B57E7F5BD0>]
+2025-09-28 18:30:16,905 - INFO - Finished loading configuration interface
+2025-09-28 18:30:19,507 - INFO - Initializing Thread Manager
+2025-09-28 18:30:19,599 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:30:19,599 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:30:19,601 - INFO - Initializing configuration interface
+2025-09-28 18:30:19,607 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000276FC9C5A80>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000276FC9C5AE0>]
+2025-09-28 18:30:19,608 - INFO - Finished loading configuration interface
+2025-09-28 18:31:14,420 - INFO - Initializing Thread Manager
+2025-09-28 18:31:14,454 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:31:14,456 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:31:14,456 - INFO - Initializing configuration interface
+2025-09-28 18:31:14,457 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000287233C5BA0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000287233C5C00>]
+2025-09-28 18:31:14,457 - INFO - Finished loading configuration interface
+2025-09-28 18:31:28,385 - INFO - Initializing Thread Manager
+2025-09-28 18:31:28,435 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:31:28,436 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:31:28,436 - INFO - Initializing configuration interface
+2025-09-28 18:31:28,437 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001D94A9C9B40>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001D94A9C9BA0>]
+2025-09-28 18:31:28,437 - INFO - Finished loading configuration interface
+2025-09-28 18:31:44,260 - INFO - Initializing Thread Manager
+2025-09-28 18:31:44,297 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:31:44,298 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:31:44,298 - INFO - Initializing configuration interface
+2025-09-28 18:31:44,299 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001712B429BD0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001712B429C30>]
+2025-09-28 18:31:44,299 - INFO - Finished loading configuration interface
+2025-09-28 18:32:02,238 - INFO - Initializing Thread Manager
+2025-09-28 18:32:02,277 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:32:02,277 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:32:02,278 - INFO - Initializing configuration interface
+2025-09-28 18:32:02,278 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002B7C6D49C00>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002B7C6D49C60>]
+2025-09-28 18:32:02,278 - INFO - Finished loading configuration interface
+2025-09-28 18:34:17,313 - INFO - Initializing Thread Manager
+2025-09-28 18:34:17,355 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:34:17,355 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:34:17,355 - INFO - Initializing configuration interface
+2025-09-28 18:34:17,356 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001ABB8DE9BA0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001ABB8DE9C00>]
+2025-09-28 18:34:17,356 - INFO - Finished loading configuration interface
+2025-09-28 18:35:50,219 - INFO - Initializing Thread Manager
+2025-09-28 18:35:50,261 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:35:50,261 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:35:50,262 - INFO - Initializing configuration interface
+2025-09-28 18:35:50,262 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000017BAB405C30>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000017BAB405C90>]
+2025-09-28 18:35:50,262 - INFO - Finished loading configuration interface
+2025-09-28 18:36:55,265 - INFO - Initializing Thread Manager
+2025-09-28 18:36:55,305 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:36:55,305 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:36:55,305 - INFO - Initializing configuration interface
+2025-09-28 18:36:55,306 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001E904595BD0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001E904595C30>]
+2025-09-28 18:36:55,306 - INFO - Finished loading configuration interface
+2025-09-28 18:38:08,690 - INFO - Initializing Thread Manager
+2025-09-28 18:38:08,739 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:38:08,740 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:38:08,740 - INFO - Initializing configuration interface
+2025-09-28 18:38:08,741 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000016D5B2E5D50>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000016D5B2E5DB0>]
+2025-09-28 18:38:08,741 - INFO - Finished loading configuration interface
+2025-09-28 18:38:42,760 - INFO - Initializing Thread Manager
+2025-09-28 18:38:42,797 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:38:42,798 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:38:42,798 - INFO - Initializing configuration interface
+2025-09-28 18:38:42,799 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000015B69DC5D20>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000015B69DC5D80>]
+2025-09-28 18:38:42,799 - INFO - Finished loading configuration interface
+2025-09-28 18:39:34,001 - INFO - Initializing Thread Manager
+2025-09-28 18:39:34,038 - INFO - HtkAudioMixer initialized.
+2025-09-28 18:39:34,039 - INFO - HtkAudioPlayer initialized.
+2025-09-28 18:39:34,039 - INFO - Initializing configuration interface
+2025-09-28 18:39:34,040 - INFO - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000020AFF445CC0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000020AFF445D20>]
+2025-09-28 18:39:34,040 - INFO - Finished loading configuration interface
+2025-09-28 18:40:21,373 - INFO - Selected Model: No models available with Input Options: {}
+2025-09-28 18:40:21,374 - INFO - Input Options Values: []

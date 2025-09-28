@@ -15,12 +15,15 @@ class ClientObserver:
         data = data
         """Handle the notification from the MainFrame."""
         self.logger.log(f'Observer received data: {data}')
-        if not data['user_input']:
+        if self._checkKeys(data) == False:
             self.onFailure("No user input provided.")
             self.logger.log("No user input provided.")
             return
         
         self.onSuccess(data)
+    
+    def _checkKeys(self, data: dict) -> bool:
+        return len(data) > 0
             
 
 class Subject:

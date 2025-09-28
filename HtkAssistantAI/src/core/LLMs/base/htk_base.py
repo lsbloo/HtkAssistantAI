@@ -1,5 +1,6 @@
 
 
+# not yet implemented
 class HtkClientBase(object):
     pass
 

@@ -8,6 +8,12 @@ class HtkOsEnvironment:
         script_directory = os.path.abspath("").replace("src", "res")
         path = os.path.join(script_directory, resource_file)
         return path
+    
+    @staticmethod
+    def get_absolute_path():
+        script_directory = os.path.abspath("").replace("src", "res")
+        path = os.path.join(script_directory)
+        return path
 
     @staticmethod
     def getModelsAvailableInEnvironment():
