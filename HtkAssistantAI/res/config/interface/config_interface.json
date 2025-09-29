@@ -13,7 +13,7 @@
           "default":false
        }
     },
-    "Documentação":{
+    "Documentação":{ 
        "github":{
           "label":"⚡️Github⚡️",
           "url":"https://github.com/lsbloo/HtkAssistantAI"
