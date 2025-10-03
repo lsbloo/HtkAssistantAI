@@ -188,6 +188,7 @@ class MainFrame(Subject):
                 if role.isChecked and self.actions.get(option.id) != None:
                         self.actions[option.id]()
                 elif role.isChecked == False and self.actions.get(option.id) != None:
+                        self.logger.log("Disable recon is called")
                         self.stop_recon()
                 
 
@@ -355,13 +356,12 @@ class MainFrame(Subject):
         })
         
     def update_chat(self, response):
-        
         if response["is_recon_enabled"]: 
             self.text_input_output.configure(state='normal')
             self.text_input_output.delete("1.0", tk.END)
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
-            htkThreadsManager().createThreadAndInitialize(threadName="Output Chat Recon ->", target = self.play_audio_with_recon(response))
+            self.play_audio_with_recon(response)
         else:
             self.text_input_output.configure(state='normal')
             self.text_input_output.delete("1.0", tk.END)
