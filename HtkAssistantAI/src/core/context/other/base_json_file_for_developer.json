@@ -1,0 +1,24 @@
+{
+    "name": "",
+    "role": "",
+    "description": "",
+    "hard_skills": [],
+    "soft_skills": [],
+    "language": "pt-BR",
+    "context": {
+        "responsibilities": [],
+        "personality": {
+            "approach": "",
+            "tone": "",
+            "mindset": "",
+            "values": []
+        },
+        "preferences": {
+            "style": "",
+            "code_style": "",
+            "examples": "",
+            "format": ""
+        },
+        "limitations": []
+    }
+}
