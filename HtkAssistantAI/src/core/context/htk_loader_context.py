@@ -9,7 +9,7 @@ class HtkLoaderContext:
         self._logger = HtkApplicationLogger()
     
     def load_personas(self):
-        absolute_path = HtkOsEnvironment.get_absolute_path_for_context()
+        absolute_path = HtkOsEnvironment.get_absolute_path_for_resource()
         print(absolute_path)
         
         file_path = ""

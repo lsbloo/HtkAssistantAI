@@ -4,12 +4,6 @@ from core.setup.config_environment import environments_config
 
 class HtkOsEnvironment:
     @staticmethod
-    def get_absolute_path_for_context(resource_file):
-        script_directory = os.path.abspath("")
-        path = os.path.join(script_directory, resource_file)
-        return path
-    
-    @staticmethod
     def get_absolute_path_for_resource(resource_file="no-face.ico"):
         script_directory = os.path.abspath("").replace("src", "res")
         path = os.path.join(script_directory, resource_file)
