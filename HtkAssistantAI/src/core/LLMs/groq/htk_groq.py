@@ -99,7 +99,7 @@ class HtkGroqClient(HtkClientBase):
         response = self.client.invoke(input = formatted_history)
         
         self.memory.save_context({"input": input_message.content}, {"output": str(response.content)})
-            
+        
         return str(response.content)
     
     def chat_with_roles(self, message, role) -> str:
@@ -119,7 +119,7 @@ class HtkGroqClient(HtkClientBase):
         response = self.client.invoke(input = formatted_history)
         
         self.memory.save_context({"input": input_message.content}, {"output": str(response.content)})
-            
+
         return str(response.content)
        
    

@@ -25,7 +25,7 @@ class HtkAudioPlayer(Subject):
         if self._enableOrDisableMic:
             with sr.Microphone() as Font:
                 while not self._stop_recon_event.is_set():
-                        self._rec.adjust_for_ambient_noise(Font)  # Ajuste para ruído ambiente (consigo melhorar isso?)
+                        self._rec.adjust_for_ambient_noise(Font, duration=2)  # Ajuste para ruído ambiente (consigo melhorar isso?)
                         input_audio = self._rec.listen(Font)
                         try:
                             output_in_text = self._rec.recognize_google(input_audio, language="pt-BR")

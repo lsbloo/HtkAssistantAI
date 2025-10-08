@@ -10,7 +10,6 @@ from core.utils.design.observer.observer import ClientObserver as ConfigurationI
 from core.utils.design.observer.observer import ClientObserver as AudioInterfaceObserver
 from core.audio.htk_player import HtkAudioPlayer
 from core.setup.interface.config_options_interface import HtkLoaderConfigInterface
-from core.concurrency.htk_threads_manager import htkThreadsManager
 import customtkinter as ctk
 import webbrowser
 
@@ -24,6 +23,10 @@ class MainFrame(Subject):
         self.root.iconbitmap(HtkOsEnvironment.get_absolute_path_for_resource(resource_file="no-face.ico"))  # Set the window icon
         ctk.set_appearance_mode("dark")  # Set the appearance mode to dark
         
+    
+    def setup_loading_spinner(self):
+        self._progressbar = ctk.CTkProgressBar(master=self.root, mode = "indeterminate", indeterminate_speed = 10,width=150, corner_radius = 20)
+        self._progressbar.place(x=390, y=460)
         
     def create_circular_widget(self):
         # Create a canvas for the circular widget
@@ -317,7 +320,6 @@ class MainFrame(Subject):
         self._htkConfigurationInterface.register_observer(configuration_interface_observer)
         self._htkConfigurationInterface.init()
         
-    
         self.title = title
         self.root = tk.Tk()  
         self.option_role_menu = None
@@ -325,6 +327,7 @@ class MainFrame(Subject):
         self.configurations_role = []
         
         self.create_root()
+        self.setup_loading_spinner()
         self.create_circular_widget()
         self.create_model_selection()
         self.create_input_area()
@@ -346,7 +349,8 @@ class MainFrame(Subject):
         if(selected_model == "Selecione um modelo" or selected_model == "No models available"):
             show_toast("Por favor, selecione um modelo válido.", duration=3000)
             return
-        
+        self.submit_button.configure(state="disabled")
+        self._progressbar.start()
         self.notify_observers({
             'user_input': user_input,
             'selected_model': selected_model,
@@ -356,6 +360,8 @@ class MainFrame(Subject):
         })
         
     def update_chat(self, response):
+        self._progressbar.stop()
+        self.submit_button.configure(state="normal")
         if response["is_recon_enabled"]: 
             self.text_input_output.configure(state='normal')
             self.text_input_output.delete("1.0", tk.END)

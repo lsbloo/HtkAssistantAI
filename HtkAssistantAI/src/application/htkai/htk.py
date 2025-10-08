@@ -26,10 +26,7 @@ def main():
         ),
         onFailure=lambda _: show_toast(f"Digite algo", duration=5000))
     
-    
     frame.register_observer(options_observer)
-    
-    
     
     frame.run()
     
