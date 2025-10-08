@@ -11,6 +11,7 @@ class ClientObserver:
         self.onSuccess = onSuccess
         self.onFailure = onFailure
         self.logger = HtkApplicationLogger()
+        self._threadManager = htkThreadsManager()
     
     def update(self, data):
         data = data
@@ -24,7 +25,6 @@ class ClientObserver:
         def worker():
             try:
                 if self.onSuccess:
-                    # roda setupHtkAssistantModel em thread separada
                     self.onSuccess(data)
             except Exception as e:
                 if self.onFailure:
@@ -32,7 +32,7 @@ class ClientObserver:
         
         
         # Creating a new thread from execute LLM and not interferes in UI main frame
-        htkThreadsManager().createThreadAndInitialize("Observable - LLM Rule", target=worker)
+        self._threadManager.createThreadAndInitialize("Observable - LLM Rule", target=worker)
     
     def _checkKeys(self, data: dict) -> bool:
         return len(data) > 0

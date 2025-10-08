@@ -25,8 +25,15 @@ class MainFrame(Subject):
         
     
     def setup_loading_spinner(self):
-        self._progressbar = ctk.CTkProgressBar(master=self.root, mode = "indeterminate", indeterminate_speed = 10,width=150, corner_radius = 20)
-        self._progressbar.place(x=390, y=460)
+        self._progressbar = ctk.CTkProgressBar(
+            master=self.root, 
+            mode = "indeterminate", 
+            indeterminate_speed = 10,
+            width= 700, 
+            corner_radius = 20,
+            progress_color = "#4D0C83"
+            )
+        self._progressbar.place(x=30, y=225)
         
     def create_circular_widget(self):
         # Create a canvas for the circular widget
@@ -94,7 +101,7 @@ class MainFrame(Subject):
     def create_input_area(self):
         # Create a label for the text input
         self.input_label = tk.Label(self.root, text="No que você está pensando hoje?", bg="#1E1E1E", fg='white', font=("Arial", 12))
-        self.input_label.place(x=300, y=210)
+        self.input_label.place(x=275, y=195)
                 
         # Create a text box for user input
         self.text_input = ctk.CTkTextbox(self.root, height=75, width=700, font=('Arial', 12), fg_color='#252526', text_color='white', corner_radius=10)
