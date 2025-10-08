@@ -1,14 +1,10 @@
-from core.LLMs.groq.htk_groq import HtkGroqClient
+from core.LLMs.groq.htk_groq import HtkGroqInitializer
 from core.LLMs.groq.htk_groq_facade import GroqClientFacade
 from core.LLMs.model.roles import RoleType
-from core.setup.config_environment import environments_config
 
 def setupHtkAssistantModel(response, callback=None):
     if response['selected_model'] == 'Groq':
-        groq = GroqClientFacade(
-            driver = HtkGroqClient(environments_config.get('HTK_ASSISTANT_API_KEY_LLM_GROQ'))
-        )
-        
+        groq = GroqClientFacade(driver = HtkGroqInitializer().getInstanceGroq())
         option = response['selected_option']
         if option == 'simple_chat':
             if response['is_recon_enabled'] == True:

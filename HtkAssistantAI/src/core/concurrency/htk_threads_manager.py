@@ -3,16 +3,14 @@ import threading
 from core.log.htk_logger import HtkApplicationLogger
 
 class HtkThreadManager:
-    
     # Singleton Class
-    _instance = {}
+    _instance = None
     
-    def __call__(cls,*args,**kwargs):
-        if cls not in cls._instances:
-            instance = super().__call__(*args, **kwargs)
-            cls._instances[cls] = instance
-        return cls._instances[cls]    
-        
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+    
     def __init__(self):
         self._logger = HtkApplicationLogger()
         self._pool = []
@@ -35,6 +33,12 @@ class HtkThreadManager:
                 d = "Stopping thread -> " + threadName
                 self._logger.log(d)
                 htkThread.thread.stop()
+    
+    def get(self):
+        if self._instance is None:
+            self._instance = self
+        return self._instance
+
         
 class HtkThreadWrapper(threading.Thread):
     def __init__(self,target):
@@ -57,4 +61,4 @@ class HtkThread:
 
 
 def htkThreadsManager():
-    return HtkThreadManager()
+    return HtkThreadManager().get()

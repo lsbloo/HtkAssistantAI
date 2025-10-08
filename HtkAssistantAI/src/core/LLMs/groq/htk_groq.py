@@ -7,6 +7,7 @@ from langchain.schema import AIMessage, BaseMessage, ChatMessage, FunctionMessag
 from ..model.roles import RoleType
 import warnings
 from ..base.htk_base import HtkClientBase
+from core.setup.config_environment import environments_config
 
 
 """
@@ -98,7 +99,7 @@ class HtkGroqClient(HtkClientBase):
         response = self.client.invoke(input = formatted_history)
         
         self.memory.save_context({"input": input_message.content}, {"output": str(response.content)})
-            
+        
         return str(response.content)
     
     def chat_with_roles(self, message, role) -> str:
@@ -118,10 +119,25 @@ class HtkGroqClient(HtkClientBase):
         response = self.client.invoke(input = formatted_history)
         
         self.memory.save_context({"input": input_message.content}, {"output": str(response.content)})
-            
+
         return str(response.content)
        
    
 
 class Message(BaseModel):
     content: str
+    
+
+class HtkGroqInitializer:
+    _instance = None
+    _instance_groq = None
+    
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+    
+    def getInstanceGroq(self): 
+        if self._instance_groq is None:
+            self._instance_groq = HtkGroqClient(environments_config.get('HTK_ASSISTANT_API_KEY_LLM_GROQ'))
+        return self._instance_groq

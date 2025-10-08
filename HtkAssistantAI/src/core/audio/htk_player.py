@@ -1,13 +1,9 @@
 import speech_recognition as sr
 from core.log.htk_logger import HtkApplicationLogger
 from core.utils.design.observer.observer import Subject
-from core.utils.os_env.os_env import HtkOsEnvironment
-from core.audio.htk_mixer import HtkAudioMixer
+from core.audio.htk_speaker import HtkSpeaker
 from core.concurrency.htk_threads_manager import htkThreadsManager
-from gtts import gTTS
-import os
 import threading
-import time
 
 class HtkAudioPlayer(Subject):
     def __init__(self):
@@ -16,7 +12,7 @@ class HtkAudioPlayer(Subject):
         self._threadManager = htkThreadsManager()
         self._rec = sr.Recognizer()
         self._logger = HtkApplicationLogger()
-        self._mixer = HtkAudioMixer(logger=self._logger)
+        self._mixer = HtkSpeaker(logger=self._logger)
         self._logger.log("HtkAudioPlayer initialized.")
         self._threadName = "HtkAudioPlayer - Recongnize"
         self._isEnabledOutputAudio = False # Flag to control audio output
@@ -29,7 +25,7 @@ class HtkAudioPlayer(Subject):
         if self._enableOrDisableMic:
             with sr.Microphone() as Font:
                 while not self._stop_recon_event.is_set():
-                        self._rec.adjust_for_ambient_noise(Font)  # Ajuste para ruído ambiente (consigo melhorar isso?)
+                        self._rec.adjust_for_ambient_noise(Font, duration=2)  # Ajuste para ruído ambiente (consigo melhorar isso?)
                         input_audio = self._rec.listen(Font)
                         try:
                             output_in_text = self._rec.recognize_google(input_audio, language="pt-BR")
@@ -52,17 +48,19 @@ class HtkAudioPlayer(Subject):
         self._threadManager.createThreadAndInitialize(threadName = self._threadName, target=self.initRecon)
     
     def stopRecon(self):
+        self._logger.log("Call disable recon")
         self._stop_recon_event.set()  # sinaliza para a thread parar
         self._enableOrDisableMic = False
         self._threadManager.stopThread(threadName=self._threadName)
             
     def enableOutputAudio(self, text):
-        unique_name = f"output_{int(time.time()*1000)}.mp3"
-        path_output_audio = HtkOsEnvironment.get_absolute_path() + "\\audio\\" + unique_name
-        self._gtts = gTTS(text=text, lang='PT-BR')
-        self._gtts.save(path_output_audio)
-        self._logger.log(f"Audio output generated and saved to {path_output_audio}.")
-        self._mixer.play_audio(os.path.join(HtkOsEnvironment.get_absolute_path(), "audio", unique_name))
+        # OLD CODE 
+        #unique_name = f"output_{int(time.time()*1000)}.mp3"
+        #path_output_audio = HtkOsEnvironment.get_absolute_path() + "\\audio\\" + unique_name
+        #self._gtts = gTTS(text=text, lang='PT-BR')
+        #self._gtts.save(path_output_audio)
+        #self._logger.log(f"Audio output generated and saved to {path_output_audio}.")
+        self._mixer.play_audio(text)
       
     def disableOutputAudio(self):
         self._mixer.stop_audio()
