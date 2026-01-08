@@ -1,22 +1,26 @@
 {
-    "Configurações":{
-       "recon":{
-          "label":"Ativar Recoginição",
-          "default":false
-       },
-       "contexto":{
-          "label":"Habilitar Contexto",
-          "default":false
-       },
-       "som":{
-          "label":"Ativar Som",
-          "default":false
-       }
-    },
-    "Documentação":{ 
-       "github":{
-          "label":"⚡️Github⚡️",
-          "url":"https://github.com/lsbloo/HtkAssistantAI"
-       }
-    }
- }
+   "Configurações": {
+      "recon": {
+         "label": "Ativar Recoginição",
+         "default": false
+      },
+      "contexto": {
+         "label": "Habilitar Contexto",
+         "default": false
+      },
+      "som": {
+         "label": "Ativar Som",
+         "default": true
+      },
+      "web": {
+         "label": "Ativar Web",
+         "default": false
+      }
+   },
+   "Documentação": {
+      "github": {
+         "label": "⚡️Github⚡️",
+         "url": "https://github.com/lsbloo/HtkAssistantAI"
+      }
+   }
+}
