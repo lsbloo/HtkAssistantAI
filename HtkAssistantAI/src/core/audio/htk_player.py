@@ -15,7 +15,6 @@ class HtkAudioPlayer(Subject):
         self._mixer = HtkSpeaker(logger=self._logger)
         self._logger.log("HtkAudioPlayer initialized.")
         self._threadName = "HtkAudioPlayer - Recongnize"
-        self._isEnabledOutputAudio = False # Flag to control audio output
         self._enableOrDisableMic = False
         self._stop_recon_event = threading.Event()
         
@@ -53,18 +52,5 @@ class HtkAudioPlayer(Subject):
         self._enableOrDisableMic = False
         self._threadManager.stopThread(threadName=self._threadName)
             
-    def enableOutputAudio(self, text):
-        # OLD CODE 
-        #unique_name = f"output_{int(time.time()*1000)}.mp3"
-        #path_output_audio = HtkOsEnvironment.get_absolute_path() + "\\audio\\" + unique_name
-        #self._gtts = gTTS(text=text, lang='PT-BR')
-        #self._gtts.save(path_output_audio)
-        #self._logger.log(f"Audio output generated and saved to {path_output_audio}.")
-        self._mixer.play_audio(text)
-      
-    def disableOutputAudio(self):
-        self._mixer.stop_audio()
-        self._isEnabledOutputAudio = False
-        
-    def isEnabledOutputAudio(self, isEnabled: bool):
-        self._isEnabledOutputAudio = isEnabled
+    def enableOutputAudio(self, text, onMixerBusy = None):
+        self._mixer.play_audio(text, onMixerBusy)

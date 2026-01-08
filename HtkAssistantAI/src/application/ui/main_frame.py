@@ -12,7 +12,9 @@ from core.audio.htk_player import HtkAudioPlayer
 from core.setup.interface.config_options_interface import HtkLoaderConfigInterface
 import customtkinter as ctk
 import webbrowser
-
+from core.context.htk_loader_context import HtkLoaderContext
+from core.context.htk_speaker_context_system import HtkSpeakerContextSystemInitializer
+from threading import Thread
 
 class MainFrame(Subject):
     def create_root(self):
@@ -31,8 +33,7 @@ class MainFrame(Subject):
             indeterminate_speed = 10,
             width= 700, 
             corner_radius = 20,
-            progress_color = "#4D0C83"
-            )
+            progress_color = "#4D0C83")
         self._progressbar.place(x=30, y=225)
         
     def create_circular_widget(self):
@@ -138,6 +139,7 @@ class MainFrame(Subject):
         input_options = {}
         if selected_model == "Groq":
             input_options = input_groq_options()
+            self.speakSystem(key="model_groq_selected")
         
         
         self.logger.log(f"Selected Model: {selected_model} with Input Options: {input_options}")
@@ -173,11 +175,13 @@ class MainFrame(Subject):
         self.logger.log(f"Selected Model Option: {selected_option}")
 
         if selected_option == "chat_with_roles":
+            self.speakSystem(key="model_chat_roles")
             self.option_role_menu = ctk.CTkOptionMenu(self.root, values=["assistant", "user", "system"], 
                               command=lambda choice: self.set_option_role_choice(choice))
             
             self.option_role_menu.place(x=575, y=180) 
         else:
+            self.speakSystem(key="model_chat")
             self.option_role_menu.pack_forget()
             self.option_role_menu.destroy()
             self.root.update()
@@ -195,13 +199,40 @@ class MainFrame(Subject):
         for role in self.configurations_role:
             if role.name == option.label:
                 role.isChecked = isChecked.get()
-                if role.isChecked and self.actions.get(option.id) != None:
+                if role.isChecked and self.actions.get(option.id) is not None:
                         self.actions[option.id]()
-                elif role.isChecked == False and self.actions.get(option.id) != None:
-                        self.logger.log("Disable recon is called")
-                        self.stop_recon()
+                elif role.isChecked == False and self.actions.get(option.id) is not None:
+                        self.actions_disable[option.id]()
                 
-
+    def context_options_selected(self, choice):
+        self.speakSystem(key="context_enabled")
+        self.option_persona_context_choice = self.htk_contexts.load_persona_with_resource_file(resource_file=choice)
+        self.logger.log(f"Selected Persona Context: {self.option_persona_context_choice}")
+    
+    def init_context_options(self):
+        self.context_frame = ctk.CTkFrame(master=self.root, width=350, height=230, corner_radius=24)
+        self.context_frame.place(x=330, y=500)
+        context_label = ctk.CTkLabel(self.context_frame, text="Opções de Contexto", bg_color="transparent", 
+                                      fg_color="transparent", 
+                                      font=("Arial", 12),
+                                      height=15, text_color="white")
+        context_label.place(x=125, y=10)
+        
+        personas_available = self.htk_contexts.load_contexts_personas_available()
+        optionmenu_var = ctk.StringVar(value="Selecione uma persona")
+        optionmenu = ctk.CTkOptionMenu(self.context_frame,values=personas_available,
+                                         command=self.context_options_selected,
+                                         variable=optionmenu_var)
+        optionmenu.place(x=10, y=50)
+    
+    def stop_context_options(self):
+        self.context_frame.destroy()
+        
+    def init_speaker_system(self):
+        self.init_system_speaker = True
+    
+    def stop_speaker_system(self):
+        self.init_system_speaker = False
         
     def init_recon(self):
         self._htkAudioPlayer.initializeRecon()
@@ -287,27 +318,59 @@ class MainFrame(Subject):
             show_toast("Por favor, selecione um modelo válido.", duration=3000)
             return
         
+        self.submit_button.configure(state="disabled")
+        self._progressbar.start()
         self.notify_observers({
             'selected_model': selected_model,
             'selected_option': selected_option,
             'option_role_choice': self.option_role_choice,
+            'init_system_speaker': self.init_system_speaker,
+            'option_persona_context_choice': self.option_persona_context_choice,
             'input_from_recon': response['recon_output_in_text'],
             'is_recon_enabled': True,
         })
         
-    def play_audio_with_recon(self, response):
-        self._htkAudioPlayer.enableOutputAudio(response['response'])
+    def play_audio_with_recon(self, response, onMixerBusy = None):
+        self._htkAudioPlayer.enableOutputAudio(response['response'], onMixerBusy)
         
     def setup_configuration_interface(self, response):
         self._configuration_interface = response
+        for item in self._configuration_interface[0].items:
+            if item.default == True:
+                if self.actions.get(item.id) is not None:
+                    self.actions[item.id]()
+
+    def set_state_mixer_busy(self, isBusy):
+        print("ENGINE CHANGE STATE", isBusy)
+        self._onMixerBusy = isBusy
+
+        if self._onMixerBusy:
+            self._htkAudioPlayer.stopRecon()
+        else:
+            self._htkAudioPlayer.initializeRecon()
+            
+    def speakSystem(self,key):
+        if self.init_system_speaker == True:
+            thread = Thread(target=self._systemSpeaker.initialize_system_audio_context, args=(key,))
+            thread.start()
         
     def __init__(self, title="HTK Assistant AI"):
         self._observers = []
         
         self.actions = {
-            "recon": self.init_recon
+            "recon": self.init_recon,
+            "contexto": self.init_context_options,
+            "som": self.init_speaker_system,
         }
         
+        self.actions_disable = {
+            "recon": self.stop_recon,
+            "contexto": self.stop_context_options,
+            "som": self.stop_speaker_system,
+        }
+        
+        ## System Speaker Audio Context
+        self._systemSpeaker = HtkSpeakerContextSystemInitializer().getInstance()
         ## Reconginition Audio
         self._htkAudioPlayer = HtkAudioPlayer()
         self._htkAudioPlayerObsever = AudioInterfaceObserver(
@@ -315,6 +378,7 @@ class MainFrame(Subject):
             onFailure=lambda error: ()
         )
         self._htkAudioPlayer.register_observer(self._htkAudioPlayerObsever)
+        self._onMixerBusy = False
         
         self._configuration_interface = None
         ## Logger Application
@@ -327,20 +391,24 @@ class MainFrame(Subject):
         self._htkConfigurationInterface.register_observer(configuration_interface_observer)
         self._htkConfigurationInterface.init()
         
+        self.htk_contexts = HtkLoaderContext()
+        
         self.title = title
         self.root = tk.Tk()  
         self.option_role_menu = None
         self.option_role_choice = None
+        self.option_persona_context_choice = None
         self.configurations_role = []
+        self.init_system_speaker = True
         
         self.create_root()
         self.setup_loading_spinner()
         self.create_circular_widget()
-        self.create_model_selection()
         self.create_input_area()
         self.create_output_area()
         self.create_button()
         self.create_configuration_view()
+        self.create_model_selection()
        
 
     def submit(self):
@@ -348,20 +416,19 @@ class MainFrame(Subject):
         user_input = self.text_input.get("1.0", tk.END).strip()
         selected_model = self.model_var.get()
         selected_option = self.model_input_option_var.get() if hasattr(self, 'model_input_option_var') else None
-
-        # Print the input and selected model (replace this with your processing logic)
-        #print(f"User Input: {user_input}")
-        #print(f"Selected Model: {selected_model}")
         
         if(selected_model == "Selecione um modelo" or selected_model == "No models available"):
             show_toast("Por favor, selecione um modelo válido.", duration=3000)
             return
         self.submit_button.configure(state="disabled")
         self._progressbar.start()
+        self.speakSystem(key="processing")
         self.notify_observers({
             'user_input': user_input,
             'selected_model': selected_model,
             'selected_option': selected_option,
+            'init_system_speaker': self.init_system_speaker,
+            'option_persona_context_choice': self.option_persona_context_choice,
             'option_role_choice': self.option_role_choice,
             'is_recon_enabled': False,
         })
@@ -374,10 +441,13 @@ class MainFrame(Subject):
             self.text_input_output.delete("1.0", tk.END)
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
-            self.play_audio_with_recon(response)
+            self.play_audio_with_recon(response, onMixerBusy= lambda res: self.set_state_mixer_busy(res))
         else:
             self.text_input_output.configure(state='normal')
             self.text_input_output.delete("1.0", tk.END)
+            if self.init_system_speaker == True:
+                self._systemSpeaker.speak_response_system(response['response'])
+            
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
 

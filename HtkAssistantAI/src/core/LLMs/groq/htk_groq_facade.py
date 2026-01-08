@@ -5,10 +5,10 @@ class GroqClientFacade():
         self.client = driver # Instance of HtkGroqClient
         self.logger = HtkApplicationLogger()
 
-    def chat_with_roles(self, message, role):
+    def chat_with_roles(self, message,role, additionalContext=None):
         self.logger.log(f"GroqClientFacade: chat_with_roles called with role: {role}")
-        return self.client.chat_with_roles(message=message, role=role)
+        return self.client.chat_with_roles(message=message, role=role, additionalContext=additionalContext)
     
-    def chat(self, message):
+    def chat(self, message, additionalContext=None):
         self.logger.log("GroqClientFacade: chat called")
-        return self.client.chat(message=message)
+        return self.client.chat(message=message, additionalContext=additionalContext)

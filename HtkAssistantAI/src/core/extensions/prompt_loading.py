@@ -1,6 +1,6 @@
 import time
 
-def load_prompt(prompt_name, timeSleep = 2, loadingPercentSimulate = 100):    
+def load_prompt(prompt_name, timeSleep = 4, loadingPercentSimulate = 100):    
     """
     Load a prompt from the prompts directory.
     
