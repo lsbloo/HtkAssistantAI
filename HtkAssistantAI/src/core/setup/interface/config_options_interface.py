@@ -58,7 +58,8 @@ class HtkLoaderConfigInterface(Subject):
                 "Configurações": {
                     "recon": {"label": "Ativar Recoginição", "default": False},
                     "contexto":   {"label": "Habilitar Contexto",           "default": False},
-                    "som":           {"label": "Ativar Som",            "default": False}
+                    "som":           {"label": "Ativar Som",            "default": True},
+                    "web": {"label":"Ativar Web","default": False},
                 },
                 "Documentação": {
                     "github": {"label": "⚡️Github⚡️", "url": "https://github.com/lsbloo/HtkAssistantAI"}

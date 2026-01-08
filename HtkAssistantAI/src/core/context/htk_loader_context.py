@@ -22,6 +22,10 @@ class HtkLoaderContext:
         personas_available = HtkOsEnvironment.list_directory_contents(absolute_path)
         return personas_available
     
-    def load_audio_first_interaction(self):
-        # not yet
-        pass
+    def load_context_system_audio(self, key):
+        absolute_path = HtkOsEnvironment.get_absolute_path_for_resource_context_system(resource_file="first_interaction.json")
+        with open(absolute_path, "r", encoding="utf-8") as file:
+            json_string = file.read()
+            data = json.loads(json_string)
+            self._logger.log(f"Audio Message'{data['audio'].get(key)}' loaded from {absolute_path}")
+            return data['audio'].get(key)

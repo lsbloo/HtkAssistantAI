@@ -13,7 +13,8 @@ from core.setup.interface.config_options_interface import HtkLoaderConfigInterfa
 import customtkinter as ctk
 import webbrowser
 from core.context.htk_loader_context import HtkLoaderContext
-
+from core.context.htk_speaker_context_system import HtkSpeakerContextSystemInitializer
+from threading import Thread
 
 class MainFrame(Subject):
     def create_root(self):
@@ -138,6 +139,7 @@ class MainFrame(Subject):
         input_options = {}
         if selected_model == "Groq":
             input_options = input_groq_options()
+            self.speakSystem(key="model_groq_selected")
         
         
         self.logger.log(f"Selected Model: {selected_model} with Input Options: {input_options}")
@@ -173,11 +175,13 @@ class MainFrame(Subject):
         self.logger.log(f"Selected Model Option: {selected_option}")
 
         if selected_option == "chat_with_roles":
+            self.speakSystem(key="model_chat_roles")
             self.option_role_menu = ctk.CTkOptionMenu(self.root, values=["assistant", "user", "system"], 
                               command=lambda choice: self.set_option_role_choice(choice))
             
             self.option_role_menu.place(x=575, y=180) 
         else:
+            self.speakSystem(key="model_chat")
             self.option_role_menu.pack_forget()
             self.option_role_menu.destroy()
             self.root.update()
@@ -201,6 +205,7 @@ class MainFrame(Subject):
                         self.actions_disable[option.id]()
                 
     def context_options_selected(self, choice):
+        self.speakSystem(key="context_enabled")
         self.option_persona_context_choice = self.htk_contexts.load_persona_with_resource_file(resource_file=choice)
         self.logger.log(f"Selected Persona Context: {self.option_persona_context_choice}")
     
@@ -222,6 +227,12 @@ class MainFrame(Subject):
     
     def stop_context_options(self):
         self.context_frame.destroy()
+        
+    def init_speaker_system(self):
+        self.init_system_speaker = True
+    
+    def stop_speaker_system(self):
+        self.init_system_speaker = False
         
     def init_recon(self):
         self._htkAudioPlayer.initializeRecon()
@@ -309,11 +320,11 @@ class MainFrame(Subject):
         
         self.submit_button.configure(state="disabled")
         self._progressbar.start()
-        
         self.notify_observers({
             'selected_model': selected_model,
             'selected_option': selected_option,
             'option_role_choice': self.option_role_choice,
+            'init_system_speaker': self.init_system_speaker,
             'option_persona_context_choice': self.option_persona_context_choice,
             'input_from_recon': response['recon_output_in_text'],
             'is_recon_enabled': True,
@@ -324,6 +335,10 @@ class MainFrame(Subject):
         
     def setup_configuration_interface(self, response):
         self._configuration_interface = response
+        for item in self._configuration_interface[0].items:
+            if item.default == True:
+                if self.actions.get(item.id) is not None:
+                    self.actions[item.id]()
 
     def set_state_mixer_busy(self, isBusy):
         print("ENGINE CHANGE STATE", isBusy)
@@ -333,6 +348,11 @@ class MainFrame(Subject):
             self._htkAudioPlayer.stopRecon()
         else:
             self._htkAudioPlayer.initializeRecon()
+            
+    def speakSystem(self,key):
+        if self.init_system_speaker == True:
+            thread = Thread(target=self._systemSpeaker.initialize_system_audio_context, args=(key,))
+            thread.start()
         
     def __init__(self, title="HTK Assistant AI"):
         self._observers = []
@@ -340,13 +360,17 @@ class MainFrame(Subject):
         self.actions = {
             "recon": self.init_recon,
             "contexto": self.init_context_options,
+            "som": self.init_speaker_system,
         }
         
-        self.actions_disable =  {
+        self.actions_disable = {
             "recon": self.stop_recon,
             "contexto": self.stop_context_options,
+            "som": self.stop_speaker_system,
         }
         
+        ## System Speaker Audio Context
+        self._systemSpeaker = HtkSpeakerContextSystemInitializer().getInstance()
         ## Reconginition Audio
         self._htkAudioPlayer = HtkAudioPlayer()
         self._htkAudioPlayerObsever = AudioInterfaceObserver(
@@ -375,15 +399,16 @@ class MainFrame(Subject):
         self.option_role_choice = None
         self.option_persona_context_choice = None
         self.configurations_role = []
+        self.init_system_speaker = True
         
         self.create_root()
         self.setup_loading_spinner()
         self.create_circular_widget()
-        self.create_model_selection()
         self.create_input_area()
         self.create_output_area()
         self.create_button()
         self.create_configuration_view()
+        self.create_model_selection()
        
 
     def submit(self):
@@ -397,10 +422,12 @@ class MainFrame(Subject):
             return
         self.submit_button.configure(state="disabled")
         self._progressbar.start()
+        self.speakSystem(key="processing")
         self.notify_observers({
             'user_input': user_input,
             'selected_model': selected_model,
             'selected_option': selected_option,
+            'init_system_speaker': self.init_system_speaker,
             'option_persona_context_choice': self.option_persona_context_choice,
             'option_role_choice': self.option_role_choice,
             'is_recon_enabled': False,
@@ -418,6 +445,9 @@ class MainFrame(Subject):
         else:
             self.text_input_output.configure(state='normal')
             self.text_input_output.delete("1.0", tk.END)
+            if self.init_system_speaker == True:
+                self._systemSpeaker.speak_response_system(response['response'])
+            
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
 

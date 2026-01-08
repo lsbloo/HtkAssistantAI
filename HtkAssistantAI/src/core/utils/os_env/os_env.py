@@ -13,6 +13,15 @@ class HtkOsEnvironment:
     
     
     @staticmethod
+    def get_absolute_path_for_resource_context_system(resource_file):
+        if resource_file is None or resource_file == "":
+            return os.path.abspath("").replace("src", "res\\context\\audio\\")
+        
+        script_directory = os.path.abspath("").replace("src", "res\\context\\audio\\")
+        path = os.path.join(script_directory, resource_file)
+        return path
+    
+    @staticmethod
     def get_absolute_path_for_resource_context_personas(resource_file):
         if resource_file is None or resource_file == "":
             return os.path.abspath("").replace("src", "res\\context\\other\\personas\\")
