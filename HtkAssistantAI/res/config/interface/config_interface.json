@@ -4,8 +4,8 @@
           "label":"Ativar Recoginição",
           "default":false
        },
-       "modo_escuro":{
-          "label":"Modo Escuro",
+       "contexto":{
+          "label":"Habilitar Contexto",
           "default":false
        },
        "som":{

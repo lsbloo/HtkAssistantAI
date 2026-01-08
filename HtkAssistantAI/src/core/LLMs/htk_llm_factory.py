@@ -8,17 +8,17 @@ def setupHtkAssistantModel(response, callback=None):
         option = response['selected_option']
         if option == 'simple_chat':
             if response['is_recon_enabled'] == True:
-                response = groq.chat(message=response['input_from_recon'])
+                response = groq.chat(message=response['input_from_recon'], additionalContext=response['option_persona_context_choice'])
                 callback({"response": response, "is_recon_enabled": True})
             else:
-                response = groq.chat(message=response['user_input'])
+                response = groq.chat(message=response['user_input'], additionalContext=response['option_persona_context_choice'])
                 callback({"response": response, "is_recon_enabled": False})
         elif option == 'chat_with_roles':
             if response['is_recon_enabled'] == True:
-                response = groq.chat_with_roles(message=response['input_from_recon'], role=RoleType.fromType(response['option_role_choice']))
+                response = groq.chat_with_roles(message=response['input_from_recon'], role=RoleType.fromType(response['option_role_choice']), additionalContext=response['option_persona_context_choice'])
                 callback({"response": response, "is_recon_enabled": True})
             else:
-                response = groq.chat_with_roles(message=response['user_input'], role=RoleType.fromType(response['option_role_choice']))
+                response = groq.chat_with_roles(message=response['user_input'], role=RoleType.fromType(response['option_role_choice']), additionalContext=response['option_persona_context_choice'])
                 callback({"response": response, "is_recon_enabled": False})
             
         

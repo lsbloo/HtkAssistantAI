@@ -62,7 +62,7 @@ class HtkGroqClient(HtkClientBase):
         self.client = ChatGroq(groq_api_key=api_key, 
                                model_name=GROQ_CLIENT_DEFAULT_MODEL,
                                temperature=0.7, 
-                               max_tokens=1000
+                               max_tokens=1000,
                                )
         
         with warnings.catch_warnings():
@@ -88,8 +88,11 @@ class HtkGroqClient(HtkClientBase):
             6. Saves the input and output context to memory.
             7. Returns the client's response as a string.
     """
-    def chat(self, message) -> str:
+    def chat(self, message, additionalContext=None) -> str:
         input_message = Message(content=message)
+        
+        if additionalContext != None:
+            self.memory.chat_memory.add_message(SystemMessage(content=additionalContext))
         
         chat_history = self.memory.chat_memory.messages
         
@@ -102,8 +105,11 @@ class HtkGroqClient(HtkClientBase):
         
         return str(response.content)
     
-    def chat_with_roles(self, message, role) -> str:
+    def chat_with_roles(self, message, role, additionalContext=None) -> str:
         input_message = Message(content=message)
+        
+        if additionalContext != None:
+            self.memory.chat_memory.add_message(SystemMessage(content=additionalContext))
         
         chat_history = self.memory.chat_memory.messages
         

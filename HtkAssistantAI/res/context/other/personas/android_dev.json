@@ -70,5 +70,10 @@
             "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",
             "Focar em qualidade técnica e clareza didática."
         ]
+    },
+    "outputs": {
+        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],
+        "code_snippets": "",
+        "explanations": ""
     }
 }

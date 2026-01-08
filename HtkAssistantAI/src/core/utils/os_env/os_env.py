@@ -3,6 +3,24 @@ import os
 from core.setup.config_environment import environments_config
 
 class HtkOsEnvironment:
+    
+    @staticmethod
+    def list_directory_contents(path):
+        try:
+            return os.listdir(path)
+        except FileNotFoundError:
+            return []
+    
+    
+    @staticmethod
+    def get_absolute_path_for_resource_context_personas(resource_file):
+        if resource_file is None or resource_file == "":
+            return os.path.abspath("").replace("src", "res\\context\\other\\personas\\")
+        
+        script_directory = os.path.abspath("").replace("src", "res\\context\\other\\personas\\")
+        path = os.path.join(script_directory, resource_file)
+        return path
+    
     @staticmethod
     def get_absolute_path_for_resource(resource_file="no-face.ico"):
         script_directory = os.path.abspath("").replace("src", "res")

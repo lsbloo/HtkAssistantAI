@@ -20,5 +20,10 @@
             "format": ""
         },
         "limitations": []
+    },
+    "outputs": {
+        "response_format": [],
+        "code_snippets": [],
+        "explanations": []
     }
 }

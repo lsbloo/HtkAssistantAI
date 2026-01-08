@@ -11,13 +11,17 @@ def main():
     """Main function to initialize the HtkAssistantAI application.
     This function sets up the terminal appearance, initializes the environment configuration,
     and starts the main application frame.  """
-    
+    setup_application()
+    initialize_main_frame()
+
+def setup_application(): 
     # Load terminal appearance
     setup_terminal_appearance()
 
     # Initialize the environment configuration
     initialize_environment()
-    
+
+def initialize_main_frame():
     frame = MainFrame()
     
     options_observer = OptionsObserver(
@@ -29,8 +33,3 @@ def main():
     frame.register_observer(options_observer)
     
     frame.run()
-    
-    
-
-    
-    
