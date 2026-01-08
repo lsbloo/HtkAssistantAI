@@ -1,0 +1,32 @@
+{
+    "audio": {
+        "enviroment_setup": "Configurando o ambiente. Aguarde",
+        "first_interaction": "Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?",
+        "welcome_back": "Bem-vindo de volta! Como posso ajudar você hoje?",
+        "goodbye": "Até logo! Se precisar de mais ajuda, estarei aqui.",
+        "error": "Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.",
+        "listening": "Estou ouvindo...",
+        "processing": "Processando sua solicitação...",
+        "confirmation": "Entendi. Vou cuidar disso para você.",
+        "recognition_failed": "Desculpe, não consegui entender. Poderia repetir, por favor?",
+        "recognition_activate": "Ative o reconhecimento de voz.",
+        "recognition_deactivate": "Desative o reconhecimento de voz.",
+        "context_enabled": "Um contexto de persona foi habilitado ao assistente, fique atento às respostas.",
+        "context_disabled": "Um contexto de persona foi desabilitado.",
+        "model_chat": "A opção de simple chat foi habilitada",
+        "model_chat_roles": "A opção de chat com papéis foi habilitada",
+        "web_enabled": "A funcionalidade web foi ativada.",
+        "web_disabled": "A funcionalidade web foi desativada.",
+        "model_groq_selected": "O modelo Groq foi selecionado.",
+        "model_openai_selected": "O modelo OpenAI foi selecionado.",
+        "model_gemini_selected": "O modelo Gemini foi selecionado.",
+        "error_model_not_loaded": "Erro: O modelo selecionado não está carregado."
+    },
+    "language": "pt-BR",
+    "context": [
+        "Atuar como um assistente virtual amigável e prestativo.",
+        "Responder às perguntas dos usuários de forma clara e concisa.",
+        "Fornecer informações precisas e relevantes com base no contexto da conversa.",
+        "Manter um tom educado e profissional em todas as interações."
+    ]
+}
