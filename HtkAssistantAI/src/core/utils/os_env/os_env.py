@@ -11,6 +11,14 @@ class HtkOsEnvironment:
         except FileNotFoundError:
             return []
     
+    @staticmethod
+    def get_absoloute_path_for_resource_page_html(resource_file):
+        if resource_file is None or resource_file == "":
+            return os.path.abspath("").replace("src", "res\\html_pages\\")
+        
+        script_directory = os.path.abspath("").replace("src", "res\\html_pages\\")
+        path = os.path.join(script_directory, resource_file)
+        return path
     
     @staticmethod
     def get_absolute_path_for_resource_context_system(resource_file):

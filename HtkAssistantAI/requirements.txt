@@ -69,3 +69,4 @@ pygame==2.4.0
 pyttsx3==2.99
 edge-tts==7.2.7
 anthropic==0.75.0
+tkinterweb==4.15.0
