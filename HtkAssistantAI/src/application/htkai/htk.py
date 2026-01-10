@@ -8,19 +8,22 @@ from core.LLMs.htk_llm_factory import setupHtkAssistantModel
 from application.ui.main_frame import MainFrame
 from core.context.htk_speaker_context_system import HtkSpeakerContextSystemInitializer
 from threading import Thread
-import time
 
 def main():
     """Main function to initialize the HtkAssistantAI application.
     This function sets up the terminal appearance, initializes the environment configuration,
     and starts the main application frame.  """
-    first_interaction_speaker_system()
+    interaction_speaker_system()
     setup_application()
     initialize_main_frame()
     
 
-def first_interaction_speaker_system(key="enviroment_setup"):
+def interaction_speaker_system(key="enviroment_setup"):
     Thread(target=HtkSpeakerContextSystemInitializer().getInstance().initialize_system_audio_context, args=(key, )).start()
+
+def show_generic_error(frame: MainFrame):
+    frame.enabled_input_frame()
+    interaction_speaker_system("error")
     
 def setup_application(): 
     # Load terminal appearance
@@ -34,8 +37,8 @@ def initialize_main_frame():
         onSuccess=lambda response: setupHtkAssistantModel(
             response = response,callback=lambda res: frame.update_chat(res)
         ),
-        onFailure=lambda _: show_toast(f"Digite algo", duration=5000))
+        onFailure=lambda _: show_generic_error(frame=frame))
     
     frame.register_observer(options_observer)
-    first_interaction_speaker_system("first_interaction")
+    interaction_speaker_system("first_interaction")
     frame.run()

@@ -18,6 +18,7 @@
         "web_enabled": "A funcionalidade web foi ativada.",
         "web_disabled": "A funcionalidade web foi desativada.",
         "model_groq_selected": "O modelo Groq foi selecionado.",
+        "model_sonnet_selected": "O modelo Claude Sonnet foi selecionado.",
         "model_openai_selected": "O modelo OpenAI foi selecionado.",
         "model_gemini_selected": "O modelo Gemini foi selecionado.",
         "error_model_not_loaded": "Erro: O modelo selecionado não está carregado."

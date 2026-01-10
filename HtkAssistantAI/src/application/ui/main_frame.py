@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from core.utils.design.observer.observer import Subject
 from core.LLMs.groq.options import input_groq_options
+from core.LLMs.claudesonnet.options import input_sonnet_options
 from core.log.htk_logger import HtkApplicationLogger
 from .utils import show_toast
 from PIL import Image, ImageTk, ImageDraw
@@ -141,7 +142,9 @@ class MainFrame(Subject):
             input_options = input_groq_options()
             self.speakSystem(key="model_groq_selected")
         
-        
+        elif selected_model == "Claude Sonnet":
+            input_options = input_sonnet_options()
+            self.speakSystem(key="model_sonnet_selected")
         self.logger.log(f"Selected Model: {selected_model} with Input Options: {input_options}")
         
         if input_options is not None:
@@ -294,21 +297,25 @@ class MainFrame(Subject):
         
         
     def setupModelsBasedInEnvironment(self):
-        avialiableModelsByEnv = HtkOsEnvironment.getModelsAvailableInEnvironment()
-        avialiableModels = []
-        
-        if len(avialiableModelsByEnv) == 0:
-            avialiableModels.append('No models available')
-            return avialiableModels
-        
-        for i in range(len(avialiableModelsByEnv)):
-            if(avialiableModelsByEnv[i] == 'HTK_ASSISTANT_API_KEY_LLM_GROQ'):
-                avialiableModels.append('Groq')
-            elif(avialiableModelsByEnv[i] == 'HTK_ASSISTANT_API_KEY_LLM_CHATGPT'):
-                avialiableModels.append('ChatGPT')
-            elif(avialiableModelsByEnv[i] == 'HTK_ASSISTANT_API_KEY_LLM_GEMINI'):
-                avialiableModels.append('Gemini')
-        return avialiableModels
+        model_mapping = {
+            'HTK_ASSISTANT_API_KEY_LLM_GROQ': 'Groq',
+            'HTK_ASSISTANT_API_KEY_LLM_ANTHROPIC': 'Claude Sonnet',
+            'HTK_ASSISTANT_API_KEY_LLM_CHATGPT': 'ChatGPT',
+            'HTK_ASSISTANT_API_KEY_LLM_GEMINI': 'Gemini',
+        }
+
+        available_env_models = HtkOsEnvironment.getModelsAvailableInEnvironment()
+
+        if not available_env_models:
+            return ['No models available']
+
+        available_models = [
+            model_mapping[env_model]
+            for env_model in available_env_models
+            if env_model in model_mapping
+        ]
+
+        return available_models if available_models else ['No models available']
     
     def submit_on_recon(self, response):
         selected_model = self.model_var.get()
@@ -341,7 +348,7 @@ class MainFrame(Subject):
                     self.actions[item.id]()
 
     def set_state_mixer_busy(self, isBusy):
-        print("ENGINE CHANGE STATE", isBusy)
+        self.logger.log(f"Engine Mixer Busy State Changed: {isBusy}")
         self._onMixerBusy = isBusy
 
         if self._onMixerBusy:
@@ -451,6 +458,10 @@ class MainFrame(Subject):
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
 
+    def enabled_input_frame(self):
+        self._progressbar.stop()
+        self.submit_button.configure(state="enabled")
+        
     def run(self):
         self.root.mainloop()
         
