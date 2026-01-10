@@ -73,7 +73,7 @@ class HtkArgs:
             print()
             print("HtkAssistantAI Command Line Interface Documentation")
             print("This application is designed to assist users with AI-powered interactions.")
-            print("For more information, visit the official documentation website.")
+            print("For more information, visit the official documentation website. -> www.github.com/lsbloo/HtkAssistantAI")
             print()
             
             print("Arguments Description:")
@@ -96,3 +96,7 @@ class HtkArgs:
             print("--verbose\tHabilita a saída detalhada para registros mais completos.")
             print("--init\tAtiva o modo de inicialização, inicia a ferramenta em modo gráfico")
             print("--doc\tExibe a documentação da aplicação HtkAssistantAI.")
+            
+            print()
+            print()
+            print("Para mais informações, visite o site do projeto. -> www.github.com/lsbloo/HtkAssistantAI")
