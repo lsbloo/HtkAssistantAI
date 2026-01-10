@@ -2,6 +2,7 @@ import argparse
 from core.log.htk_logger import HtkApplicationLogger
 from core.utils.os_env.os_env import HtkOsEnvironment
 from core.setup.config_environment import initialize_environment
+import os
 import time
 
 class HtkArgs:
@@ -11,6 +12,7 @@ class HtkArgs:
         self._parser.add_argument('--models', action='store_true', help='List of models to use, are found in environment variables, separated by comma')
         self._parser.add_argument('--verbose', action='store_true', help='Enable verbose output')
         self._parser.add_argument('--init', action='store_true', help='Activate initialization mode')
+        self._parser.add_argument('--env', action='store_true', help='Description for environment variables')
         self._parser.add_argument('--doc', action='store_true', help='Show documentation')
         self._args = self._parser.parse_args()
         self._logger.log("HtkAssistantAI Command Line Arguments Initialized and Parsed")
@@ -18,6 +20,7 @@ class HtkArgs:
     def exec(self, onInitCallback=None):
         self.init(onInitCallback=onInitCallback)
         self.show_models()
+        self.show_env_description()
         self.show_documentation()
         
     def show_models(self):
@@ -34,6 +37,35 @@ class HtkArgs:
             time.sleep(1)  # Simulate some initialization work
             self._logger.log("Initialization complete.")
             onInitCallback()
+    
+    def show_env_description(self):
+        if self._args.env:
+            initialize_environment()
+            self._logger.log("Showing environment variables description...")
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("Environment Variables Value:")
+            print("--------------------------------------------------------------------------------------------------------------------------------------")
+            print("Variable\t       Value")
+
+            # Import the environment configuration dynamically
+            from core.setup.config_environment import environments_config
+            from core.setup.config_environment import environments_config_description
+
+            # Iterate through the environment variables and print their values
+            for variable, value in environments_config.items():
+                print(f"{variable}\t{value}")
+            print()
+            print()
+            print()
+            
+            print("Environment Variables Description:")
+            print("--------------------------------------------------------------------------------------------------------------------------------------")
+            print("Variable\t       Description")
+            # Iterate through the environment variables and print their descriptions
+            for variable, value in environments_config_description.items():
+                print(f"{variable}\t{value}")
+            
+            print()
     
     def show_documentation(self):
         if self._args.doc:
