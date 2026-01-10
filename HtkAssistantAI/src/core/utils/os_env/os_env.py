@@ -46,6 +46,7 @@ class HtkOsEnvironment:
     def getModelsAvailableInEnvironment():
         available_models = []
         required_keys = {
+                'HTK_ASSISTANT_API_KEY_LLM_ANTHROPIC': "",
                 'HTK_ASSISTANT_API_KEY_LLM_GROQ': "",
                 'HTK_ASSISTANT_API_KEY_LLM_CHATGPT': "",
                 'HTK_ASSISTANT_API_KEY_LLM_GEMINI': "",

@@ -1,8 +1,15 @@
+from abc import ABC, abstractmethod
 
 
-# not yet implemented
-class HtkClientBase(object):
-    pass
+class HtkClientBase(ABC):
+    @abstractmethod
+    def chat(self, message, additionalContext=None) -> str:
+        pass
+    
+    @abstractmethod
+    def chat_with_roles(self, message, role, additionalContext=None) -> str:
+        pass
+
 
 
 class HtkLLMOptionsBase(object):
