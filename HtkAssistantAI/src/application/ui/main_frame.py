@@ -16,6 +16,7 @@ import webbrowser
 from core.context.htk_loader_context import HtkLoaderContext
 from core.context.htk_speaker_context_system import HtkSpeakerContextSystemInitializer
 from threading import Thread
+from .webview_frame import WebViewFrame
 
 class MainFrame(Subject):
     def create_root(self):
@@ -243,6 +244,12 @@ class MainFrame(Subject):
     def stop_recon(self):
         self._htkAudioPlayer.stopRecon()
         
+    def init_web(self):
+        self._webViewFrame = WebViewFrame(self.root)
+    
+    def stop_web(self):
+        self._webViewFrame.destroy()
+        
     def create_configuration_view(self):
         self.notebook = ctk.CTkTabview(
             self.root,
@@ -368,12 +375,14 @@ class MainFrame(Subject):
             "recon": self.init_recon,
             "contexto": self.init_context_options,
             "som": self.init_speaker_system,
+            "web": self.init_web,
         }
         
         self.actions_disable = {
             "recon": self.stop_recon,
             "contexto": self.stop_context_options,
             "som": self.stop_speaker_system,
+            "web": self.stop_web,
         }
         
         ## System Speaker Audio Context
@@ -449,6 +458,7 @@ class MainFrame(Subject):
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
             self.play_audio_with_recon(response, onMixerBusy= lambda res: self.set_state_mixer_busy(res))
+            self._webViewFrame.add_llm_response(response['response'])
         else:
             self.text_input_output.configure(state='normal')
             self.text_input_output.delete("1.0", tk.END)
@@ -457,6 +467,7 @@ class MainFrame(Subject):
             
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
+            self._webViewFrame.add_llm_response(response['response'])
 
     def enabled_input_frame(self):
         self._progressbar.stop()
