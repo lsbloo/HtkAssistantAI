@@ -458,6 +458,7 @@ class MainFrame(Subject):
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
             self.play_audio_with_recon(response, onMixerBusy= lambda res: self.set_state_mixer_busy(res))
+            self._webViewFrame.add_llm_response(response['response'])
         else:
             self.text_input_output.configure(state='normal')
             self.text_input_output.delete("1.0", tk.END)
@@ -466,6 +467,7 @@ class MainFrame(Subject):
             
             self.text_input_output.insert(tk.END, response['response'])
             self.text_input_output.configure(state='disabled')
+            self._webViewFrame.add_llm_response(response['response'])
 
     def enabled_input_frame(self):
         self._progressbar.stop()

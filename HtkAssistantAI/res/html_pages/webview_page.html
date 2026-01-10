@@ -16,7 +16,7 @@
 
       header {
         background-color: #ddd;
-        color: #252526;
+        color: #ddd;
         padding: 10px 20px;
         text-align: center;
       }
@@ -32,10 +32,10 @@
       }
 
       .response-area {
+        visibility: hidden;
         border: 1px solid #ddd;
         border-radius: 24px;
         padding: 10px;
-        height: 400px;
         overflow-y: auto;
         background-color: #252526;
         margin-bottom: 20px;
@@ -45,7 +45,9 @@
         margin: 10px 0;
         padding: 10px;
         background: #252526;
-        border-radius: 24px;
+        color: #ddd;
+        word-wrap: break-word;
+        white-space: pre-wrap;
       }
 
     </style>
@@ -53,11 +55,10 @@
   <body>
     <header>
       <h1>HTK Assistant AI</h1>
+      <h2>Visualização de respostas dos modelos em modo web</h2>
     </header>
     <div class="container">
-      <div class="response-area" id="responseArea">
-        <!-- Respostas geradas pelas LLMs aparecerão aqui -->
-      </div>
+      <div class="response-area" id="responseArea"></div>
     </div>
   </body>
 </html>
