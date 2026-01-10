@@ -21,7 +21,8 @@
         "model_sonnet_selected": "O modelo Claude Sonnet foi selecionado.",
         "model_openai_selected": "O modelo OpenAI foi selecionado.",
         "model_gemini_selected": "O modelo Gemini foi selecionado.",
-        "error_model_not_loaded": "Erro: O modelo selecionado não está carregado."
+        "error_model_not_loaded": "Erro: O modelo selecionado não está carregado.",
+        "network_failure": "Falha na rede. Para uma melhor experiência, verifique sua conexão com a internet."
     },
     "language": "pt-BR",
     "context": [
