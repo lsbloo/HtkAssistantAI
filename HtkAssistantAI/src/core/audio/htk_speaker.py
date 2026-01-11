@@ -17,10 +17,7 @@ class HtkSpeaker:
 
     async def _generate_audio(self, text, filename):
         communicate = edge_tts.Communicate(
-            text,
-            voice="pt-BR-AntonioNeural",
-            rate="+20%",
-            volume="+100%"
+            text, voice="pt-BR-AntonioNeural", rate="+20%", volume="+100%"
         )
         await communicate.save(filename)
 
@@ -39,15 +36,13 @@ class HtkSpeaker:
             while pygame.mixer.music.get_busy():
                 time.sleep(0.05)
 
-            pygame.mixer.music.unload()  
-            os.remove(filename)         
+            pygame.mixer.music.unload()
+            os.remove(filename)
 
             if onMixerBusy:
                 onMixerBusy(False)
 
     def play_audio(self, text, onMixerBusy=None):
         threading.Thread(
-            target=self._worker,
-            args=(text, onMixerBusy),
-            daemon=True
+            target=self._worker, args=(text, onMixerBusy), daemon=True
         ).start()

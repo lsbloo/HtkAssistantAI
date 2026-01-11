@@ -6,7 +6,7 @@
         "goodbye": "Até logo! Se precisar de mais ajuda, estarei aqui.",
         "error": "Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.",
         "listening": "Estou ouvindo...",
-        "processing": "Processando sua solicitação...",
+        "processing": "Pensando...",
         "confirmation": "Entendi. Vou cuidar disso para você.",
         "recognition_failed": "Desculpe, não consegui entender. Poderia repetir, por favor?",
         "recognition_activate": "Ative o reconhecimento de voz.",

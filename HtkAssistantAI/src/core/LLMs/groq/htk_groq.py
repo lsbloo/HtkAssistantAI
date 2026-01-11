@@ -1,9 +1,15 @@
-
 from langchain_groq import ChatGroq
 from langchain.memory import ConversationBufferMemory
 from langchain.prompts import ChatPromptTemplate
 from pydantic import BaseModel
-from langchain.schema import AIMessage, BaseMessage, ChatMessage, FunctionMessage, HumanMessage, SystemMessage
+from langchain.schema import (
+    AIMessage,
+    BaseMessage,
+    ChatMessage,
+    FunctionMessage,
+    HumanMessage,
+    SystemMessage,
+)
 from ..model.roles import RoleType
 import warnings
 from ..base.htk_base import HtkClientBase
@@ -53,26 +59,32 @@ Dependencies:
 GROQ_CLIENT_DEFAULT_ROLE = "user"
 GROQ_CLIENT_DEFAULT_MODEL = "llama-3.3-70b-versatile"
 
+
 class HtkGroqClient(HtkClientBase):
     def __init__(self, api_key=None):
         api_key = api_key
         if not api_key:
-            raise ValueError("API key for Groq is not set in the environment configuration.")
-        
-        self.client = ChatGroq(groq_api_key=api_key, 
-                               model_name=GROQ_CLIENT_DEFAULT_MODEL,
-                               temperature=0.7, 
-                               max_tokens=1000,
-                               )
-        
+            raise ValueError(
+                "API key for Groq is not set in the environment configuration."
+            )
+
+        self.client = ChatGroq(
+            groq_api_key=api_key,
+            model_name=GROQ_CLIENT_DEFAULT_MODEL,
+            temperature=0.7,
+            max_tokens=1000,
+        )
+
         with warnings.catch_warnings():
-            warnings.filterwarnings('ignore', category=DeprecationWarning)
-            try: 
-                self.memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+            warnings.filterwarnings("ignore", category=DeprecationWarning)
+            try:
+                self.memory = ConversationBufferMemory(
+                    memory_key="chat_history", return_messages=True
+                )
             except Exception as e:
                 print("Error initializing ConversationBufferMemory:", str(e))
                 self.memory = None
-                
+
     """
         Handles a chat interaction by sending a message to the client and managing the chat history.
         Args:
@@ -88,62 +100,80 @@ class HtkGroqClient(HtkClientBase):
             6. Saves the input and output context to memory.
             7. Returns the client's response as a string.
     """
+
     def chat(self, message, additionalContext=None) -> str:
         input_message = Message(content=message)
-        
+
         if additionalContext != None:
-            self.memory.chat_memory.add_message(SystemMessage(content=additionalContext))
-        
+            self.memory.chat_memory.add_message(
+                SystemMessage(content=additionalContext)
+            )
+
         chat_history = self.memory.chat_memory.messages
-        
-        system_message = SystemMessage(content='You are a helpful assistant.')
-        formatted_history = [system_message] + chat_history + [HumanMessage(content=input_message.content)]
-        
-        response = self.client.invoke(input = formatted_history)
-        
-        self.memory.save_context({"input": input_message.content}, {"output": str(response.content)})
-        
-        return str(response.content)
-    
-    def chat_with_roles(self, message, role, additionalContext=None) -> str:
-        input_message = Message(content=message)
-        
-        if additionalContext != None:
-            self.memory.chat_memory.add_message(SystemMessage(content=additionalContext))
-        
-        chat_history = self.memory.chat_memory.messages
-        
-        if(role == RoleType.SYSTEM):
-            system_message = SystemMessage(content='You are a system.')
-        elif(role == RoleType.ASSISTANT):
-            system_message = AIMessage(content='You are the assistant.')
-        else:
-            system_message = HumanMessage(content='You are the user.')
-            
-        formatted_history = [system_message] + chat_history + [HumanMessage(content=input_message.content)]
-        
-        response = self.client.invoke(input = formatted_history)
-        
-        self.memory.save_context({"input": input_message.content}, {"output": str(response.content)})
+
+        system_message = SystemMessage(content="You are a helpful assistant.")
+        formatted_history = (
+            [system_message]
+            + chat_history
+            + [HumanMessage(content=input_message.content)]
+        )
+
+        response = self.client.invoke(input=formatted_history)
+
+        self.memory.save_context(
+            {"input": input_message.content}, {"output": str(response.content)}
+        )
 
         return str(response.content)
-       
-   
+
+    def chat_with_roles(self, message, role, additionalContext=None) -> str:
+        input_message = Message(content=message)
+
+        if additionalContext != None:
+            self.memory.chat_memory.add_message(
+                SystemMessage(content=additionalContext)
+            )
+
+        chat_history = self.memory.chat_memory.messages
+
+        if role == RoleType.SYSTEM:
+            system_message = SystemMessage(content="You are a system.")
+        elif role == RoleType.ASSISTANT:
+            system_message = AIMessage(content="You are the assistant.")
+        else:
+            system_message = HumanMessage(content="You are the user.")
+
+        formatted_history = (
+            [system_message]
+            + chat_history
+            + [HumanMessage(content=input_message.content)]
+        )
+
+        response = self.client.invoke(input=formatted_history)
+
+        self.memory.save_context(
+            {"input": input_message.content}, {"output": str(response.content)}
+        )
+
+        return str(response.content)
+
 
 class Message(BaseModel):
     content: str
-    
+
 
 class HtkGroqInitializer:
     _instance = None
     _instance_groq = None
-    
+
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
-    
-    def getInstanceGroq(self): 
+
+    def getInstanceGroq(self):
         if self._instance_groq is None:
-            self._instance_groq = HtkGroqClient(environments_config.get('HTK_ASSISTANT_API_KEY_LLM_GROQ'))
+            self._instance_groq = HtkGroqClient(
+                environments_config.get("HTK_ASSISTANT_API_KEY_LLM_GROQ")
+            )
         return self._instance_groq

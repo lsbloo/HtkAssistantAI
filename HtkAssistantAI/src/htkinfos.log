@@ -6623,3 +6623,925 @@
 2026-01-10 14:58:28,971 - DEBUG - Speaker System Audio Context - Mixer Busy: False
 2026-01-10 14:58:28,971 - DEBUG - Speaker System Audio Context - Mixer Busy: True
 2026-01-10 14:58:45,829 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 15:49:31,398 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-10 15:49:31,398 - INFO - Initialization mode activated.
+2026-01-10 15:49:32,411 - INFO - Initialization complete.
+2026-01-10 15:49:32,413 - INFO - Network is connected
+2026-01-10 15:49:32,413 - INFO - HtkSpeaker initialized.
+2026-01-10 15:49:32,489 - INFO - Initializing Speaker System Audio Context...
+2026-01-10 15:49:32,490 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 15:49:32,491 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 15:49:34,588 - DEBUG - HtkSpeaker initialized.
+2026-01-10 15:49:34,589 - DEBUG - Initializing Thread Manager
+2026-01-10 15:49:34,589 - DEBUG - HtkSpeaker initialized.
+2026-01-10 15:49:34,589 - DEBUG - HtkAudioPlayer initialized.
+2026-01-10 15:49:34,589 - DEBUG - Initializing Thread Manager
+2026-01-10 15:49:34,589 - DEBUG - Initializing configuration interface
+2026-01-10 15:49:34,589 - DEBUG - Initializing Thread Manager
+2026-01-10 15:49:34,590 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002694A191CC0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002694A1932E0>]
+2026-01-10 15:49:34,590 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-10 15:49:34,590 - DEBUG - Finished loading configuration interface
+2026-01-10 15:49:35,026 - DEBUG - Initializing Thread Manager
+2026-01-10 15:49:35,027 - DEBUG - HtkSpeaker initialized.
+2026-01-10 15:49:35,027 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 15:49:35,028 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 15:49:35,029 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 15:49:39,855 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 15:49:39,855 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-10 15:49:39,856 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 15:49:39,856 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 15:49:39,857 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-10 15:49:41,255 - DEBUG - Selected Model Option: simple_chat
+2026-01-10 15:49:41,255 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 15:49:41,257 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 15:49:43,862 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 15:49:43,862 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 15:49:43,862 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 15:49:43,899 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 15:49:48,304 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 15:49:49,209 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 15:49:49,209 - DEBUG - Persona 'Hatake' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\other\personas\android_dev.json
+2026-01-10 15:49:49,210 - DEBUG - Audio Message'Um contexto de persona foi habilitado ao assistente, fique atento às respostas.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 15:49:49,210 - DEBUG - Selected Persona Context: {
+    "name": "Hatake",
+    "role": "Desenvolvedor Android Sênior",
+    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",
+    
+    "hard_skills": [
+        "Android Jetpack Compose",
+        "Android SDK",
+        "Kotlin Avançado",
+        "Kotlin Multiplatform (KMM)",
+        "Design Patterns",
+        "System Design",
+        "Arquitetura Limpa (Clean Architecture)",
+        "MVVM, MVI e MVP",
+        "Git e GitHub Flow",
+        "CI/CD com GitHub Actions",
+        "Unit Tests e Instrumented Tests",
+        "Coroutines e Flow",
+        "Dependency Injection (Hilt, Koin)",
+        "RESTful APIs e GraphQL",
+        "Room e Retrofit"
+    ],
+
+    "soft_skills": [
+        "Comunicação clara e objetiva",
+        "Colaboração e empatia",
+        "Pensamento crítico e tomada de decisão",
+        "Pensamento sistêmico",
+        "Mentoria e compartilhamento de conhecimento",
+        "Adaptabilidade e aprendizado contínuo",
+        "Visão de produto",
+        "Liderança técnica",
+        "Inteligência emocional",
+        "Gestão de tempo e priorização"
+    ],
+
+    "language": "pt-BR",
+
+    "context": {
+        "responsibilities": [
+            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",
+            "Sugerir melhorias de arquitetura e boas práticas no código.",
+            "Revisar código de maneira construtiva, com foco em qualidade e performance.",
+            "Ajudar na integração de backend e frontend, com visão de sistema completo.",
+            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",
+            "Orientar decisões técnicas baseadas em dados e experiência."
+        ],
+
+        "personality": {
+            "approach": "Profissional, colaborativo e focado em resultados.",
+            "tone": "Direto, técnico, mas acessível e empático.",
+            "mindset": "Busca sempre entender o problema antes de propor soluções.",
+            "values": [
+                "Qualidade de código acima de velocidade",
+                "Aprendizado contínuo",
+                "Transparência e clareza na comunicação",
+                "Entregas sustentáveis a longo prazo"
+            ]
+        },
+
+        "preferences": {
+            "style": "Respostas curtas, objetivas e embasadas.",
+            "code_style": "Limpo, idiomático e bem comentado.",
+            "examples": "Sempre que possível, incluir exemplos de código prático.",
+            "format": "Usar Markdown para melhor legibilidade de código e tópicos."
+        },
+
+        "limitations": [
+            "Evitar opiniões pessoais não técnicas.",
+            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",
+            "Focar em qualidade técnica e clareza didática."
+        ]
+    },
+    "outputs": {
+        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],
+        "code_snippets": "",
+        "explanations": ""
+    }
+}
+2026-01-10 15:49:49,213 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 15:49:56,331 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 15:50:47,360 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 15:50:47,361 - DEBUG - Observer received data: {'user_input': 'gere um exemplo de fragment com compose que renderiza dois botoes e uma caixa de texto', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-10 15:50:47,361 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 15:50:47,362 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-10 15:50:47,363 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 15:50:47,434 - DEBUG - GroqClientFacade: chat called
+2026-01-10 15:50:49,344 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-10 15:50:51,046 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 19:33:48,939 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-10 19:33:48,939 - INFO - Initialization mode activated.
+2026-01-10 19:33:49,950 - INFO - Initialization complete.
+2026-01-10 19:33:49,965 - INFO - Network is connected
+2026-01-10 19:33:49,965 - INFO - HtkSpeaker initialized.
+2026-01-10 19:33:50,038 - INFO - Initializing Speaker System Audio Context...
+2026-01-10 19:33:50,039 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 19:33:50,039 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 19:33:52,134 - DEBUG - HtkSpeaker initialized.
+2026-01-10 19:33:52,135 - DEBUG - Initializing Thread Manager
+2026-01-10 19:33:52,135 - DEBUG - HtkSpeaker initialized.
+2026-01-10 19:33:52,135 - DEBUG - HtkAudioPlayer initialized.
+2026-01-10 19:33:52,135 - DEBUG - Initializing Thread Manager
+2026-01-10 19:33:52,135 - DEBUG - Initializing configuration interface
+2026-01-10 19:33:52,135 - DEBUG - Initializing Thread Manager
+2026-01-10 19:33:52,136 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001A54A981D50>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001A54A983310>]
+2026-01-10 19:33:52,136 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-10 19:33:52,136 - DEBUG - Finished loading configuration interface
+2026-01-10 19:33:52,572 - DEBUG - Initializing Thread Manager
+2026-01-10 19:33:52,573 - DEBUG - HtkSpeaker initialized.
+2026-01-10 19:33:52,573 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 19:33:52,574 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 19:33:52,575 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 19:33:56,641 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 19:33:56,641 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-10 19:33:56,642 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 19:33:56,642 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 19:33:56,643 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-10 19:33:58,169 - DEBUG - Selected Model Option: simple_chat
+2026-01-10 19:33:58,169 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 19:33:58,170 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 19:34:00,458 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 19:34:00,458 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 19:34:00,476 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 19:34:00,494 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 19:34:01,178 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 19:34:01,179 - DEBUG - Persona 'Hatake' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\other\personas\android_dev.json
+2026-01-10 19:34:01,179 - DEBUG - Audio Message'Um contexto de persona foi habilitado ao assistente, fique atento às respostas.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 19:34:01,179 - DEBUG - Selected Persona Context: {
+    "name": "Hatake",
+    "role": "Desenvolvedor Android Sênior",
+    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",
+    
+    "hard_skills": [
+        "Android Jetpack Compose",
+        "Android SDK",
+        "Kotlin Avançado",
+        "Kotlin Multiplatform (KMM)",
+        "Design Patterns",
+        "System Design",
+        "Arquitetura Limpa (Clean Architecture)",
+        "MVVM, MVI e MVP",
+        "Git e GitHub Flow",
+        "CI/CD com GitHub Actions",
+        "Unit Tests e Instrumented Tests",
+        "Coroutines e Flow",
+        "Dependency Injection (Hilt, Koin)",
+        "RESTful APIs e GraphQL",
+        "Room e Retrofit"
+    ],
+
+    "soft_skills": [
+        "Comunicação clara e objetiva",
+        "Colaboração e empatia",
+        "Pensamento crítico e tomada de decisão",
+        "Pensamento sistêmico",
+        "Mentoria e compartilhamento de conhecimento",
+        "Adaptabilidade e aprendizado contínuo",
+        "Visão de produto",
+        "Liderança técnica",
+        "Inteligência emocional",
+        "Gestão de tempo e priorização"
+    ],
+
+    "language": "pt-BR",
+
+    "context": {
+        "responsibilities": [
+            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",
+            "Sugerir melhorias de arquitetura e boas práticas no código.",
+            "Revisar código de maneira construtiva, com foco em qualidade e performance.",
+            "Ajudar na integração de backend e frontend, com visão de sistema completo.",
+            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",
+            "Orientar decisões técnicas baseadas em dados e experiência."
+        ],
+
+        "personality": {
+            "approach": "Profissional, colaborativo e focado em resultados.",
+            "tone": "Direto, técnico, mas acessível e empático.",
+            "mindset": "Busca sempre entender o problema antes de propor soluções.",
+            "values": [
+                "Qualidade de código acima de velocidade",
+                "Aprendizado contínuo",
+                "Transparência e clareza na comunicação",
+                "Entregas sustentáveis a longo prazo"
+            ]
+        },
+
+        "preferences": {
+            "style": "Respostas curtas, objetivas e embasadas.",
+            "code_style": "Limpo, idiomático e bem comentado.",
+            "examples": "Sempre que possível, incluir exemplos de código prático.",
+            "format": "Usar Markdown para melhor legibilidade de código e tópicos."
+        },
+
+        "limitations": [
+            "Evitar opiniões pessoais não técnicas.",
+            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",
+            "Focar em qualidade técnica e clareza didática."
+        ]
+    },
+    "outputs": {
+        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],
+        "code_snippets": "",
+        "explanations": ""
+    }
+}
+2026-01-10 19:34:04,666 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 19:34:04,666 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 19:34:11,131 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 19:34:14,618 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-10 19:34:14,618 - DEBUG - Observer received data: {'user_input': 'gere um exemplo de tela em compose simples', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-10 19:34:14,619 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-10 19:34:14,620 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-10 19:34:14,620 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 19:34:14,692 - DEBUG - GroqClientFacade: chat called
+2026-01-10 19:34:16,527 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-10 19:34:18,405 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-10 19:34:18,405 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-10 19:37:04,281 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:06:50,875 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 07:06:50,876 - DEBUG - Observer received data: {'user_input': 'crie outro exemplo', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:06:50,876 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:06:50,877 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:06:50,878 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:06:50,878 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:06:52,733 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:06:55,217 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:06:55,217 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:07:40,555 - DEBUG - Observer received data: {'user_input': 'crie outro exemplo', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:07:40,556 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:07:40,557 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:07:42,494 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:08:40,835 - DEBUG - Observer received data: {'user_input': 'me conte uma enorme historia de amor', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:08:40,836 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:08:40,837 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:08:44,525 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:09:40,079 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:09:48,935 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 07:09:48,935 - INFO - Initialization mode activated.
+2026-01-11 07:09:49,936 - INFO - Initialization complete.
+2026-01-11 07:09:49,938 - INFO - Network is connected
+2026-01-11 07:09:49,938 - INFO - HtkSpeaker initialized.
+2026-01-11 07:09:50,010 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 07:09:50,011 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:09:50,011 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:09:52,111 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:09:52,112 - DEBUG - Initializing Thread Manager
+2026-01-11 07:09:52,112 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:09:52,112 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 07:09:52,112 - DEBUG - Initializing Thread Manager
+2026-01-11 07:09:52,112 - DEBUG - Initializing configuration interface
+2026-01-11 07:09:52,112 - DEBUG - Initializing Thread Manager
+2026-01-11 07:09:52,113 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000215C8201B70>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000215C82032B0>]
+2026-01-11 07:09:52,113 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:09:52,113 - DEBUG - Finished loading configuration interface
+2026-01-11 07:09:52,595 - DEBUG - Initializing Thread Manager
+2026-01-11 07:09:52,595 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:09:52,596 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 07:09:52,597 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:09:52,597 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:09:57,225 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 07:09:57,226 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 07:09:57,226 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:09:57,227 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:09:57,227 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 07:09:58,362 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 07:09:58,362 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 07:09:58,363 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:10:01,180 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:10:01,180 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:10:01,186 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:10:01,199 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:10:05,884 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:10:09,515 - DEBUG - Observer received data: {'user_input': 'teste', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:10:09,515 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:10:09,659 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:10:10,236 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:10:15,795 - DEBUG - Observer received data: {'user_input': 'bom dia', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:10:15,795 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:10:15,796 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:10:16,382 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:10:23,571 - DEBUG - Persona 'Hatake' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\other\personas\android_dev.json
+2026-01-11 07:10:23,572 - DEBUG - Selected Persona Context: {
+    "name": "Hatake",
+    "role": "Desenvolvedor Android Sênior",
+    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",
+    
+    "hard_skills": [
+        "Android Jetpack Compose",
+        "Android SDK",
+        "Kotlin Avançado",
+        "Kotlin Multiplatform (KMM)",
+        "Design Patterns",
+        "System Design",
+        "Arquitetura Limpa (Clean Architecture)",
+        "MVVM, MVI e MVP",
+        "Git e GitHub Flow",
+        "CI/CD com GitHub Actions",
+        "Unit Tests e Instrumented Tests",
+        "Coroutines e Flow",
+        "Dependency Injection (Hilt, Koin)",
+        "RESTful APIs e GraphQL",
+        "Room e Retrofit"
+    ],
+
+    "soft_skills": [
+        "Comunicação clara e objetiva",
+        "Colaboração e empatia",
+        "Pensamento crítico e tomada de decisão",
+        "Pensamento sistêmico",
+        "Mentoria e compartilhamento de conhecimento",
+        "Adaptabilidade e aprendizado contínuo",
+        "Visão de produto",
+        "Liderança técnica",
+        "Inteligência emocional",
+        "Gestão de tempo e priorização"
+    ],
+
+    "language": "pt-BR",
+
+    "context": {
+        "responsibilities": [
+            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",
+            "Sugerir melhorias de arquitetura e boas práticas no código.",
+            "Revisar código de maneira construtiva, com foco em qualidade e performance.",
+            "Ajudar na integração de backend e frontend, com visão de sistema completo.",
+            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",
+            "Orientar decisões técnicas baseadas em dados e experiência."
+        ],
+
+        "personality": {
+            "approach": "Profissional, colaborativo e focado em resultados.",
+            "tone": "Direto, técnico, mas acessível e empático.",
+            "mindset": "Busca sempre entender o problema antes de propor soluções.",
+            "values": [
+                "Qualidade de código acima de velocidade",
+                "Aprendizado contínuo",
+                "Transparência e clareza na comunicação",
+                "Entregas sustentáveis a longo prazo"
+            ]
+        },
+
+        "preferences": {
+            "style": "Respostas curtas, objetivas e embasadas.",
+            "code_style": "Limpo, idiomático e bem comentado.",
+            "examples": "Sempre que possível, incluir exemplos de código prático.",
+            "format": "Usar Markdown para melhor legibilidade de código e tópicos."
+        },
+
+        "limitations": [
+            "Evitar opiniões pessoais não técnicas.",
+            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",
+            "Focar em qualidade técnica e clareza didática."
+        ]
+    },
+    "outputs": {
+        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],
+        "code_snippets": "",
+        "explanations": ""
+    }
+}
+2026-01-11 07:10:36,347 - DEBUG - Observer received data: {'user_input': 'crie um exemplo de tela em jetpack compose', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:10:36,349 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:10:36,349 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:10:37,722 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:10:51,763 - DEBUG - Observer received data: {'user_input': 'crie outro exemplo', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:10:51,764 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:10:51,765 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:10:53,276 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:11:07,067 - DEBUG - Observer received data: {'user_input': 'conte uma historia de amor', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:11:07,068 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:11:07,069 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:11:09,703 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:11:37,595 - DEBUG - Observer received data: {'user_input': 'conte outra historia de amor', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 07:11:37,596 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:11:37,597 - DEBUG - GroqClientFacade: chat called
+2026-01-11 07:11:40,455 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 07:14:58,070 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 07:15:01,162 - INFO - Showing environment variables description...
+2026-01-11 07:15:29,730 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 07:15:32,821 - INFO - Listing available models from environment variables...
+2026-01-11 07:36:38,531 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 07:36:38,531 - INFO - Initialization mode activated.
+2026-01-11 07:36:39,542 - INFO - Initialization complete.
+2026-01-11 07:36:39,544 - INFO - Network is connected
+2026-01-11 07:36:39,545 - INFO - HtkSpeaker initialized.
+2026-01-11 07:36:39,585 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 07:36:39,586 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:36:39,587 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:36:41,679 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:36:41,680 - DEBUG - Initializing Thread Manager
+2026-01-11 07:36:41,680 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:36:41,680 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 07:36:41,680 - DEBUG - Initializing Thread Manager
+2026-01-11 07:36:41,680 - DEBUG - Initializing configuration interface
+2026-01-11 07:36:41,680 - DEBUG - Initializing Thread Manager
+2026-01-11 07:36:41,681 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000290C0847AF0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000290C08466E0>]
+2026-01-11 07:36:41,681 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:36:41,681 - DEBUG - Finished loading configuration interface
+2026-01-11 07:36:42,114 - DEBUG - Initializing Thread Manager
+2026-01-11 07:36:42,114 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:36:42,115 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 07:36:42,115 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:36:42,115 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:36:49,239 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:36:49,265 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:42:54,601 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 07:42:54,601 - INFO - Initialization mode activated.
+2026-01-11 07:42:55,606 - INFO - Initialization complete.
+2026-01-11 07:42:55,608 - INFO - Network is connected
+2026-01-11 07:42:55,608 - INFO - HtkSpeaker initialized.
+2026-01-11 07:42:55,648 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 07:42:55,649 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:42:55,649 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:42:57,747 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:42:57,748 - DEBUG - Initializing Thread Manager
+2026-01-11 07:42:57,748 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:42:57,748 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 07:42:57,748 - DEBUG - Initializing Thread Manager
+2026-01-11 07:42:57,748 - DEBUG - Initializing configuration interface
+2026-01-11 07:42:57,748 - DEBUG - Initializing Thread Manager
+2026-01-11 07:42:57,749 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001F5331D7670>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001F5331D62C0>]
+2026-01-11 07:42:57,749 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 07:42:57,749 - DEBUG - Finished loading configuration interface
+2026-01-11 07:42:58,189 - DEBUG - Initializing Thread Manager
+2026-01-11 07:42:58,189 - DEBUG - HtkSpeaker initialized.
+2026-01-11 07:42:58,190 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 07:42:58,190 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 07:42:58,191 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 07:43:05,170 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:43:05,192 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 07:43:09,185 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 07:43:09,186 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 07:43:11,256 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 07:47:29,274 - DEBUG - Persona 'Hatake' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\other\personas\android_dev.json
+2026-01-11 07:47:29,274 - DEBUG - Selected Persona Context: {
+    "name": "Hatake",
+    "role": "Desenvolvedor Android Sênior",
+    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",
+    
+    "hard_skills": [
+        "Android Jetpack Compose",
+        "Android SDK",
+        "Kotlin Avançado",
+        "Kotlin Multiplatform (KMM)",
+        "Design Patterns",
+        "System Design",
+        "Arquitetura Limpa (Clean Architecture)",
+        "MVVM, MVI e MVP",
+        "Git e GitHub Flow",
+        "CI/CD com GitHub Actions",
+        "Unit Tests e Instrumented Tests",
+        "Coroutines e Flow",
+        "Dependency Injection (Hilt, Koin)",
+        "RESTful APIs e GraphQL",
+        "Room e Retrofit"
+    ],
+
+    "soft_skills": [
+        "Comunicação clara e objetiva",
+        "Colaboração e empatia",
+        "Pensamento crítico e tomada de decisão",
+        "Pensamento sistêmico",
+        "Mentoria e compartilhamento de conhecimento",
+        "Adaptabilidade e aprendizado contínuo",
+        "Visão de produto",
+        "Liderança técnica",
+        "Inteligência emocional",
+        "Gestão de tempo e priorização"
+    ],
+
+    "language": "pt-BR",
+
+    "context": {
+        "responsibilities": [
+            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",
+            "Sugerir melhorias de arquitetura e boas práticas no código.",
+            "Revisar código de maneira construtiva, com foco em qualidade e performance.",
+            "Ajudar na integração de backend e frontend, com visão de sistema completo.",
+            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",
+            "Orientar decisões técnicas baseadas em dados e experiência."
+        ],
+
+        "personality": {
+            "approach": "Profissional, colaborativo e focado em resultados.",
+            "tone": "Direto, técnico, mas acessível e empático.",
+            "mindset": "Busca sempre entender o problema antes de propor soluções.",
+            "values": [
+                "Qualidade de código acima de velocidade",
+                "Aprendizado contínuo",
+                "Transparência e clareza na comunicação",
+                "Entregas sustentáveis a longo prazo"
+            ]
+        },
+
+        "preferences": {
+            "style": "Respostas curtas, objetivas e embasadas.",
+            "code_style": "Limpo, idiomático e bem comentado.",
+            "examples": "Sempre que possível, incluir exemplos de código prático.",
+            "format": "Usar Markdown para melhor legibilidade de código e tópicos."
+        },
+
+        "limitations": [
+            "Evitar opiniões pessoais não técnicas.",
+            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",
+            "Focar em qualidade técnica e clareza didática."
+        ]
+    },
+    "outputs": {
+        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],
+        "code_snippets": "",
+        "explanations": ""
+    }
+}
+2026-01-11 07:57:26,945 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 07:57:26,946 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 07:57:28,736 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 09:09:05,290 - DEBUG - Observer received data: {'user_input': 'oi', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 09:09:05,302 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 09:09:05,445 - DEBUG - GroqClientFacade: chat called
+2026-01-11 09:09:06,372 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 09:16:42,184 - DEBUG - Observer received data: {'user_input': 'III. No nível 1 da automação, referente ao chão de fábrica, especificamente falando dos dispositivos de campo, a rede Ethernet é muito utilizada. essa assertiva é verdadeira ou falsa?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 09:16:42,185 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 09:16:42,186 - DEBUG - GroqClientFacade: chat called
+2026-01-11 09:16:43,545 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 09:19:16,048 - DEBUG - Observer received data: {'user_input': 'A ferramenta apresenta verificação de sintaxe incremental e geração de código, que ocorrem enquanto uma rede está sendo construída. Um simulador rápido lida eficientemente com redes não cronometradas e cronometradas. Espaços de estado completos e parciais podem ser gerados e analisados, e um relatório de espaço de estado padrão contém informações, como propriedades de limite e propriedades de atividade. Fonte: https://cpntools.org \n\nMarque a alternativa que especifica o tipo de modelagem que o software CPN Tools referido no texto permite desenvolver e simular:\n\nEscolha uma opção:\nRede de Petri Colorida.\nMapa de Pontos.\nRede de Petri.\nFluxograma.\nFluxo de Dados.', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 09:19:16,049 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 09:19:16,050 - DEBUG - GroqClientFacade: chat called
+2026-01-11 09:19:17,370 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 09:20:22,727 - DEBUG - Observer received data: {'user_input': 'Sequencial Funcion Char é uma linguagem gráfica e textual.', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 09:20:22,729 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 09:20:22,729 - DEBUG - GroqClientFacade: chat called
+2026-01-11 09:20:24,005 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 09:27:08,111 - DEBUG - Observer received data: {'user_input': 'Este tipo de saída para controladores lógicos programáveis são utilizados na ativação direta de pequenas cargas e grandes que necessitam de baixa corrente, em corrente alternada ou corrente contínua. É comum no acionamento de cargas com CLP utilizarmos placas conversoras ou que permitam adequação de sinal, utilizando em algumas aplicações optoacopladores para diminuir a interferência eletromagnética.\n\nMarque a alternativa que especifica o tipo de saída de controlador lógico programável caracterizado no texto acima.\n\nEscolha uma opção:\nDiac.\nRelé.\nDigital.\nTransistor.\nTriac.', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 09:27:08,113 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 09:27:08,113 - DEBUG - GroqClientFacade: chat called
+2026-01-11 09:27:09,612 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 09:28:36,543 - DEBUG - Observer received data: {'user_input': 'nao é digital, ta errado', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': False, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 09:28:36,545 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 09:28:36,545 - DEBUG - GroqClientFacade: chat called
+2026-01-11 09:28:37,899 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:39:55,029 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 14:39:55,029 - INFO - Initialization mode activated.
+2026-01-11 14:39:56,044 - INFO - Initialization complete.
+2026-01-11 14:39:56,046 - INFO - Network is connected
+2026-01-11 14:39:56,046 - INFO - HtkSpeaker initialized.
+2026-01-11 14:39:56,091 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 14:39:56,092 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:39:56,092 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:39:58,190 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:39:58,191 - DEBUG - Initializing Thread Manager
+2026-01-11 14:39:58,191 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:39:58,191 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 14:39:58,191 - DEBUG - Initializing Thread Manager
+2026-01-11 14:39:58,191 - DEBUG - Initializing configuration interface
+2026-01-11 14:39:58,191 - DEBUG - Initializing Thread Manager
+2026-01-11 14:39:58,192 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001CD9B8D5840>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001CD9B8D7400>]
+2026-01-11 14:39:58,192 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:39:58,192 - DEBUG - Finished loading configuration interface
+2026-01-11 14:39:58,744 - DEBUG - Initializing Thread Manager
+2026-01-11 14:39:58,744 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:39:58,745 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:39:58,745 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:39:58,746 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:40:00,947 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:40:01,997 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:40:01,998 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 14:40:01,998 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:40:01,999 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:40:01,999 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 14:40:03,117 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 14:40:03,118 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:40:03,118 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:40:06,217 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:40:06,218 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:40:06,218 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:40:10,380 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:40:14,039 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:40:14,039 - DEBUG - Observer received data: {'user_input': 'oi tudo bem?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:40:14,040 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:40:14,040 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:40:14,040 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:40:14,214 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:40:14,936 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:40:14,948 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:40:14,949 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:40:14,949 - DEBUG - Audio Message'Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:40:14,950 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:40:21,575 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:40:21,575 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:40:21,617 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:40:31,504 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:40:58,279 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:40:58,279 - DEBUG - Observer received data: {'user_input': 'oi tudo bem?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:40:58,279 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:40:58,279 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:40:58,280 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:40:58,280 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:40:58,688 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:40:58,702 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:40:58,702 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:40:58,703 - DEBUG - Audio Message'Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:40:58,703 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:41:06,004 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:41:06,004 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:41:06,010 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:41:10,118 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:41:10,118 - DEBUG - Observer received data: {'user_input': 'oi tudo bem?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:41:10,118 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:41:10,119 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:41:10,119 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:41:10,677 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:41:18,361 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:41:18,361 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:41:22,637 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:41:22,637 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:41:38,957 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:42:05,822 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:42:05,822 - DEBUG - Observer received data: {'user_input': 'quanto é 2+2', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:42:05,823 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:42:05,823 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:42:05,823 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:42:05,824 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:42:06,282 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:42:09,525 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:42:09,525 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:42:23,417 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:42:30,838 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:42:30,838 - DEBUG - Observer received data: {'user_input': 'e 2+5?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:42:30,839 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:42:30,839 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:42:30,839 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:42:30,842 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:42:31,264 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:42:34,550 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:42:34,550 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:42:50,727 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:42:55,111 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:42:55,111 - DEBUG - Observer received data: {'user_input': 'oi tudo bem', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:42:55,111 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:42:55,111 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:42:55,112 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:42:55,112 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:42:55,762 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:42:58,872 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:42:58,872 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:43:11,560 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:43:19,253 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 14:43:19,254 - INFO - Initialization mode activated.
+2026-01-11 14:43:20,257 - INFO - Initialization complete.
+2026-01-11 14:43:20,259 - INFO - Network is connected
+2026-01-11 14:43:20,259 - INFO - HtkSpeaker initialized.
+2026-01-11 14:43:20,294 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 14:43:20,295 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:43:20,296 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:43:22,390 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:43:22,391 - DEBUG - Initializing Thread Manager
+2026-01-11 14:43:22,391 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:43:22,391 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 14:43:22,391 - DEBUG - Initializing Thread Manager
+2026-01-11 14:43:22,391 - DEBUG - Initializing configuration interface
+2026-01-11 14:43:22,391 - DEBUG - Initializing Thread Manager
+2026-01-11 14:43:22,392 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000176E5407550>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000176E54061A0>]
+2026-01-11 14:43:22,392 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:43:22,392 - DEBUG - Finished loading configuration interface
+2026-01-11 14:43:22,824 - DEBUG - Initializing Thread Manager
+2026-01-11 14:43:22,825 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:43:22,825 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:43:22,825 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:43:22,826 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:43:25,645 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:43:25,646 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 14:43:25,646 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:43:25,647 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:43:25,648 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 14:43:26,693 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 14:43:26,694 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:43:26,695 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:43:29,227 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:43:29,238 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:43:29,239 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:43:29,239 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:43:31,190 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:43:31,191 - DEBUG - Observer received data: {'user_input': 'oi', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:43:31,191 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:43:31,191 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:43:31,260 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:43:31,673 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:43:31,686 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:43:31,687 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:43:31,687 - DEBUG - Audio Message'Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:43:31,688 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:43:38,843 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:43:38,843 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:43:38,886 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:43:42,859 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:43:42,859 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:43:46,646 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:46:37,456 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 14:46:37,456 - INFO - Initialization mode activated.
+2026-01-11 14:46:38,463 - INFO - Initialization complete.
+2026-01-11 14:46:38,465 - INFO - Network is connected
+2026-01-11 14:46:38,465 - INFO - HtkSpeaker initialized.
+2026-01-11 14:46:38,507 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 14:46:38,508 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:46:38,509 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:46:40,603 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:46:40,603 - DEBUG - Initializing Thread Manager
+2026-01-11 14:46:40,604 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:46:40,604 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 14:46:40,604 - DEBUG - Initializing Thread Manager
+2026-01-11 14:46:40,604 - DEBUG - Initializing configuration interface
+2026-01-11 14:46:40,604 - DEBUG - Initializing Thread Manager
+2026-01-11 14:46:40,605 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000021C88B96DA0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000021C88B97B20>]
+2026-01-11 14:46:40,605 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:46:40,605 - DEBUG - Finished loading configuration interface
+2026-01-11 14:46:41,043 - DEBUG - Initializing Thread Manager
+2026-01-11 14:46:41,043 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:46:41,044 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:46:41,044 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:46:41,045 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:46:44,461 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:46:44,461 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 14:46:44,461 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:46:44,462 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:46:44,463 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 14:46:45,492 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 14:46:45,493 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:46:45,494 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:46:48,144 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:46:48,144 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:46:48,151 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:46:48,176 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:46:48,494 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:46:48,494 - DEBUG - Observer received data: {'user_input': 'oi', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:46:48,495 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:46:48,495 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:46:48,567 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:46:49,176 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:46:49,191 - DEBUG - 'MainFrame' object has no attribute '_webViewFrame'
+2026-01-11 14:46:49,197 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:46:49,197 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:46:49,198 - DEBUG - Audio Message'Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:46:49,198 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:46:56,091 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:46:56,104 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:46:56,104 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:46:59,860 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:46:59,860 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:47:03,915 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:47:08,718 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:47:08,718 - DEBUG - Observer received data: {'user_input': 'tudo bem?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:47:08,719 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:47:08,719 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:47:08,719 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:47:08,721 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:47:09,136 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:47:09,145 - DEBUG - 'MainFrame' object has no attribute '_webViewFrame'
+2026-01-11 14:47:09,149 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:47:09,150 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:47:09,150 - DEBUG - Audio Message'Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:47:09,151 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:47:16,884 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:47:16,884 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:47:16,918 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:47:30,491 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:48:33,950 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 14:48:33,950 - INFO - Initialization mode activated.
+2026-01-11 14:48:34,959 - INFO - Initialization complete.
+2026-01-11 14:48:34,961 - INFO - Network is connected
+2026-01-11 14:48:34,961 - INFO - HtkSpeaker initialized.
+2026-01-11 14:48:34,995 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 14:48:35,001 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:48:35,002 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:48:37,091 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:48:37,092 - DEBUG - Initializing Thread Manager
+2026-01-11 14:48:37,092 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:48:37,092 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 14:48:37,092 - DEBUG - Initializing Thread Manager
+2026-01-11 14:48:37,092 - DEBUG - Initializing configuration interface
+2026-01-11 14:48:37,092 - DEBUG - Initializing Thread Manager
+2026-01-11 14:48:37,093 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002429AE77730>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002429AE76DA0>]
+2026-01-11 14:48:37,093 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:48:37,093 - DEBUG - Finished loading configuration interface
+2026-01-11 14:48:37,523 - DEBUG - Initializing Thread Manager
+2026-01-11 14:48:37,523 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:48:37,524 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:48:37,524 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:48:37,525 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:48:42,221 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:48:42,221 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 14:48:42,222 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:48:42,222 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:48:42,223 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 14:48:43,580 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 14:48:43,581 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:48:43,582 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:48:45,831 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:48:45,831 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:48:45,853 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:48:45,860 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:48:50,126 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:48:50,126 - DEBUG - Observer received data: {'user_input': 'oi', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:48:50,126 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:48:50,126 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:48:50,194 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:48:50,500 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:48:50,500 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:48:50,587 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:48:50,595 - DEBUG - 'MainFrame' object has no attribute '_webViewFrame'
+2026-01-11 14:48:50,599 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:48:50,599 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:48:50,600 - DEBUG - Audio Message'Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:48:50,600 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:48:58,490 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:48:58,490 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:48:58,508 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:49:02,245 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:49:44,184 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 14:49:44,184 - INFO - Initialization mode activated.
+2026-01-11 14:49:45,184 - INFO - Initialization complete.
+2026-01-11 14:49:45,186 - INFO - Network is connected
+2026-01-11 14:49:45,186 - INFO - HtkSpeaker initialized.
+2026-01-11 14:49:45,220 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 14:49:45,220 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:49:45,221 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:49:47,414 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:49:47,414 - DEBUG - Initializing Thread Manager
+2026-01-11 14:49:47,415 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:49:47,415 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 14:49:47,415 - DEBUG - Initializing Thread Manager
+2026-01-11 14:49:47,415 - DEBUG - Initializing configuration interface
+2026-01-11 14:49:47,415 - DEBUG - Initializing Thread Manager
+2026-01-11 14:49:47,416 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002486C0F76A0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000002486C0F7B50>]
+2026-01-11 14:49:47,416 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:49:47,416 - DEBUG - Finished loading configuration interface
+2026-01-11 14:49:47,866 - DEBUG - Initializing Thread Manager
+2026-01-11 14:49:47,867 - DEBUG - HtkSpeaker initialized.
+2026-01-11 14:49:47,867 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:49:47,868 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:49:47,868 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:49:49,805 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:49:49,805 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 14:49:49,806 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:49:49,806 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:49:49,807 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 14:49:50,788 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 14:49:50,789 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:49:50,789 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:49:53,372 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:49:53,372 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:49:53,391 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:49:53,406 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:49:55,967 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:49:55,967 - DEBUG - Observer received data: {'user_input': 'OI', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:49:55,967 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:49:55,967 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:49:56,034 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:49:56,441 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:49:58,502 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:49:58,502 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:50:02,079 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:50:02,079 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:50:09,206 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:50:09,206 - DEBUG - Observer received data: {'user_input': 'fale comigo em portugues', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:50:09,207 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:50:09,207 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:50:09,207 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:50:09,627 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:50:09,627 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:50:09,642 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:50:13,235 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:50:13,235 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:50:25,072 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:50:34,031 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 14:50:34,031 - DEBUG - Observer received data: {'user_input': 'so quero conversar', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-11 14:50:34,031 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 14:50:34,031 - DEBUG - Audio Message'Processando sua solicitação...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 14:50:34,032 - DEBUG - GroqClientFacade: chat called
+2026-01-11 14:50:34,034 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 14:50:34,936 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 14:50:37,776 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 14:50:37,776 - DEBUG - Speaker System Audio Context - Mixer Busy: True

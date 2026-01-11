@@ -1,42 +1,45 @@
-
 from core.log.htk_logger import HtkApplicationLogger
 from core.concurrency.htk_threads_manager import htkThreadsManager
+
 """
 Observer Design Pattern Implementation.
 its used to allow a subject (MainFrame) to notify multiple observers (e.g., clients) about state changes.
 """
+
 class ClientObserver:
-    
-    def __init__(self, onSuccess = None, onFailure = None):
+
+    def __init__(self, onSuccess=None, onFailure=None):
         self.onSuccess = onSuccess
         self.onFailure = onFailure
         self.logger = HtkApplicationLogger()
         self._threadManager = htkThreadsManager()
-    
+
     def update(self, data):
         data = data
         """Handle the notification from the MainFrame."""
-        self.logger.log(f'Observer received data: {data}')
+        self.logger.log(f"Observer received data: {data}")
         if self._checkKeys(data) == False:
             self.onFailure("No user input provided.")
             self.logger.log("No user input provided.")
             return
-    
+
         def worker():
             try:
                 if self.onSuccess:
                     self.onSuccess(data)
             except Exception as e:
                 if self.onFailure:
+                    self.logger.log(str(e))
                     self.onFailure(str(e))
-        
-        
+
         # Creating a new thread from execute LLM and not interferes in UI main frame
-        self._threadManager.createThreadAndInitialize("Observable - LLM Rule", target=worker)
-    
+        self._threadManager.createThreadAndInitialize(
+            "Observable - LLM Rule", target=worker
+        )
+
     def _checkKeys(self, data: dict) -> bool:
         return len(data) > 0
-    
+
 
 class Subject:
     def register_observer(self, observer):

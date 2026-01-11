@@ -1,14 +1,16 @@
 from core.log.htk_logger import HtkApplicationLogger
 
-class SonnetClientFacade():
+class SonnetClientFacade:
     def __init__(self, driver):
-        self.client = driver # Instance of HtkSonnetClient
+        self.client = driver  # Instance of HtkSonnetClient
         self.logger = HtkApplicationLogger()
 
-    def chat_with_roles(self, message,role, additionalContext=None):
+    def chat_with_roles(self, message, role, additionalContext=None):
         self.logger.log(f"SonnetClientFacade: chat_with_roles called with role: {role}")
-        return self.client.chat_with_roles(message=message, role=role, additionalContext=additionalContext)
-    
+        return self.client.chat_with_roles(
+            message=message, role=role, additionalContext=additionalContext
+        )
+
     def chat(self, message, additionalContext=None):
         self.logger.log("SonnetClientFacade: chat called")
         return self.client.chat(message=message, additionalContext=additionalContext)
