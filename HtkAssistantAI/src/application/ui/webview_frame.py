@@ -2,7 +2,8 @@ from tkinterweb import HtmlFrame
 import customtkinter as ctk
 from core.utils.design.observer.observer import Subject
 from core.utils.os_env.os_env import HtkOsEnvironment
-import json
+import html
+
 
 class WebViewFrame(Subject):
     def __init__(self, app_root, title="HTK Assistant AI - WebMode"):
@@ -21,12 +22,22 @@ class WebViewFrame(Subject):
         try:
             div_responseArea = self._web_frame.document.getElementById("responseArea")
             div_responseArea.style.visibility = "visible"
-            oldElement = div_responseArea.getElementsByTagName("p")
+
+            oldElement = div_responseArea.getElementsByTagName("pre")
             if oldElement.length > 0:
                 oldElement[0].remove()
-            newElement = self._web_frame.document.createElement("p")
-            newElement.textContent = text
+
+            # Escapa o código para não ser interpretado como HTML real
+            escaped_code = html.escape(text)
+
+            newElement = self._web_frame.document.createElement("pre")
+            codeElement = self._web_frame.document.createElement("code")
+
+            codeElement.innerHTML = escaped_code
+            newElement.appendChild(codeElement)
+
             div_responseArea.appendChild(newElement)
+
         except Exception as e:
             print(f"Error adding LLM response to WebViewFrame: {e}")
     
