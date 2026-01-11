@@ -1,7 +1,12 @@
 import cv2
 
 class MobileCamera:
-    def __init__(self, stream_url, save_interval=30, window_name='HTK Assistant AI - Mobile Camera'):
+    def __init__(
+        self,
+        stream_url,
+        save_interval=30,
+        window_name="HTK Assistant AI - Mobile Camera",
+    ):
         self.stream_url = stream_url
         self.save_interval = save_interval
         self.window_name = window_name
@@ -29,7 +34,7 @@ class MobileCamera:
                     cv2.imwrite(f"frame_{self.frame_count}.jpg", frame)
 
                 # Exit the loop if 'q' is pressed
-                if key == ord('q'):
+                if key == ord("q"):
                     break
 
                 self.frame_count += 1

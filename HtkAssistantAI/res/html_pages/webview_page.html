@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>HTK Assistant AI - WebMode</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      /* CSS para estilizar a página */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #252526;
-        color: #333;
-      }
 
-      header {
-        background-color: #ddd;
-        color: #ddd;
-        padding: 10px 20px;
-        text-align: center;
-      }
+<head>
+  <title>HTK Assistant AI - WebMode</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* CSS para estilizar a página */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #252526;
+      color: #333;
+    }
 
-      .container {
-        max-width: 100%;
-        max-height: 100%;
-        margin: 20px auto;
-        padding: 20px;
-        background: #252526;
-        border-radius: 24px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
+    header {
+      background-color: #ddd;
+      color: #ddd;
+      padding: 10px 20px;
+      text-align: center;
+    }
 
-      .response-area {
-        visibility: hidden;
-        border: 1px solid #ddd;
-        border-radius: 24px;
-        padding: 10px;
-        overflow-y: auto;
-        background-color: #252526;
-        margin-bottom: 20px;
-      }
+    .container {
+      max-width: 100%;
+      max-height: 100%;
+      margin: 20px auto;
+      padding: 20px;
+      background: #252526;
+      border-radius: 24px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-      .response-area p {
-        margin: 10px 0;
-        padding: 10px;
-        background: #252526;
-        color: #ddd;
-        word-wrap: break-word;
-        white-space: pre-wrap;
-      }
+    .response-area {
+      visibility: hidden;
+      border: 1px solid #ddd;
+      border-radius: 24px;
+      padding: 10px;
+      overflow-y: auto;
+      background-color: #252526;
+      margin-bottom: 20px;
+    }
 
-      .response-area code {
-        color: #ddd;
-      }
+    .response-area p {
+      margin: 10px 0;
+      padding: 10px;
+      background: #252526;
+      color: #ddd;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
 
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>HTK Assistant AI</h1>
-      <h2>Visualização de respostas dos modelos em modo web</h2>
-    </header>
-    <div class="container">
-      <div class="response-area" id="responseArea"></div>
-    </div>
-  </body>
+    .response-area code {
+      color: #ddd;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>HTK Assistant AI</h1>
+    <h2>Visualização de respostas dos modelos em modo web</h2>
+  </header>
+  <div class="container">
+    <div class="response-area" id="responseArea"></div>
+  </div>
+</body>
+
 </html>
