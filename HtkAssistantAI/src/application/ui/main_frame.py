@@ -318,9 +318,13 @@ class MainFrame(Subject):
         self.init_system_speaker = False
 
     def init_recon(self):
+        self.configure_option_sound_system_check("disabled")
+        self._is_stop_recon = True
         self._htkAudioPlayer.initializeRecon()
 
     def stop_recon(self):
+        self.configure_option_sound_system_check("normal")
+        self._is_stop_recon = False
         self._htkAudioPlayer.stopRecon()
 
     def init_web(self):
@@ -328,6 +332,20 @@ class MainFrame(Subject):
 
     def stop_web(self):
         self._webViewFrame.destroy()
+        
+    
+    def configure_option_sound_system_check(self, state):
+        checkbox_sound_key = "Ativar Som"
+        for role in self.configurations_role:
+            if role.name == checkbox_sound_key:
+                if state == "disabled":
+                    self.actions_disable["som"]()
+                else:
+                    self.actions["som"]()
+                for widget in self._scroll_frame.winfo_children():
+                    if isinstance(widget, ctk.CTkCheckBox) and widget.cget("text") == checkbox_sound_key:
+                        widget.configure(state=state)
+                        break
 
     def create_configuration_view(self):
         self.notebook = ctk.CTkTabview(
@@ -371,17 +389,17 @@ class MainFrame(Subject):
         else:
             self.notebook.set(self._configuration_interface[0].name)
 
-        scroll_frame = ctk.CTkScrollableFrame(
+        self._scroll_frame = ctk.CTkScrollableFrame(
             self.notebook.tab(self._configuration_interface[0].name),
             width=140,
             height=1,
         )
-        scroll_frame.pack(fill=None, expand=False)
+        self._scroll_frame.pack(fill=None, expand=False)
 
         for options in config_frame:
             var = ctk.BooleanVar(value=options.default)
             cb = ctk.CTkCheckBox(
-                scroll_frame,
+                self._scroll_frame,
                 text=options.label,
                 variable=var,
                 command=lambda n=options, v=var: self.on_toggle_configurations(n, v),
@@ -390,7 +408,7 @@ class MainFrame(Subject):
             self.configurations_role.append(
                 HtkConfigurationInterfaceOptionRule(name=options.label, isChecked=False)
             )
-        scroll_frame.update_idletasks()
+        self._scroll_frame.update_idletasks()
 
     def setupModelsBasedInEnvironment(self):
         model_mapping = {
@@ -459,7 +477,8 @@ class MainFrame(Subject):
         if self._onMixerBusy:
             self._htkAudioPlayer.stopRecon()
         else:
-            self._htkAudioPlayer.initializeRecon()
+            if self._is_stop_recon:
+                self._htkAudioPlayer.initializeRecon()
 
     def speakSystem(self, key):
         if self.init_system_speaker == True:
@@ -490,11 +509,11 @@ class MainFrame(Subject):
         self._systemSpeaker = HtkSpeakerContextSystemInitializer().getInstance()
         ## Reconginition Audio
         self._htkAudioPlayer = HtkAudioPlayer()
-        self._htkAudioPlayerObsever = AudioInterfaceObserver(
+        self._htkAudioPlayerObserver = AudioInterfaceObserver(
             onSuccess=lambda response: (self.submit_on_recon(response)),
             onFailure=lambda error: (),
         )
-        self._htkAudioPlayer.register_observer(self._htkAudioPlayerObsever)
+        self._htkAudioPlayer.register_observer(self._htkAudioPlayerObserver)
         self._onMixerBusy = False
 
         self._configuration_interface = None
