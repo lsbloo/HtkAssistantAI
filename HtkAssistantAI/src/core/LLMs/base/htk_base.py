@@ -16,6 +16,14 @@ class HtkLLMOptionsBase(object):
             "response": response,
             "image_generation": image_generation,
         }
-
+    
+    @abstractmethod
+    def get_client_config_options(self):
+        pass
+    
+    @abstractmethod
+    def get_client_config_options_default(self):
+        pass
+    
     def get_input_options(self):
         return self.input_options

@@ -18,6 +18,7 @@ import webbrowser
 from core.context.htk_loader_context import HtkLoaderContext
 from core.context.htk_speaker_context_system import HtkSpeakerContextSystemInitializer
 from threading import Thread
+from .prompts_config_frame import PromptConfigFrame
 from .webview_frame import WebViewFrame
 
 
@@ -180,6 +181,29 @@ class MainFrame(Subject):
         self.model_dropdown.place(x=30, y=150)
 
         self.model_dropdown.bind("<<ComboboxSelected>>", self._on_model_change)
+
+    def _setup_models_configuration(self):
+        icon_button = ctk.CTkImage(
+            light_image=Image.open(HtkOsEnvironment.get_absolute_path_for_resource_icon("settings-ia-icon.png")),
+            dark_image=Image.open(HtkOsEnvironment.get_absolute_path_for_resource_icon("settings-ia-icon.png")),
+            size=(20, 20),
+        )
+        
+        self.prompts_button = ctk.CTkButton(
+            self.root,
+            text="Prompts",
+            image=icon_button,
+            compound="right",
+            command=self._open_prompts_config,
+            corner_radius=24,
+            fg_color="#4D0C83",
+        )
+
+        self.prompts_button.place(x=310, y=460)
+    
+    def _open_prompts_config(self):
+        self._prompts_config_window = PromptConfigFrame(app_root=self.root, isSpeakSystem=self.init_system_speaker)
+        
 
     def _on_model_change(self, event):
         selected_model = self.model_var.get()
@@ -554,6 +578,7 @@ class MainFrame(Subject):
         self._create_button()
         self._create_configuration_view()
         self._create_model_selection()
+        self._setup_models_configuration()
 
     def _submit(self):
         # Get the text input and selected model

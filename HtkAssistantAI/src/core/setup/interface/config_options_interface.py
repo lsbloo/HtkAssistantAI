@@ -91,5 +91,3 @@ class HtkConfigurationModel:
     
     def set_items(self, items):
         self.items = items
-    
- 

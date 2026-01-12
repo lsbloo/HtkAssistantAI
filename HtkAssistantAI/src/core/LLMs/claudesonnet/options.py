@@ -6,6 +6,8 @@ class SonnetOptions(HtkLLMOptionsBase):
             chat=True, chat_with_roles=True, response=False, image_generation=False
         )
 
+def sonnet_options():
+    return SonnetOptions()
 
 def input_sonnet_options():
     return SonnetOptions().get_input_options()
