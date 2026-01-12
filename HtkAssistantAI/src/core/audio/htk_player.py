@@ -20,7 +20,7 @@ class HtkAudioPlayer(Subject):
     # =========================
     # THREAD LOOP
     # =========================
-    def initRecon(self):
+    def _initRecon(self):
         self._logger.log("Microphone initialized for audio recognition.")
 
         try:
@@ -50,7 +50,6 @@ class HtkAudioPlayer(Subject):
                         self.notify_observers({"recon_output_in_text": text})
 
                     except sr.WaitTimeoutError:
-                        # Silêncio → volta pro loop e checa stop
                         continue
 
                     except sr.UnknownValueError:
@@ -74,7 +73,7 @@ class HtkAudioPlayer(Subject):
             return
 
         self._thread = Thread(
-            target=self.initRecon,
+            target=self._initRecon,
             daemon=True
         )
         self._thread.start()

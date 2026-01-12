@@ -8859,3 +8859,523 @@
 2026-01-11 15:55:52,510 - DEBUG - Stopping recon thread...
 2026-01-11 15:55:54,713 - DEBUG - Audio not understood.
 2026-01-11 15:55:54,715 - DEBUG - Recognition thread finalized.
+2026-01-11 15:57:11,837 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-11 15:57:11,837 - INFO - Initialization mode activated.
+2026-01-11 15:57:12,847 - INFO - Initialization complete.
+2026-01-11 15:57:12,849 - INFO - Network is connected
+2026-01-11 15:57:12,849 - INFO - HtkSpeaker initialized.
+2026-01-11 15:57:12,911 - INFO - Initializing Speaker System Audio Context...
+2026-01-11 15:57:12,911 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 15:57:12,912 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 15:57:15,008 - DEBUG - HtkSpeaker initialized.
+2026-01-11 15:57:15,009 - DEBUG - HtkSpeaker initialized.
+2026-01-11 15:57:15,009 - DEBUG - HtkAudioPlayer initialized.
+2026-01-11 15:57:15,009 - DEBUG - Initializing Thread Manager
+2026-01-11 15:57:15,009 - DEBUG - Initializing configuration interface
+2026-01-11 15:57:15,009 - DEBUG - Initializing Thread Manager
+2026-01-11 15:57:15,010 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000019CAA5D83A0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000019CAA5D8400>]
+2026-01-11 15:57:15,010 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:57:15,010 - DEBUG - Finished loading configuration interface
+2026-01-11 15:57:15,456 - DEBUG - Initializing Thread Manager
+2026-01-11 15:57:15,456 - DEBUG - HtkSpeaker initialized.
+2026-01-11 15:57:15,457 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 15:57:15,457 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 15:57:15,458 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 15:57:18,576 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 15:57:18,835 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 15:57:18,836 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-11 15:57:18,836 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 15:57:18,836 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 15:57:18,837 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-11 15:57:19,739 - DEBUG - Selected Model Option: simple_chat
+2026-01-11 15:57:19,740 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-11 15:57:19,740 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-11 15:57:22,474 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 15:57:22,474 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-11 15:57:22,494 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 15:57:27,052 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-11 15:57:27,231 - DEBUG - Microphone initialized for audio recognition.
+2026-01-11 15:57:27,231 - DEBUG - Recon thread started.
+2026-01-11 15:57:27,327 - DEBUG - Microphone connected.
+2026-01-11 15:57:31,011 - DEBUG - Audio recognized: teste
+2026-01-11 15:57:31,012 - DEBUG - Observer received data: {'recon_output_in_text': 'teste'}
+2026-01-11 15:57:31,012 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:57:31,023 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': 'teste', 'is_recon_enabled': True}
+2026-01-11 15:57:31,024 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:57:31,167 - DEBUG - GroqClientFacade: chat called
+2026-01-11 15:57:31,713 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 15:57:31,722 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-11 15:57:31,722 - DEBUG - Stopping recon thread...
+2026-01-11 15:57:31,990 - DEBUG - Recognition thread finalized.
+2026-01-11 15:57:42,355 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-11 15:57:42,355 - DEBUG - Microphone initialized for audio recognition.
+2026-01-11 15:57:42,355 - DEBUG - Recon thread started.
+2026-01-11 15:57:42,417 - DEBUG - Microphone connected.
+2026-01-11 15:57:47,182 - DEBUG - Audio not understood.
+2026-01-11 15:57:51,909 - DEBUG - Audio recognized: Quanto é 2 + 2
+2026-01-11 15:57:51,909 - DEBUG - Observer received data: {'recon_output_in_text': 'Quanto é 2 + 2'}
+2026-01-11 15:57:51,910 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:57:51,921 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': 'Quanto é 2 + 2', 'is_recon_enabled': True}
+2026-01-11 15:57:51,922 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:57:51,922 - DEBUG - GroqClientFacade: chat called
+2026-01-11 15:57:52,390 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 15:57:52,399 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-11 15:57:52,399 - DEBUG - Stopping recon thread...
+2026-01-11 15:57:52,888 - DEBUG - Recognition thread finalized.
+2026-01-11 15:58:05,303 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-11 15:58:05,303 - DEBUG - Microphone initialized for audio recognition.
+2026-01-11 15:58:05,303 - DEBUG - Recon thread started.
+2026-01-11 15:58:05,366 - DEBUG - Microphone connected.
+2026-01-11 15:58:12,765 - DEBUG - Audio not understood.
+2026-01-11 15:58:15,364 - DEBUG - Audio recognized: Mc LP
+2026-01-11 15:58:15,364 - DEBUG - Observer received data: {'recon_output_in_text': 'Mc LP'}
+2026-01-11 15:58:15,365 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:58:15,378 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': 'Mc LP', 'is_recon_enabled': True}
+2026-01-11 15:58:15,378 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:58:15,379 - DEBUG - GroqClientFacade: chat called
+2026-01-11 15:58:16,655 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 15:58:16,665 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-11 15:58:16,665 - DEBUG - Stopping recon thread...
+2026-01-11 15:58:17,433 - DEBUG - Recognition thread finalized.
+2026-01-11 15:59:17,066 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-11 15:59:17,066 - DEBUG - Microphone initialized for audio recognition.
+2026-01-11 15:59:17,067 - DEBUG - Recon thread started.
+2026-01-11 15:59:17,129 - DEBUG - Microphone connected.
+2026-01-11 15:59:22,951 - DEBUG - Audio recognized: CLP
+2026-01-11 15:59:22,952 - DEBUG - Observer received data: {'recon_output_in_text': 'CLP'}
+2026-01-11 15:59:22,952 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:59:22,964 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': 'CLP', 'is_recon_enabled': True}
+2026-01-11 15:59:22,964 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-11 15:59:22,965 - DEBUG - GroqClientFacade: chat called
+2026-01-11 15:59:24,272 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-11 15:59:24,283 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-11 15:59:24,283 - DEBUG - Stopping recon thread...
+2026-01-11 15:59:24,946 - DEBUG - Recognition thread finalized.
+2026-01-11 15:59:37,441 - DEBUG - Stopping recon thread...
+2026-01-11 16:00:28,855 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-12 07:43:31,916 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-12 07:43:31,917 - INFO - Initialization mode activated.
+2026-01-12 07:43:32,931 - INFO - Initialization complete.
+2026-01-12 07:43:32,933 - INFO - Network is connected
+2026-01-12 07:43:32,933 - INFO - HtkSpeaker initialized.
+2026-01-12 07:43:33,008 - INFO - Initializing Speaker System Audio Context...
+2026-01-12 07:43:33,009 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:43:33,009 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:43:35,170 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:43:35,171 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:43:35,171 - DEBUG - HtkAudioPlayer initialized.
+2026-01-12 07:43:35,171 - DEBUG - Initializing Thread Manager
+2026-01-12 07:43:35,171 - DEBUG - Initializing configuration interface
+2026-01-12 07:43:35,171 - DEBUG - Initializing Thread Manager
+2026-01-12 07:43:35,172 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000244469C6680>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000244469C6E60>]
+2026-01-12 07:43:35,172 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:43:35,172 - DEBUG - Finished loading configuration interface
+2026-01-12 07:43:35,645 - DEBUG - Initializing Thread Manager
+2026-01-12 07:43:35,645 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:43:35,646 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:43:35,646 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:43:35,647 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:43:39,523 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:43:39,523 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-12 07:43:39,523 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:43:39,524 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:43:39,525 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-12 07:43:41,418 - DEBUG - Selected Model Option: simple_chat
+2026-01-12 07:43:41,418 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:43:41,419 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:43:43,411 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:43:43,414 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:43:43,414 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:43:43,432 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:43:47,549 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:43:48,038 - DEBUG - Microphone initialized for audio recognition.
+2026-01-12 07:43:48,039 - DEBUG - Recon thread started.
+2026-01-12 07:43:48,144 - DEBUG - Microphone connected.
+2026-01-12 07:43:52,502 - DEBUG - Audio recognized: teste
+2026-01-12 07:43:52,502 - DEBUG - Observer received data: {'recon_output_in_text': 'teste'}
+2026-01-12 07:43:52,502 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:43:52,514 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': 'teste', 'is_recon_enabled': True}
+2026-01-12 07:43:52,515 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:43:52,657 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:43:53,431 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:43:53,439 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-12 07:43:53,439 - DEBUG - Stopping recon thread...
+2026-01-12 07:43:54,480 - DEBUG - Recognition thread finalized.
+2026-01-12 07:44:10,105 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-12 07:44:10,105 - DEBUG - Microphone initialized for audio recognition.
+2026-01-12 07:44:10,105 - DEBUG - Recon thread started.
+2026-01-12 07:44:10,168 - DEBUG - Microphone connected.
+2026-01-12 07:44:13,124 - DEBUG - Audio recognized: é 2 +
+2026-01-12 07:44:13,124 - DEBUG - Observer received data: {'recon_output_in_text': 'é 2 +'}
+2026-01-12 07:44:13,124 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:44:13,136 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': 'é 2 +', 'is_recon_enabled': True}
+2026-01-12 07:44:13,136 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:44:13,137 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:44:13,686 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:44:13,695 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-12 07:44:13,696 - DEBUG - Stopping recon thread...
+2026-01-12 07:44:14,103 - DEBUG - Recognition thread finalized.
+2026-01-12 07:44:34,899 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-12 07:44:34,899 - DEBUG - Microphone initialized for audio recognition.
+2026-01-12 07:44:34,899 - DEBUG - Recon thread started.
+2026-01-12 07:44:34,962 - DEBUG - Microphone connected.
+2026-01-12 07:44:39,084 - DEBUG - Audio recognized: 2 + 2
+2026-01-12 07:44:39,084 - DEBUG - Observer received data: {'recon_output_in_text': '2 + 2'}
+2026-01-12 07:44:39,084 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:44:39,096 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': '2 + 2', 'is_recon_enabled': True}
+2026-01-12 07:44:39,097 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:44:39,097 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:44:39,698 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:44:39,708 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-12 07:44:39,708 - DEBUG - Stopping recon thread...
+2026-01-12 07:44:40,063 - DEBUG - Recognition thread finalized.
+2026-01-12 07:44:56,194 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-12 07:44:56,194 - DEBUG - Microphone initialized for audio recognition.
+2026-01-12 07:44:56,195 - DEBUG - Recon thread started.
+2026-01-12 07:44:56,329 - DEBUG - Microphone connected.
+2026-01-12 07:45:07,673 - DEBUG - Audio recognized: obrigado
+2026-01-12 07:45:07,673 - DEBUG - Observer received data: {'recon_output_in_text': 'obrigado'}
+2026-01-12 07:45:07,673 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:45:07,685 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': 'obrigado', 'is_recon_enabled': True}
+2026-01-12 07:45:07,685 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:45:07,686 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:45:08,166 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:45:08,175 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-12 07:45:08,176 - DEBUG - Stopping recon thread...
+2026-01-12 07:45:08,650 - DEBUG - Recognition thread finalized.
+2026-01-12 07:45:17,195 - DEBUG - Stopping recon thread...
+2026-01-12 07:45:24,747 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-12 07:52:42,614 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-12 07:52:42,615 - INFO - Initialization mode activated.
+2026-01-12 07:52:43,621 - INFO - Initialization complete.
+2026-01-12 07:52:43,623 - INFO - Network is connected
+2026-01-12 07:52:43,623 - INFO - HtkSpeaker initialized.
+2026-01-12 07:52:43,695 - INFO - Initializing Speaker System Audio Context...
+2026-01-12 07:52:43,695 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:52:43,696 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:52:45,899 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:53:05,881 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-12 07:53:05,882 - INFO - Initialization mode activated.
+2026-01-12 07:53:06,887 - INFO - Initialization complete.
+2026-01-12 07:53:06,902 - INFO - Network is connected
+2026-01-12 07:53:06,902 - INFO - HtkSpeaker initialized.
+2026-01-12 07:53:06,964 - INFO - Initializing Speaker System Audio Context...
+2026-01-12 07:53:06,965 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:53:06,966 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:53:09,061 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:53:09,062 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:53:09,062 - DEBUG - HtkAudioPlayer initialized.
+2026-01-12 07:53:09,062 - DEBUG - Initializing Thread Manager
+2026-01-12 07:53:09,062 - DEBUG - Initializing configuration interface
+2026-01-12 07:53:09,062 - DEBUG - Initializing Thread Manager
+2026-01-12 07:53:09,063 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001EF79D2C280>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001EF79D2C2E0>]
+2026-01-12 07:53:09,063 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:53:09,063 - DEBUG - Finished loading configuration interface
+2026-01-12 07:53:09,247 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:53:31,664 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-12 07:53:31,665 - INFO - Initialization mode activated.
+2026-01-12 07:53:32,672 - INFO - Initialization complete.
+2026-01-12 07:53:32,674 - INFO - Network is connected
+2026-01-12 07:53:32,674 - INFO - HtkSpeaker initialized.
+2026-01-12 07:53:32,733 - INFO - Initializing Speaker System Audio Context...
+2026-01-12 07:53:32,734 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:53:32,735 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:53:34,897 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:53:34,897 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:53:34,897 - DEBUG - HtkAudioPlayer initialized.
+2026-01-12 07:53:34,898 - DEBUG - Initializing Thread Manager
+2026-01-12 07:53:34,898 - DEBUG - Initializing configuration interface
+2026-01-12 07:53:34,898 - DEBUG - Initializing Thread Manager
+2026-01-12 07:53:34,898 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001ED6ABB7A60>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001ED6ABB67A0>]
+2026-01-12 07:53:34,899 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:53:34,899 - DEBUG - Finished loading configuration interface
+2026-01-12 07:53:35,298 - DEBUG - Initializing Thread Manager
+2026-01-12 07:53:35,298 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:53:35,299 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:53:35,299 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:53:35,299 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:53:39,410 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:53:39,411 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-12 07:53:39,411 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:53:39,411 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:53:39,412 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-12 07:53:40,490 - DEBUG - Selected Model Option: simple_chat
+2026-01-12 07:53:40,490 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:53:40,491 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:53:43,285 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:53:43,295 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:53:43,296 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:53:43,296 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:53:47,803 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:53:50,060 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:53:50,060 - DEBUG - Observer received data: {'user_input': 'oi bom dia tudo bem?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-12 07:53:50,060 - DEBUG - Audio Message'Pensando...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:53:50,060 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:53:50,061 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:53:50,131 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:53:50,569 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:53:50,571 - DEBUG - 'MainFrame' object has no attribute 'update_chat'
+2026-01-12 07:53:50,575 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:53:50,575 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:53:50,576 - DEBUG - Audio Message'Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:53:50,576 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:53:52,781 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:53:58,180 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:55:35,257 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-12 07:55:35,257 - INFO - Initialization mode activated.
+2026-01-12 07:55:36,269 - INFO - Initialization complete.
+2026-01-12 07:55:36,271 - INFO - Network is connected
+2026-01-12 07:55:36,271 - INFO - HtkSpeaker initialized.
+2026-01-12 07:55:36,334 - INFO - Initializing Speaker System Audio Context...
+2026-01-12 07:55:36,335 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:55:36,335 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:55:38,430 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:55:38,430 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:55:38,431 - DEBUG - HtkAudioPlayer initialized.
+2026-01-12 07:55:38,431 - DEBUG - Initializing Thread Manager
+2026-01-12 07:55:38,431 - DEBUG - Initializing configuration interface
+2026-01-12 07:55:38,431 - DEBUG - Initializing Thread Manager
+2026-01-12 07:55:38,431 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001DD73C36CB0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x000001DD73C37BB0>]
+2026-01-12 07:55:38,432 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:55:38,432 - DEBUG - Finished loading configuration interface
+2026-01-12 07:55:38,857 - DEBUG - Initializing Thread Manager
+2026-01-12 07:55:38,857 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:55:38,858 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:55:38,858 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:55:38,859 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:55:41,434 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:55:41,435 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-12 07:55:41,435 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:55:41,435 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:55:41,436 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-12 07:55:45,420 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:55:45,427 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:55:45,447 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:55:45,746 - DEBUG - Selected Model Option: simple_chat
+2026-01-12 07:55:45,746 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:55:45,747 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:55:45,747 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:55:50,234 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:55:55,140 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:55:55,140 - DEBUG - Observer received data: {'user_input': 'oii tudo bem?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-12 07:55:55,140 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:55:55,140 - DEBUG - Audio Message'Pensando...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:55:55,141 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:55:55,213 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:55:55,733 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:55:55,736 - DEBUG - 'MainFrame' object has no attribute 'update_chat'
+2026-01-12 07:55:55,743 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:55:55,744 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:55:55,744 - DEBUG - Audio Message'Desculpe, ocorreu um erro. Por favor, tente novamente mais tarde.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:55:55,745 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:56:03,107 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:56:03,138 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:56:47,559 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-12 07:56:47,559 - INFO - Initialization mode activated.
+2026-01-12 07:56:48,575 - INFO - Initialization complete.
+2026-01-12 07:56:48,577 - INFO - Network is connected
+2026-01-12 07:56:48,578 - INFO - HtkSpeaker initialized.
+2026-01-12 07:56:48,640 - INFO - Initializing Speaker System Audio Context...
+2026-01-12 07:56:48,640 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:56:48,641 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:56:50,736 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:56:50,736 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:56:50,736 - DEBUG - HtkAudioPlayer initialized.
+2026-01-12 07:56:50,737 - DEBUG - Initializing Thread Manager
+2026-01-12 07:56:50,737 - DEBUG - Initializing configuration interface
+2026-01-12 07:56:50,737 - DEBUG - Initializing Thread Manager
+2026-01-12 07:56:50,737 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000255C3366A70>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x00000255C3367AF0>]
+2026-01-12 07:56:50,737 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:56:50,738 - DEBUG - Finished loading configuration interface
+2026-01-12 07:56:51,156 - DEBUG - Initializing Thread Manager
+2026-01-12 07:56:51,157 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:56:51,157 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:56:51,157 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:56:51,158 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:56:58,443 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:56:58,443 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-12 07:56:58,443 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:56:58,443 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:56:58,444 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-12 07:56:59,145 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:56:59,151 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:56:59,850 - DEBUG - Selected Model Option: simple_chat
+2026-01-12 07:56:59,851 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:56:59,851 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:57:02,159 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:57:02,159 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:57:06,492 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:57:06,492 - DEBUG - Observer received data: {'user_input': 'oii tudo bem?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-12 07:57:06,492 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:57:06,492 - DEBUG - Audio Message'Pensando...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:57:06,561 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:57:06,842 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:57:06,842 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:57:07,011 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:57:09,794 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:57:09,794 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:57:21,466 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:57:24,246 - DEBUG - Microphone initialized for audio recognition.
+2026-01-12 07:57:24,246 - DEBUG - Recon thread started.
+2026-01-12 07:57:24,344 - DEBUG - Microphone connected.
+2026-01-12 07:57:29,679 - DEBUG - Audio recognized: Quanto é 2 + 2
+2026-01-12 07:57:29,680 - DEBUG - Observer received data: {'recon_output_in_text': 'Quanto é 2 + 2'}
+2026-01-12 07:57:29,680 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:57:29,692 - DEBUG - Observer received data: {'selected_model': 'Groq', 'selected_option': 'simple_chat', 'option_role_choice': None, 'init_system_speaker': False, 'option_persona_context_choice': None, 'input_from_recon': 'Quanto é 2 + 2', 'is_recon_enabled': True}
+2026-01-12 07:57:29,692 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:57:29,693 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:57:30,165 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:57:30,176 - DEBUG - Engine Mixer Busy State Changed: True
+2026-01-12 07:57:30,176 - DEBUG - Stopping recon thread...
+2026-01-12 07:57:30,658 - DEBUG - Recognition thread finalized.
+2026-01-12 07:57:42,664 - DEBUG - Stopping recon thread...
+2026-01-12 07:57:43,875 - DEBUG - Engine Mixer Busy State Changed: False
+2026-01-12 07:58:03,347 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:58:03,347 - DEBUG - Observer received data: {'user_input': 'e 10**2', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': None, 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-12 07:58:03,348 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:58:03,348 - DEBUG - Audio Message'Pensando...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:58:03,348 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:58:03,348 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:58:03,819 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:58:06,580 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:58:06,580 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:58:23,647 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:59:06,102 - INFO - HtkAssistantAI Command Line Arguments Initialized and Parsed
+2026-01-12 07:59:06,102 - INFO - Initialization mode activated.
+2026-01-12 07:59:07,103 - INFO - Initialization complete.
+2026-01-12 07:59:07,119 - INFO - Network is connected
+2026-01-12 07:59:07,119 - INFO - HtkSpeaker initialized.
+2026-01-12 07:59:07,195 - INFO - Initializing Speaker System Audio Context...
+2026-01-12 07:59:07,196 - INFO - Audio Message'Configurando o ambiente. Aguarde' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:59:07,197 - INFO - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:59:09,290 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:59:09,290 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:59:09,290 - DEBUG - HtkAudioPlayer initialized.
+2026-01-12 07:59:09,291 - DEBUG - Initializing Thread Manager
+2026-01-12 07:59:09,291 - DEBUG - Initializing configuration interface
+2026-01-12 07:59:09,291 - DEBUG - Initializing Thread Manager
+2026-01-12 07:59:09,291 - DEBUG - Observer received data: [<core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000025158C765F0>, <core.setup.interface.config_options_interface.HtkConfigurationModel object at 0x0000025158C77C70>]
+2026-01-12 07:59:09,291 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:59:09,292 - DEBUG - Finished loading configuration interface
+2026-01-12 07:59:09,718 - DEBUG - Initializing Thread Manager
+2026-01-12 07:59:09,718 - DEBUG - HtkSpeaker initialized.
+2026-01-12 07:59:09,718 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:59:09,719 - DEBUG - Audio Message'Olá! Eu sou o seu assistente virtual. Como posso ajudar você hoje?' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:59:09,719 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:59:11,806 - INFO - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:59:14,722 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:59:14,722 - DEBUG - Selected Model: Groq with Input Options: {'simple_chat': True, 'chat_with_roles': True, 'response': False, 'image_generation': False}
+2026-01-12 07:59:14,723 - DEBUG - Audio Message'O modelo Groq foi selecionado.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:59:14,723 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:59:14,724 - DEBUG - Input Options Values: ['simple_chat', 'chat_with_roles']
+2026-01-12 07:59:15,970 - DEBUG - Selected Model Option: simple_chat
+2026-01-12 07:59:15,970 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:59:15,971 - DEBUG - Audio Message'A opção de simple chat foi habilitada' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:59:19,126 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:59:19,126 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:59:19,136 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:59:23,160 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:59:27,900 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:59:27,900 - DEBUG - Audio Message'Um contexto de persona foi habilitado ao assistente, fique atento às respostas.' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:59:27,900 - DEBUG - Persona 'Hatake' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\other\personas\android_dev.json
+2026-01-12 07:59:27,900 - DEBUG - Selected Persona Context: {
+    "name": "Hatake",
+    "role": "Desenvolvedor Android Sênior",
+    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",
+    
+    "hard_skills": [
+        "Android Jetpack Compose",
+        "Android SDK",
+        "Kotlin Avançado",
+        "Kotlin Multiplatform (KMM)",
+        "Design Patterns",
+        "System Design",
+        "Arquitetura Limpa (Clean Architecture)",
+        "MVVM, MVI e MVP",
+        "Git e GitHub Flow",
+        "CI/CD com GitHub Actions",
+        "Unit Tests e Instrumented Tests",
+        "Coroutines e Flow",
+        "Dependency Injection (Hilt, Koin)",
+        "RESTful APIs e GraphQL",
+        "Room e Retrofit"
+    ],
+
+    "soft_skills": [
+        "Comunicação clara e objetiva",
+        "Colaboração e empatia",
+        "Pensamento crítico e tomada de decisão",
+        "Pensamento sistêmico",
+        "Mentoria e compartilhamento de conhecimento",
+        "Adaptabilidade e aprendizado contínuo",
+        "Visão de produto",
+        "Liderança técnica",
+        "Inteligência emocional",
+        "Gestão de tempo e priorização"
+    ],
+
+    "language": "pt-BR",
+
+    "context": {
+        "responsibilities": [
+            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",
+            "Sugerir melhorias de arquitetura e boas práticas no código.",
+            "Revisar código de maneira construtiva, com foco em qualidade e performance.",
+            "Ajudar na integração de backend e frontend, com visão de sistema completo.",
+            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",
+            "Orientar decisões técnicas baseadas em dados e experiência."
+        ],
+
+        "personality": {
+            "approach": "Profissional, colaborativo e focado em resultados.",
+            "tone": "Direto, técnico, mas acessível e empático.",
+            "mindset": "Busca sempre entender o problema antes de propor soluções.",
+            "values": [
+                "Qualidade de código acima de velocidade",
+                "Aprendizado contínuo",
+                "Transparência e clareza na comunicação",
+                "Entregas sustentáveis a longo prazo"
+            ]
+        },
+
+        "preferences": {
+            "style": "Respostas curtas, objetivas e embasadas.",
+            "code_style": "Limpo, idiomático e bem comentado.",
+            "examples": "Sempre que possível, incluir exemplos de código prático.",
+            "format": "Usar Markdown para melhor legibilidade de código e tópicos."
+        },
+
+        "limitations": [
+            "Evitar opiniões pessoais não técnicas.",
+            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",
+            "Focar em qualidade técnica e clareza didática."
+        ]
+    },
+    "outputs": {
+        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],
+        "code_snippets": "",
+        "explanations": ""
+    }
+}
+2026-01-12 07:59:27,900 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:59:33,985 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:59:34,571 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 07:59:34,571 - DEBUG - Observer received data: {'user_input': 'oii, qual é sua persona?', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-12 07:59:34,572 - DEBUG - Audio Message'Pensando...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 07:59:34,573 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 07:59:34,573 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 07:59:34,649 - DEBUG - GroqClientFacade: chat called
+2026-01-12 07:59:35,430 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 07:59:37,613 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 07:59:37,613 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 08:00:04,515 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 08:00:04,924 - DEBUG - Initializing Speaker System Audio Context...
+2026-01-12 08:00:04,924 - DEBUG - Observer received data: {'user_input': 'interessante, obrigado', 'selected_model': 'Groq', 'selected_option': 'simple_chat', 'init_system_speaker': True, 'option_persona_context_choice': '{\n    "name": "Hatake",\n    "role": "Desenvolvedor Android Sênior",\n    "description": "Você é um desenvolvedor Android Sênior com experiência sólida em design e arquitetura de sistemas, tanto para aplicativos móveis quanto para backend. Possui mentalidade analítica e foco em qualidade de código, escalabilidade e boas práticas.",\n    \n    "hard_skills": [\n        "Android Jetpack Compose",\n        "Android SDK",\n        "Kotlin Avançado",\n        "Kotlin Multiplatform (KMM)",\n        "Design Patterns",\n        "System Design",\n        "Arquitetura Limpa (Clean Architecture)",\n        "MVVM, MVI e MVP",\n        "Git e GitHub Flow",\n        "CI/CD com GitHub Actions",\n        "Unit Tests e Instrumented Tests",\n        "Coroutines e Flow",\n        "Dependency Injection (Hilt, Koin)",\n        "RESTful APIs e GraphQL",\n        "Room e Retrofit"\n    ],\n\n    "soft_skills": [\n        "Comunicação clara e objetiva",\n        "Colaboração e empatia",\n        "Pensamento crítico e tomada de decisão",\n        "Pensamento sistêmico",\n        "Mentoria e compartilhamento de conhecimento",\n        "Adaptabilidade e aprendizado contínuo",\n        "Visão de produto",\n        "Liderança técnica",\n        "Inteligência emocional",\n        "Gestão de tempo e priorização"\n    ],\n\n    "language": "pt-BR",\n\n    "context": {\n        "responsibilities": [\n            "Ajudar na criação, desenvolvimento e otimização de novos projetos Android e mobile.",\n            "Sugerir melhorias de arquitetura e boas práticas no código.",\n            "Revisar código de maneira construtiva, com foco em qualidade e performance.",\n            "Ajudar na integração de backend e frontend, com visão de sistema completo.",\n            "Oferecer soluções escaláveis e sustentáveis para problemas técnicos complexos.",\n            "Orientar decisões técnicas baseadas em dados e experiência."\n        ],\n\n        "personality": {\n            "approach": "Profissional, colaborativo e focado em resultados.",\n            "tone": "Direto, técnico, mas acessível e empático.",\n            "mindset": "Busca sempre entender o problema antes de propor soluções.",\n            "values": [\n                "Qualidade de código acima de velocidade",\n                "Aprendizado contínuo",\n                "Transparência e clareza na comunicação",\n                "Entregas sustentáveis a longo prazo"\n            ]\n        },\n\n        "preferences": {\n            "style": "Respostas curtas, objetivas e embasadas.",\n            "code_style": "Limpo, idiomático e bem comentado.",\n            "examples": "Sempre que possível, incluir exemplos de código prático.",\n            "format": "Usar Markdown para melhor legibilidade de código e tópicos."\n        },\n\n        "limitations": [\n            "Evitar opiniões pessoais não técnicas.",\n            "Não gerar conteúdo fora do escopo de tecnologia, arquitetura ou engenharia de software.",\n            "Focar em qualidade técnica e clareza didática."\n        ]\n    },\n    "outputs": {\n        "response_format": ["evite respostas longas ou prolixas com muitos detalhes desnecessários e asteriscos."],\n        "code_snippets": "",\n        "explanations": ""\n    }\n}', 'option_role_choice': None, 'is_recon_enabled': False}
+2026-01-12 08:00:04,924 - DEBUG - Audio Message'Pensando...' loaded from D:\Projetos Python\HtkAssistantAI\HtkAssistantAI\res\context\audio\first_interaction.json
+2026-01-12 08:00:04,925 - DEBUG - Creating and initializing thread ->Observable - LLM Rule
+2026-01-12 08:00:04,925 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 08:00:04,926 - DEBUG - GroqClientFacade: chat called
+2026-01-12 08:00:05,609 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-12 08:00:07,625 - DEBUG - Speaker System Audio Context - Mixer Busy: False
+2026-01-12 08:00:07,625 - DEBUG - Speaker System Audio Context - Mixer Busy: True
+2026-01-12 08:00:20,042 - DEBUG - Speaker System Audio Context - Mixer Busy: False
