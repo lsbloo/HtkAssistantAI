@@ -20,8 +20,9 @@ from core.context.htk_speaker_context_system import HtkSpeakerContextSystemIniti
 from threading import Thread
 from .webview_frame import WebViewFrame
 
+
 class MainFrame(Subject):
-    def create_root(self):
+    def _create_root(self):
         self.root.title(self.title)  # Set the title of the main window
         self.root.geometry("800x750")  # Set the size of the main window
         self.root.configure(bg="#1E1E1E")  # Set the background color of the main window
@@ -31,7 +32,7 @@ class MainFrame(Subject):
         )  # Set the window icon
         ctk.set_appearance_mode("dark")  # Set the appearance mode to dark
 
-    def setup_loading_spinner(self):
+    def _setup_loading_spinner(self):
         self._progressbar = ctk.CTkProgressBar(
             master=self.root,
             mode="indeterminate",
@@ -42,7 +43,7 @@ class MainFrame(Subject):
         )
         self._progressbar.place(x=30, y=225)
 
-    def create_circular_widget(self):
+    def _create_circular_widget(self):
         # Create a canvas for the circular widget
 
         self.header_frame = tk.Frame(self.root, bg="#252526", height=100)
@@ -101,7 +102,7 @@ class MainFrame(Subject):
         )
         self.title_label.place(x=20, y=30)
 
-    def draw_rounded_rectangle(self, canvas, x1, y1, x2, y2, radius=25, fill="white"):
+    def _draw_rounded_rectangle(self, canvas, x1, y1, x2, y2, radius=25, fill="white"):
         points = [
             (x1 + radius, y1),
             (x2 - radius, y1),
@@ -122,7 +123,7 @@ class MainFrame(Subject):
         ]
         return canvas.create_polygon(points, smooth=True, fill=fill)
 
-    def create_input_area(self):
+    def _create_input_area(self):
         # Create a label for the text input
         self.input_label = tk.Label(
             self.root,
@@ -145,7 +146,7 @@ class MainFrame(Subject):
         )
         self.text_input.place(x=30, y=240)
 
-    def create_output_area(self):
+    def _create_output_area(self):
         # Create a text box for user input
         self.text_input_output = ctk.CTkTextbox(
             self.root,
@@ -159,7 +160,7 @@ class MainFrame(Subject):
         self.text_input_output.place(x=30, y=330)
         self.text_input_output.configure(state="disabled")
 
-    def create_model_selection(self):
+    def _create_model_selection(self):
         # Create a label for the model selection
         self.model_label_1 = tk.Label(
             self.root,
@@ -175,30 +176,30 @@ class MainFrame(Subject):
         self.model_dropdown = ttk.Combobox(
             self.root, textvariable=self.model_var, state="readonly", font=("Arial", 12)
         )
-        self.model_dropdown["values"] = self.setupModelsBasedInEnvironment()
+        self.model_dropdown["values"] = self._setupModelsBasedInEnvironment()
         self.model_dropdown.place(x=30, y=150)
 
-        self.model_dropdown.bind("<<ComboboxSelected>>", self.on_model_change)
+        self.model_dropdown.bind("<<ComboboxSelected>>", self._on_model_change)
 
-    def on_model_change(self, event):
+    def _on_model_change(self, event):
         selected_model = self.model_var.get()
 
         input_options = {}
         if selected_model == "Groq":
             input_options = input_groq_options()
-            self.speakSystem(key="model_groq_selected")
+            self._speakSystem(key="model_groq_selected")
 
         elif selected_model == "Claude Sonnet":
             input_options = input_sonnet_options()
-            self.speakSystem(key="model_sonnet_selected")
+            self._speakSystem(key="model_sonnet_selected")
         self.logger.log(
             f"Selected Model: {selected_model} with Input Options: {input_options}"
         )
 
         if input_options is not None:
-            self.create_options_area(input_options)
+            self._create_options_area(input_options)
 
-    def setupOptionsBasedInModelOptions(self, input_options):
+    def _setupOptionsBasedInModelOptions(self, input_options):
         values = []
         for key, value in input_options.items():
             if value:
@@ -207,7 +208,7 @@ class MainFrame(Subject):
         self.logger.log(f"Input Options Values: {values}")
         return values
 
-    def create_options_area(self, input_options):
+    def _create_options_area(self, input_options):
         self.model_label = tk.Label(
             self.root,
             text="Opções do modelo:",
@@ -225,44 +226,45 @@ class MainFrame(Subject):
             font=("Arial", 12),
         )
         self.model_input_option_dropdown["values"] = (
-            self.setupOptionsBasedInModelOptions(input_options=input_options)
+            self._setupOptionsBasedInModelOptions(input_options=input_options)
         )
         self.model_input_option_dropdown.place(x=575, y=150)
         self.model_input_option_dropdown.bind(
-            "<<ComboboxSelected>>", self.on_model_change_options_area
+            "<<ComboboxSelected>>", self._on_model_change_options_area
         )
 
-    def on_model_change_options_area(self, event):
+    def _on_model_change_options_area(self, event):
         selected_option = self.model_input_option_var.get()
         self.logger.log(f"Selected Model Option: {selected_option}")
 
         if selected_option == "chat_with_roles":
-            self.speakSystem(key="model_chat_roles")
+            self._speakSystem(key="model_chat_roles")
             self.option_role_menu = ctk.CTkOptionMenu(
                 self.root,
                 values=["assistant", "user", "system"],
-                command=lambda choice: self.set_option_role_choice(choice),
+                command=lambda choice: self._set_option_role_choice(choice),
             )
 
             self.option_role_menu.place(x=575, y=180)
         else:
-            self.speakSystem(key="model_chat")
-            self.option_role_menu.pack_forget()
-            self.option_role_menu.destroy()
+            self._speakSystem(key="model_chat")
+            if self.option_role_menu is not None:
+                self.option_role_menu.pack_forget()
+                self.option_role_menu.destroy()
             self.root.update()
 
-    def set_option_role_choice(self, choice):
+    def _set_option_role_choice(self, choice):
         self.option_role_choice = choice
         self.logger.log(f"Selected Role: {self.option_role_choice}")
 
-    def create_button(self):
+    def _create_button(self):
         # Create a submit button
         self.submit_button = ctk.CTkButton(
-            self.root, text="Submeter", command=self.submit, corner_radius=24
+            self.root, text="Submeter", command=self._submit, corner_radius=24
         )
         self.submit_button.place(x=590, y=460)
 
-    def on_toggle_configurations(self, option, isChecked):
+    def _on_toggle_configurations(self, option, isChecked):
         for role in self.configurations_role:
             if role.name == option.label:
                 role.isChecked = isChecked.get()
@@ -273,8 +275,8 @@ class MainFrame(Subject):
                 ):
                     self.actions_disable[option.id]()
 
-    def context_options_selected(self, choice):
-        self.speakSystem(key="context_enabled")
+    def _context_options_selected(self, choice):
+        self._speakSystem(key="context_enabled")
         self.option_persona_context_choice = (
             self.htk_contexts.load_persona_with_resource_file(resource_file=choice)
         )
@@ -282,7 +284,7 @@ class MainFrame(Subject):
             f"Selected Persona Context: {self.option_persona_context_choice}"
         )
 
-    def init_context_options(self):
+    def _init_context_options(self):
         self.context_frame = ctk.CTkFrame(
             master=self.root, width=350, height=230, corner_radius=24
         )
@@ -303,33 +305,53 @@ class MainFrame(Subject):
         optionmenu = ctk.CTkOptionMenu(
             self.context_frame,
             values=personas_available,
-            command=self.context_options_selected,
+            command=self._context_options_selected,
             variable=optionmenu_var,
         )
         optionmenu.place(x=10, y=50)
 
-    def stop_context_options(self):
+    def _stop_context_options(self):
         self.context_frame.destroy()
 
-    def init_speaker_system(self):
+    def _init_speaker_system(self):
         self.init_system_speaker = True
 
-    def stop_speaker_system(self):
+    def _stop_speaker_system(self):
         self.init_system_speaker = False
 
-    def init_recon(self):
+    def _init_recon(self):
+        self._configure_option_sound_system_check("disabled")
+        self._is_stop_recon = True
         self._htkAudioPlayer.initializeRecon()
 
-    def stop_recon(self):
+    def _stop_recon(self):
+        self._configure_option_sound_system_check("normal")
+        self._is_stop_recon = False
         self._htkAudioPlayer.stopRecon()
 
-    def init_web(self):
+    def _init_web(self):
         self._webViewFrame = WebViewFrame(self.root)
 
-    def stop_web(self):
+    def _stop_web(self):
         self._webViewFrame.destroy()
 
-    def create_configuration_view(self):
+    def _configure_option_sound_system_check(self, state):
+        checkbox_sound_key = "Ativar Som"
+        for role in self.configurations_role:
+            if role.name == checkbox_sound_key:
+                if state == "disabled":
+                    self.actions_disable["som"]()
+                else:
+                    self.actions["som"]()
+                for widget in self._scroll_frame.winfo_children():
+                    if (
+                        isinstance(widget, ctk.CTkCheckBox)
+                        and widget.cget("text") == checkbox_sound_key
+                    ):
+                        widget.configure(state=state)
+                        break
+
+    def _create_configuration_view(self):
         self.notebook = ctk.CTkTabview(
             self.root,
             width=75,
@@ -352,12 +374,12 @@ class MainFrame(Subject):
 
         if len(self._configuration_interface) >= 2:
             config_frame = self._configuration_interface[0].items
-            settins_frame = self._configuration_interface[1].items[0]
+            settings_frame = self._configuration_interface[1].items[0]
             self.notebook.set(self._configuration_interface[1].name)
 
             about_link = ctk.CTkLabel(
                 self.notebook.tab(self._configuration_interface[1].name),
-                text=settins_frame.label,
+                text=settings_frame.label,
                 bg_color="transparent",
                 fg_color="transparent",
                 font=("Arial", 12),
@@ -365,34 +387,34 @@ class MainFrame(Subject):
                 text_color="white",
             )
             about_link.pack(pady=10, anchor="w")
-            url = str(settins_frame.url)
+            url = str(settings_frame.url)
             about_link.bind("<Button-1>", lambda e: webbrowser.open(url))
 
         else:
             self.notebook.set(self._configuration_interface[0].name)
 
-        scroll_frame = ctk.CTkScrollableFrame(
+        self._scroll_frame = ctk.CTkScrollableFrame(
             self.notebook.tab(self._configuration_interface[0].name),
             width=140,
             height=1,
         )
-        scroll_frame.pack(fill=None, expand=False)
+        self._scroll_frame.pack(fill=None, expand=False)
 
         for options in config_frame:
             var = ctk.BooleanVar(value=options.default)
             cb = ctk.CTkCheckBox(
-                scroll_frame,
+                self._scroll_frame,
                 text=options.label,
                 variable=var,
-                command=lambda n=options, v=var: self.on_toggle_configurations(n, v),
+                command=lambda n=options, v=var: self._on_toggle_configurations(n, v),
             )
             cb.pack(pady=10, anchor="w")
             self.configurations_role.append(
                 HtkConfigurationInterfaceOptionRule(name=options.label, isChecked=False)
             )
-        scroll_frame.update_idletasks()
+        self._scroll_frame.update_idletasks()
 
-    def setupModelsBasedInEnvironment(self):
+    def _setupModelsBasedInEnvironment(self):
         model_mapping = {
             "HTK_ASSISTANT_API_KEY_LLM_GROQ": "Groq",
             "HTK_ASSISTANT_API_KEY_LLM_ANTHROPIC": "Claude Sonnet",
@@ -413,7 +435,7 @@ class MainFrame(Subject):
 
         return available_models if available_models else ["No models available"]
 
-    def submit_on_recon(self, response):
+    def _submit_on_recon(self, response):
         selected_model = self.model_var.get()
         selected_option = (
             self.model_input_option_var.get()
@@ -430,6 +452,8 @@ class MainFrame(Subject):
 
         self.submit_button.configure(state="disabled")
         self._progressbar.start()
+        self.text_input.delete("1.0", tk.END)
+        self.text_input.insert(tk.END, response["recon_output_in_text"])
         self.notify_observers(
             {
                 "selected_model": selected_model,
@@ -442,26 +466,27 @@ class MainFrame(Subject):
             }
         )
 
-    def play_audio_with_recon(self, response, onMixerBusy=None):
+    def _play_audio_with_recon(self, response, onMixerBusy=None):
         self._htkAudioPlayer.enableOutputAudio(response["response"], onMixerBusy)
 
-    def setup_configuration_interface(self, response):
+    def _setup_configuration_interface(self, response):
         self._configuration_interface = response
         for item in self._configuration_interface[0].items:
             if item.default == True:
                 if self.actions.get(item.id) is not None:
                     self.actions[item.id]()
 
-    def set_state_mixer_busy(self, isBusy):
+    def _set_state_mixer_busy(self, isBusy):
         self.logger.log(f"Engine Mixer Busy State Changed: {isBusy}")
         self._onMixerBusy = isBusy
 
         if self._onMixerBusy:
             self._htkAudioPlayer.stopRecon()
         else:
-            self._htkAudioPlayer.initializeRecon()
+            if self._is_stop_recon:
+                self._htkAudioPlayer.initializeRecon()
 
-    def speakSystem(self, key):
+    def _speakSystem(self, key):
         if self.init_system_speaker == True:
             thread = Thread(
                 target=self._systemSpeaker.initialize_system_audio_context, args=(key,)
@@ -473,28 +498,28 @@ class MainFrame(Subject):
         self._webViewFrame = None
 
         self.actions = {
-            "recon": self.init_recon,
-            "contexto": self.init_context_options,
-            "som": self.init_speaker_system,
-            "web": self.init_web,
+            "recon": self._init_recon,
+            "contexto": self._init_context_options,
+            "som": self._init_speaker_system,
+            "web": self._init_web,
         }
 
         self.actions_disable = {
-            "recon": self.stop_recon,
-            "contexto": self.stop_context_options,
-            "som": self.stop_speaker_system,
-            "web": self.stop_web,
+            "recon": self._stop_recon,
+            "contexto": self._stop_context_options,
+            "som": self._stop_speaker_system,
+            "web": self._stop_web,
         }
 
         ## System Speaker Audio Context
         self._systemSpeaker = HtkSpeakerContextSystemInitializer().getInstance()
         ## Reconginition Audio
         self._htkAudioPlayer = HtkAudioPlayer()
-        self._htkAudioPlayerObsever = AudioInterfaceObserver(
-            onSuccess=lambda response: (self.submit_on_recon(response)),
+        self._htkAudioPlayerObserver = AudioInterfaceObserver(
+            onSuccess=lambda response: (self._submit_on_recon(response)),
             onFailure=lambda error: (),
         )
-        self._htkAudioPlayer.register_observer(self._htkAudioPlayerObsever)
+        self._htkAudioPlayer.register_observer(self._htkAudioPlayerObserver)
         self._onMixerBusy = False
 
         self._configuration_interface = None
@@ -504,7 +529,7 @@ class MainFrame(Subject):
         ## Resource loader of configurations interface
         self._htkConfigurationInterface = HtkLoaderConfigInterface()
         configuration_interface_observer = ConfigurationInterfaceObserver(
-            onSuccess=lambda response: (self.setup_configuration_interface(response))
+            onSuccess=lambda response: (self._setup_configuration_interface(response))
         )
         self._htkConfigurationInterface.register_observer(
             configuration_interface_observer
@@ -521,16 +546,16 @@ class MainFrame(Subject):
         self.configurations_role = []
         self.init_system_speaker = True
 
-        self.create_root()
-        self.setup_loading_spinner()
-        self.create_circular_widget()
-        self.create_input_area()
-        self.create_output_area()
-        self.create_button()
-        self.create_configuration_view()
-        self.create_model_selection()
+        self._create_root()
+        self._setup_loading_spinner()
+        self._create_circular_widget()
+        self._create_input_area()
+        self._create_output_area()
+        self._create_button()
+        self._create_configuration_view()
+        self._create_model_selection()
 
-    def submit(self):
+    def _submit(self):
         # Get the text input and selected model
         user_input = self.text_input.get("1.0", tk.END).strip()
         selected_model = self.model_var.get()
@@ -548,7 +573,7 @@ class MainFrame(Subject):
             return
         self.submit_button.configure(state="disabled")
         self._progressbar.start()
-        self.speakSystem(key="processing")
+        self._speakSystem(key="processing")
         self.notify_observers(
             {
                 "user_input": user_input,
@@ -569,10 +594,10 @@ class MainFrame(Subject):
             self.text_input_output.delete("1.0", tk.END)
             self.text_input_output.insert(tk.END, response["response"])
             self.text_input_output.configure(state="disabled")
-            self.play_audio_with_recon(
-                response, onMixerBusy=lambda res: self.set_state_mixer_busy(res)
+            self._play_audio_with_recon(
+                response, onMixerBusy=lambda res: self._set_state_mixer_busy(res)
             )
-            if (self._webViewFrame is not None):
+            if self._webViewFrame is not None:
                 self._webViewFrame.add_llm_response(response["response"])
         else:
             self.text_input_output.configure(state="normal")
@@ -582,7 +607,7 @@ class MainFrame(Subject):
 
             self.text_input_output.insert(tk.END, response["response"])
             self.text_input_output.configure(state="disabled")
-            if (self._webViewFrame is not None):
+            if self._webViewFrame is not None:
                 self._webViewFrame.add_llm_response(response["response"])
 
     def enabled_input_frame(self):
