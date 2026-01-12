@@ -63,7 +63,7 @@ class ModelConfigRepository:
                     model.max_token,
                     model.max_retries,
                     model.n,
-                    model.id
+                    model_config.id
                 ))
                 cursor.close()
                 return model.id

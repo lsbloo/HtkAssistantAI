@@ -4,9 +4,10 @@ from core.utils.os_env.os_env import HtkOsEnvironment
 from core.prompts.setup_prompts_model import HtkPromptsModelConfiguration
 from core.context.htk_speaker_context_system import HtkSpeakerContextSystemInitializer
 from core.log.htk_logger import HtkApplicationLogger
+from core.prompts.prompts_manager import HtkPromptsModelInitializerManager
 from threading import Thread
 from PIL import Image
-
+import time
 
 class PromptConfigFrame(Subject):
     def __init__(
@@ -23,6 +24,8 @@ class PromptConfigFrame(Subject):
         self._logger = HtkApplicationLogger()
         self._logger.log("Initializing Prompt Configuration Frame")
         self._htk_prompts_model_configuration = HtkPromptsModelConfiguration()
+        self._model_entries = {}
+        self._prompt_initializer_manager = HtkPromptsModelInitializerManager()
         self._setup_header_view()
         self._setup_loading_spinner()
         self._setup_models_view()
@@ -63,6 +66,7 @@ class PromptConfigFrame(Subject):
             self._setup_view_options_for_model(model)
 
     def _setup_view_options_for_model(self, model: str):
+        self._model_entries[model] = {}
         options = self._htk_prompts_model_configuration.get_client_config_options(model)
         default_options = (
             self._htk_prompts_model_configuration.get_client_config_options_default(
@@ -94,6 +98,8 @@ class PromptConfigFrame(Subject):
                 entry = ctk.CTkEntry(master=tab)
                 entry.insert(0, str(default_options.get(option)))
                 entry.grid(row=row, column=1, padx=10, pady=10, sticky="w")
+                
+                self._model_entries[model][option] = entry
 
                 label_description = ctk.CTkLabel(
                     master=tab, text=f"{options.get(option)}:"
@@ -139,7 +145,7 @@ class PromptConfigFrame(Subject):
                     text="Atualizar Modelo",
                     image=icon_button,
                     compound="right",
-                    command=self._update_model_with_new_params,
+                    command=lambda: self._update_model_with_new_params(model=model),
                     corner_radius=24,
                     fg_color="#4D0C83",
                 )
@@ -166,8 +172,39 @@ class PromptConfigFrame(Subject):
 
     def _update_model_with_new_params(self,model):
         self._progressbar.start()
-        # HAHAHAHA
-        a = 10
+        entries = self._model_entries.get(model)
+        if not entries:
+            self._logger.log(f"No entries found for model {model}")
+            return
+
+        params = {}
+
+        for option, entry in entries.items():
+            value = entry.get()
+            if value.isdigit():
+                value = int(value)
+            else:
+                try:
+                    value = float(value)
+                except ValueError:
+                    pass
+
+            params[option] = value
+
+        self._logger.log(f"Updated params for {model}: {params}")
+        
+        self._app.after(
+            2000,
+            lambda model=model, params=params: self._save_model_config(model,params)
+        )
+        
+    def _save_model_config(self,model,params):
+        result = self._prompt_initializer_manager.save_model_config_by_name(model=model, params=params)
+        if result:
+            self._speakSystem("prompt_config_successful")
+        else:
+            self._speakSystem("prompt_config_error")
+        self._progressbar.stop()
         
     def _setupModelsBasedInEnvironment(self):
         model_mapping = {

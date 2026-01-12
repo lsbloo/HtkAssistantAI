@@ -10,7 +10,7 @@ class HtkOsEnvironment:
             return os.listdir(path)
         except FileNotFoundError:
             return []
-        
+    
     @staticmethod
     def get_absolute_path_for_resource_icon(resource_file):
         if resource_file is None or resource_file == "":

@@ -69,7 +69,7 @@ class HtkGroqClient(HtkClientBase):
             raise ValueError(
                 "API key for Groq is not set in the environment configuration."
             )
-        
+
         self._logger = HtkApplicationLogger()
         self._prompt_initializer_manager = HtkPromptsModelInitializerManager()
 
@@ -94,15 +94,20 @@ class HtkGroqClient(HtkClientBase):
 
     def update_client(self):
         self._logger.log("Driver Groq is updated!")
-        default_configs = self._prompt_initializer_manager.find_model_config_by_name("Groq")
+        default_configs = self._prompt_initializer_manager.find_model_config_by_name(
+            "Groq"
+        )
+        self._logger.log(
+            f"Parameters: model_name: {default_configs.model_name} - temperature: {default_configs.temperature} - max_tokens: {default_configs.max_token} - max_retries: {default_configs.max_retries} - n: {default_configs.n}"
+        )
         self.client = ChatGroq(
-        groq_api_key=self._api_key,
-        model_name=default_configs.model_name,
-        temperature=default_configs.temperature,
-        max_tokens=default_configs.max_token,
-        max_retries=default_configs.max_retries,
-        n=default_configs.n,
-    )
+            groq_api_key=self._api_key,
+            model_name=default_configs.model_name,
+            temperature=default_configs.temperature,
+            max_tokens=default_configs.max_token,
+            max_retries=default_configs.max_retries,
+            n=default_configs.n,
+        )
 
     """
         Handles a chat interaction by sending a message to the client and managing the chat history.
@@ -189,7 +194,7 @@ class HtkGroqInitializer:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
-    
+
     def getInstanceGroq(self):
         if self._instance_groq is None:
             self._instance_groq = HtkGroqClient(

@@ -25,12 +25,9 @@ class HtkApplicationDatabase:
         self._isSpeakSystem = True
 
         try:
-            HtkApplicationDatabase._connection = sqlite3.connect(
-                "htk_database.db",
-                check_same_thread=False
-            )
+            HtkApplicationDatabase._connection = sqlite3.connect("storage/htk_database.db", check_same_thread=False)
         except Exception as e:
-            self._logger(f"Failure to connect local database: {e}")
+            self._logger.log(f"Failure to connect local database: {e}")
             self._speakSystem("database_failure_connection")
 
     def _speakSystem(self, key):
