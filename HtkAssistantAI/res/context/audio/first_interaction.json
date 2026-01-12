@@ -22,7 +22,11 @@
         "model_openai_selected": "O modelo OpenAI foi selecionado.",
         "model_gemini_selected": "O modelo Gemini foi selecionado.",
         "error_model_not_loaded": "Erro: O modelo selecionado não está carregado.",
-        "network_failure": "Falha na rede. Para uma melhor experiência, verifique sua conexão com a internet."
+        "network_failure": "Falha na rede. Para uma melhor experiência, verifique sua conexão com a internet.",
+        "welcome_prompt_config": "Bem vindo as configurações de prompts - Nesta aba, você pode customizar parametros para prompts do modelo selecionado",
+        "database_failure_connection": "Houve uma falha ao tentar se conectar ao banco de dados local",
+        "prompt_config_successful": "Nova configuração do modelo atualizada com sucesso!",
+        "prompt_config_error": "Falha ao atualizar nova configuração do modelo!"
     },
     "language": "pt-BR",
     "context": [

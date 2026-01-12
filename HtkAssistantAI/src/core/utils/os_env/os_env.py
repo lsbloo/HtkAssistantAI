@@ -10,6 +10,15 @@ class HtkOsEnvironment:
             return os.listdir(path)
         except FileNotFoundError:
             return []
+    
+    @staticmethod
+    def get_absolute_path_for_resource_icon(resource_file):
+        if resource_file is None or resource_file == "":
+            return os.path.abspath("").replace("src", "res\\icons\\")
+
+        script_directory = os.path.abspath("").replace("src", "res\\icons\\")
+        path = os.path.join(script_directory, resource_file)
+        return path
 
     @staticmethod
     def get_absolute_path_for_resource_page_html(resource_file):
