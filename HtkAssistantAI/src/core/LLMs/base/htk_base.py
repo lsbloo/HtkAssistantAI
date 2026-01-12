@@ -25,5 +25,9 @@ class HtkLLMOptionsBase(object):
     def get_client_config_options_default(self):
         pass
     
+    @abstractmethod
+    def get_client_config_general_options_default(self):
+        pass
+    
     def get_input_options(self):
         return self.input_options

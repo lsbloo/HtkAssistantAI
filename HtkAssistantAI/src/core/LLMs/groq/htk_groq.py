@@ -14,6 +14,8 @@ from ..model.roles import RoleType
 import warnings
 from ..base.htk_base import HtkClientBase
 from core.setup.config_environment import environments_config
+from core.prompts.prompts_manager import HtkPromptsModelInitializerManager
+from core.log.htk_logger import HtkApplicationLogger
 
 
 """
@@ -62,12 +64,16 @@ GROQ_CLIENT_DEFAULT_MODEL = "llama-3.3-70b-versatile"
 
 class HtkGroqClient(HtkClientBase):
     def __init__(self, api_key=None):
-        api_key = api_key
-        if not api_key:
+        self._api_key = api_key
+        if not self._api_key:
             raise ValueError(
                 "API key for Groq is not set in the environment configuration."
             )
+        
+        self._logger = HtkApplicationLogger()
+        self._prompt_initializer_manager = HtkPromptsModelInitializerManager()
 
+        self._logger.log("Driver Groq is started!")
         self.client = ChatGroq(
             groq_api_key=api_key,
             model_name=GROQ_CLIENT_DEFAULT_MODEL,
@@ -82,8 +88,21 @@ class HtkGroqClient(HtkClientBase):
                     memory_key="chat_history", return_messages=True
                 )
             except Exception as e:
+                self._logger.log("Error initializing ConversationBufferMemory:")
                 print("Error initializing ConversationBufferMemory:", str(e))
                 self.memory = None
+
+    def update_client(self):
+        self._logger.log("Driver Groq is updated!")
+        default_configs = self._prompt_initializer_manager.find_model_config_by_name("Groq")
+        self.client = ChatGroq(
+        groq_api_key=self._api_key,
+        model_name=default_configs.model_name,
+        temperature=default_configs.temperature,
+        max_tokens=default_configs.max_token,
+        max_retries=default_configs.max_retries,
+        n=default_configs.n,
+    )
 
     """
         Handles a chat interaction by sending a message to the client and managing the chat history.
@@ -170,10 +189,11 @@ class HtkGroqInitializer:
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
-
+    
     def getInstanceGroq(self):
         if self._instance_groq is None:
             self._instance_groq = HtkGroqClient(
                 environments_config.get("HTK_ASSISTANT_API_KEY_LLM_GROQ")
             )
+        self._instance_groq.update_client()
         return self._instance_groq

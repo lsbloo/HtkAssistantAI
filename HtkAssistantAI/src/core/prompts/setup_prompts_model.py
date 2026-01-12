@@ -20,4 +20,29 @@ class HtkPromptsModelConfiguration:
         else:
             self._logger.log(f"HtkPromptsModelConfiguration: Retrieved options for the model: {model}")
             return model_options.get_client_config_options()
-        
+    
+    def get_client_config_options_default(self,model: str):
+        model_mapping = {
+            "Groq": groq_options(),
+            "Claude Sonnet": sonnet_options(),
+        }
+        model_options = model_mapping.get(model, None)
+        if model_options is None:
+            self._logger.log(f"HtkPromptsModelConfiguration: No options default found for the model: {model}")
+            raise ValueError(f"No options found for the model: {model}")
+        else:
+            self._logger.log(f"HtkPromptsModelConfiguration: Retrieved options default for the model: {model}")
+            return model_options.get_client_config_options_default()
+
+    def get_client_config_general_options_default(self,model: str):
+        model_mapping = {
+            "Groq": groq_options(),
+            "Claude Sonnet": sonnet_options(),
+        }
+        model_options = model_mapping.get(model, None)
+        if model_options is None:
+            self._logger.log(f"HtkPromptsModelConfiguration: No options general default found for the model: {model}")
+            raise ValueError(f"No options found for the model: {model}")
+        else:
+            self._logger.log(f"HtkPromptsModelConfiguration: Retrieved options general default for the model: {model}")
+            return model_options.get_client_config_general_options_default()
