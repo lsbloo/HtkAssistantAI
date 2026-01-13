@@ -17,6 +17,9 @@ class HtkSpeakerContextSystem:
                 f"Speaker System Audio Context - Mixer Busy: {busy}"
             ),
         )
+    
+    def load_context_system_audio(self, key):
+        return self._htk_context.load_context_system_audio(key=key)
 
     def speak_response_system(self, message):
         self._speaker.play_audio(

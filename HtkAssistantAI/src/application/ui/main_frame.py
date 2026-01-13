@@ -4,7 +4,7 @@ from core.utils.design.observer.observer import Subject
 from core.LLMs.groq.options import input_groq_options
 from core.LLMs.claudesonnet.options import input_sonnet_options
 from core.log.htk_logger import HtkApplicationLogger
-from .utils import show_toast
+from .validator.main_frame_validator import HtkMainFrameUIValidator
 from PIL import Image, ImageTk, ImageDraw
 from core.utils.os_env.os_env import HtkOsEnvironment
 from core.utils.design.observer.observer import (
@@ -184,11 +184,19 @@ class MainFrame(Subject):
 
     def _setup_models_configuration(self):
         icon_button = ctk.CTkImage(
-            light_image=Image.open(HtkOsEnvironment.get_absolute_path_for_resource_icon("settings-ia-icon.png")),
-            dark_image=Image.open(HtkOsEnvironment.get_absolute_path_for_resource_icon("settings-ia-icon.png")),
+            light_image=Image.open(
+                HtkOsEnvironment.get_absolute_path_for_resource_icon(
+                    "settings-ia-icon.png"
+                )
+            ),
+            dark_image=Image.open(
+                HtkOsEnvironment.get_absolute_path_for_resource_icon(
+                    "settings-ia-icon.png"
+                )
+            ),
             size=(20, 20),
         )
-        
+
         self.prompts_button = ctk.CTkButton(
             self.root,
             text="Prompts",
@@ -200,10 +208,11 @@ class MainFrame(Subject):
         )
 
         self.prompts_button.place(x=310, y=460)
-    
+
     def _open_prompts_config(self):
-        self._prompts_config_window = PromptConfigFrame(app_root=self.root, isSpeakSystem=self.init_system_speaker)
-        
+        self._prompts_config_window = PromptConfigFrame(
+            app_root=self.root, isSpeakSystem=self.init_system_speaker
+        )
 
     def _on_model_change(self, event):
         selected_model = self.model_var.get()
@@ -467,28 +476,25 @@ class MainFrame(Subject):
             else None
         )
 
-        if (
-            selected_model == "Selecione um modelo"
-            or selected_model == "No models available"
-        ):
-            show_toast("Por favor, selecione um modelo válido.", duration=3000)
-            return
+        params = {
+            "selected_model": selected_model,
+            "selected_option": selected_option,
+            "option_role_choice": self.option_role_choice,
+            "init_system_speaker": self.init_system_speaker,
+            "option_persona_context_choice": self.option_persona_context_choice,
+            "input_from_recon": response["recon_output_in_text"],
+            "is_recon_enabled": True,
+        }
 
-        self.submit_button.configure(state="disabled")
-        self._progressbar.start()
-        self.text_input.delete("1.0", tk.END)
-        self.text_input.insert(tk.END, response["recon_output_in_text"])
-        self.notify_observers(
-            {
-                "selected_model": selected_model,
-                "selected_option": selected_option,
-                "option_role_choice": self.option_role_choice,
-                "init_system_speaker": self.init_system_speaker,
-                "option_persona_context_choice": self.option_persona_context_choice,
-                "input_from_recon": response["recon_output_in_text"],
-                "is_recon_enabled": True,
-            }
-        )
+        if self._main_frame_validator.validate_inputs_recon(
+            self.init_system_speaker, params
+        ):
+            self.submit_button.configure(state="disabled")
+            self._progressbar.start()
+            self._speakSystem(key="processing")
+            self.text_input.delete("1.0", tk.END)
+            self.text_input.insert(tk.END, response["recon_output_in_text"])
+            self.notify_observers(params)
 
     def _play_audio_with_recon(self, response, onMixerBusy=None):
         self._htkAudioPlayer.enableOutputAudio(response["response"], onMixerBusy)
@@ -570,6 +576,10 @@ class MainFrame(Subject):
         self.configurations_role = []
         self.init_system_speaker = True
 
+        self._main_frame_validator = HtkMainFrameUIValidator(
+            root=self.root,
+            isSpeakSystem=self.init_system_speaker
+        )
         self._create_root()
         self._setup_loading_spinner()
         self._create_circular_widget()
@@ -590,26 +600,21 @@ class MainFrame(Subject):
             else None
         )
 
-        if (
-            selected_model == "Selecione um modelo"
-            or selected_model == "No models available"
-        ):
-            show_toast("Por favor, selecione um modelo válido.", duration=3000)
-            return
-        self.submit_button.configure(state="disabled")
-        self._progressbar.start()
-        self._speakSystem(key="processing")
-        self.notify_observers(
-            {
-                "user_input": user_input,
-                "selected_model": selected_model,
-                "selected_option": selected_option,
-                "init_system_speaker": self.init_system_speaker,
-                "option_persona_context_choice": self.option_persona_context_choice,
-                "option_role_choice": self.option_role_choice,
-                "is_recon_enabled": False,
-            }
-        )
+        params = {
+            "user_input": user_input,
+            "selected_model": selected_model,
+            "selected_option": selected_option,
+            "init_system_speaker": self.init_system_speaker,
+            "option_persona_context_choice": self.option_persona_context_choice,
+            "option_role_choice": self.option_role_choice,
+            "is_recon_enabled": False,
+        }
+
+        if self._main_frame_validator.validate_inputs(self.init_system_speaker, params):
+            self.submit_button.configure(state="disabled")
+            self._progressbar.start()
+            self._speakSystem(key="processing")
+            self.notify_observers(params)
 
     def update_chat(self, response):
         self._progressbar.stop()
