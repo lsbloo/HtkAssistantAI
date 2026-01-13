@@ -26,7 +26,10 @@
         "welcome_prompt_config": "Bem vindo as configurações de prompts - Nesta aba, você pode customizar parametros para prompts do modelo selecionado",
         "database_failure_connection": "Houve uma falha ao tentar se conectar ao banco de dados local",
         "prompt_config_successful": "Nova configuração do modelo atualizada com sucesso!",
-        "prompt_config_error": "Falha ao atualizar nova configuração do modelo!"
+        "prompt_config_error": "Falha ao atualizar nova configuração do modelo!",
+        "input_validator_error_selected_model": "Por favor, selecione um modelo!",
+        "input_validator_error_input_area": "Nenhum prompt de entrada foi encontrado!",
+        "input_validator_error_selected_option": "Nenhuma opção do modelo foi habilitada!"
     },
     "language": "pt-BR",
     "context": [
