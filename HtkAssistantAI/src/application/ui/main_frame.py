@@ -19,6 +19,7 @@ from core.context.htk_loader_context import HtkLoaderContext
 from core.context.htk_speaker_context_system import HtkSpeakerContextSystemInitializer
 from threading import Thread
 from .prompts_config_frame import PromptConfigFrame
+from .contexts_config_frame import ContextFrame
 from .webview_frame import WebViewFrame
 
 
@@ -342,7 +343,21 @@ class MainFrame(Subject):
             variable=optionmenu_var,
         )
         optionmenu.place(x=10, y=50)
-
+        
+        self.context_button_open_config = ctk.CTkButton(
+            self.context_frame,
+            text="Adicionar Contextos",
+            corner_radius=24,
+            fg_color="#4D0C83",
+            command=self._open_context_config,
+        )
+        
+        self.context_button_open_config.place(x=100, y=180)
+        
+    def _open_context_config(self):
+        self._config_frame = ContextFrame(self.root, isSpeakSystem=self.init_system_speaker)
+        
+    
     def _stop_context_options(self):
         self.context_frame.destroy()
 
